@@ -12,7 +12,10 @@ function generate() {
   document.getElementById("certRole").innerText = role;
   document.getElementById("certDate").innerText = date;
 
-  document.getElementById("certificate").classList.remove("hidden");
+  const cert = document.getElementById("certificate");
+  cert.classList.remove("hidden");
+
+  document.body.classList.add("show-hands");
 }
 
 function downloadPDF() {
