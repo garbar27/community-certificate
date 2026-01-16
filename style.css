@@ -1,130 +1,10 @@
-/* ===== GLOBAL ===== */
 body {
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(circle at top, #4a1d7a, #120018);
+  background: radial-gradient(circle at top, #4b1d7a, #140018);
   font-family: 'Poppins', sans-serif;
-  color: #ffffff;
-  overflow-x: hidden;
-}
-
-/* ===== FORM ===== */
-.form {
-  padding: 40px;
-}
-
-.form h2 {
-  margin-bottom: 16px;
-}
-
-input, select {
-  padding: 10px;
-  margin-right: 8px;
-  font-size: 15px;
-  border-radius: 6px;
-  border: none;
-}
-
-button {
-  padding: 12px 22px;
-  background: linear-gradient(135deg, #8b5cf6, #a855f7);
-  border: none;
-  border-radius: 10px;
   color: white;
-  cursor: pointer;
-}
-
-/* ===== CERTIFICATE ===== */
-#certificate {
-  display: none;
-  margin: 100px auto;
-  width: 920px;
-  animation: scrollOpen 1.4s ease forwards;
-}
-
-/* ===== SCROLL (PARCHMENT) ===== */
-.scroll {
-  position: relative;
-  padding: 90px 70px;
-  text-align: center;
-
-  background:
-    radial-gradient(circle at 20% 30%, rgba(0,0,0,0.04), transparent 40%),
-    radial-gradient(circle at 70% 60%, rgba(0,0,0,0.06), transparent 45%),
-    linear-gradient(135deg, #f8f1dc, #efe2c3);
-
-  border: 14px solid #caa24d;
-  border-radius: 40px;
-
-  box-shadow:
-    0 40px 80px rgba(0,0,0,0.45),
-    inset 0 0 50px rgba(0,0,0,0.15);
-}
-
-/* ===== SCROLL ROLLS ===== */
-.scroll::before,
-.scroll::after {
-  content: "";
-  position: absolute;
-  top: -35px;
-  bottom: -35px;
-  width: 70px;
-
-  background: linear-gradient(180deg, #d6b15e, #9c7a2e);
-  border-radius: 35px;
-}
-
-.scroll::before { left: -45px; }
-.scroll::after  { right: -45px; }
-
-/* ===== TEXT ===== */
-.title {
-  font-family: 'Great Vibes', cursive;
-  font-size: 54px;
-  margin-bottom: 18px;
-  color: #4b2e10;
-}
-
-.title span {
-  color: #7a3aed;
-}
-
-.small {
-  font-size: 16px;
-  margin-top: 12px;
-  color: #3a2a12;
-}
-
-#certName {
-  font-size: 42px;
-  margin: 26px 0;
-  color: #7a3aed;
-  letter-spacing: 2px;
-  font-weight: 600;
-}
-
-#certRole {
-  font-weight: 600;
-  color: #7a3aed;
-}
-
-.approved {
-  margin-top: 42px;
-  font-size: 15px;
-  font-style: italic;
-  color: #3a2a12;
-}
-
-/* ===== ANIMATION ===== */
-@keyframes scrollOpen {
-  from {
-    transform: scaleY(0.2);
-    opacity: 0;
-  }
-  to {
-    transform: scaleY(1);
-    opacity: 1;
-  }
+  overflow-x: hidden;
 }
 
 /* ===== STARS ===== */
@@ -133,16 +13,122 @@ button {
   inset: 0;
   background:
     radial-gradient(2px 2px at 20% 30%, #fff, transparent),
-    radial-gradient(1.5px 1.5px at 70% 40%, #fff, transparent),
-    radial-gradient(2px 2px at 40% 80%, #fff, transparent),
-    radial-gradient(1px 1px at 90% 60%, #fff, transparent),
-    radial-gradient(1.5px 1.5px at 10% 70%, #fff, transparent);
-  opacity: 0.35;
+    radial-gradient(1px 1px at 80% 40%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 50% 80%, #fff, transparent);
+  opacity: .4;
   animation: twinkle 6s infinite alternate;
   pointer-events: none;
 }
 
 @keyframes twinkle {
-  from { opacity: 0.25; }
-  to   { opacity: 0.55; }
+  from { opacity: .25; }
+  to { opacity: .6; }
 }
+
+/* ===== FORM ===== */
+.form {
+  padding: 30px;
+}
+
+input, select, button {
+  padding: 10px;
+  margin-right: 6px;
+  border-radius: 6px;
+  border: none;
+}
+
+button {
+  background: linear-gradient(135deg,#7c3aed,#a855f7);
+  color: white;
+  cursor: pointer;
+}
+
+/* ===== CERTIFICATE ===== */
+#certificate {
+  display: none;
+  margin: 120px auto;
+  width: 900px;
+  animation: unfold 1.8s ease forwards;
+}
+
+/* ===== SCROLL ===== */
+.scroll {
+  position: relative;
+  padding: 90px 80px;
+  text-align: center;
+
+  background:
+    radial-gradient(circle at 20% 30%, rgba(0,0,0,.08), transparent 40%),
+    radial-gradient(circle at 70% 70%, rgba(0,0,0,.1), transparent 45%),
+    linear-gradient(135deg, #f7eed3, #ebddb5);
+
+  border: 18px solid #caa24d;
+  border-radius: 40px;
+
+  box-shadow:
+    0 50px 120px rgba(0,0,0,.6),
+    inset 0 0 60px rgba(0,0,0,.2);
+}
+
+/* ROLLS */
+.scroll::before,
+.scroll::after {
+  content:"";
+  position:absolute;
+  top:-50px;
+  bottom:-50px;
+  width:80px;
+  background: linear-gradient(180deg,#d6b15e,#8c6a1e);
+  border-radius:40px;
+}
+.scroll::before { left:-60px; }
+.scroll::after { right:-60px; }
+
+/* TEXT */
+.title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 56px;
+  color: #4b2e10;
+}
+
+.title span { color:#7a3aed; }
+
+.subtitle {
+  margin-top: 16px;
+  font-family: 'Cinzel', serif;
+  color: #3a2a12;
+}
+
+#certName {
+  font-size: 44px;
+  margin: 28px 0;
+  font-family: 'Cinzel', serif;
+  color: #7a3aed;
+}
+
+#certRole {
+  color:#7a3aed;
+  font-weight:700;
+}
+
+.approved {
+  margin-top:40px;
+  font-style:italic;
+  color:#3a2a12;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes unfold {
+  from { transform: scaleY(.15); opacity:0; }
+  to { transform: scaleY(1); opacity:1; }
+}
+
+/* ===== MAGES ===== */
+.mage {
+  position: fixed;
+  bottom: 80px;
+  width: 140px;
+  height: 260px;
+  background: radial-gradient(circle, #9b6cff, #4a1d7a);
+  border-radius: 50% 50% 30% 30%;
+  animation: float 4s ease-in-out infin
