@@ -2,59 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>MagicBlock Certificate</title>
+  <title>MagicBlock Community Certificate</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div class="form">
-    <h2>Join MagicBlock Community</h2>
+<div class="stars"></div>
 
-    <input id="name" placeholder="Your name or nickname" />
+<div class="form">
+  <h2>JOIN MAGICBLOCK COMMUNITY</h2>
 
-    <select id="role">
-      <option>Gaming Magician</option>
-      <option>Wizard</option>
-      <option>Art Magician</option>
-      <option>Apprentice</option>
-      <option>Sorcerer</option>
-      <option>Adept</option>
-      <option>Inner Circle</option>
-      <option>Mod</option>
-      <option>Team</option>
-    </select>
+  <input id="name" placeholder="Your name or nickname" />
 
-    <input id="joinDate" type="date" />
+  <select id="role">
+    <option>Gaming Magician</option>
+    <option>Wizard</option>
+    <option>Art Magician</option>
+    <option>Apprentice</option>
+    <option>Sorcerer</option>
+    <option>Adept</option>
+    <option>Inner Circle</option>
+    <option>Mod</option>
+    <option>Team</option>
+  </select>
 
-    <button onclick="generate()">Generate Certificate</button>
-  </div>
+  <input type="date" id="joinDate" />
 
-  <div id="certificate">
-    <h1 class="cert-title">
+  <button onclick="generate()">Generate Certificate</button>
+</div>
+
+<!-- CERTIFICATE -->
+<div id="certificate">
+  <div class="scroll">
+
+    <div class="title">
       Certificate of <span>MagicBlock</span> Community Member
-    </h1>
+    </div>
 
-    <p class="small">This certifies that</p>
+    <div class="small">THIS CERTIFIES THAT</div>
 
-    <h2 id="certName"></h2>
+    <div id="certName">Name</div>
 
-    <p class="small">
-      is an official <span id="certRole"></span> of the MagicBlock community
-    </p>
+    <div class="small">
+      IS AN OFFICIAL <span id="certRole">Role</span> OF THE MAGICBLOCK COMMUNITY
+    </div>
 
-    <p class="small">
-      Member since: <span id="certDate"></span>
-    </p>
+    <div class="small">
+      MEMBER SINCE: <span id="certDate"></span>
+    </div>
 
-    <p class="approved">
-      Approved by MagicBlock Team
-    </p>
+    <div class="approved">
+      APPROVED BY MAGICBLOCK TEAM
+    </div>
+
   </div>
+</div>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
