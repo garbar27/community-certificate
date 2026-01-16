@@ -4,7 +4,7 @@ function generate() {
   const date = document.getElementById("date").value;
 
   if (!name || !date) {
-    alert("Please enter name and join date");
+    alert("Please fill all fields");
     return;
   }
 
@@ -15,16 +15,6 @@ function generate() {
   document.getElementById("certificate").classList.remove("hidden");
 }
 
-async function downloadPDF() {
-  const cert = document.getElementById("certificate");
-
-  const canvas = await html2canvas(cert, { scale: 2 });
-  const imgData = canvas.toDataURL("image/png");
-
-  const { jsPDF } = window.jspdf;
-  const pdf = new jsPDF("landscape", "px", [canvas.width, canvas.height]);
-
-  pdf.addImage(imgData, "PNG", 0, 0, canvas.width, canvas.height);
-  pdf.save("MagicBlock-Certificate.pdf");
+function downloadPDF() {
+  window.print();
 }
-
