@@ -2,7 +2,7 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(circle at top, #3b1d63, #120018);
+  background: radial-gradient(circle at top, #4a1d7a, #120018);
   font-family: 'Poppins', sans-serif;
   color: #ffffff;
   overflow-x: hidden;
@@ -37,86 +37,88 @@ button {
 /* ===== CERTIFICATE ===== */
 #certificate {
   display: none;
-  margin: 80px auto;
+  margin: 100px auto;
   width: 920px;
-  animation: scrollOpen 1.6s ease forwards;
+  animation: scrollOpen 1.4s ease forwards;
 }
 
-/* ===== SCROLL ===== */
+/* ===== SCROLL (PARCHMENT) ===== */
 .scroll {
   position: relative;
   padding: 90px 70px;
   text-align: center;
 
   background:
-    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.08), transparent 40%),
-    radial-gradient(circle at 70% 60%, rgba(0,0,0,0.15), transparent 45%),
-    linear-gradient(135deg, #6d28d9, #8b5cf6);
+    radial-gradient(circle at 20% 30%, rgba(0,0,0,0.04), transparent 40%),
+    radial-gradient(circle at 70% 60%, rgba(0,0,0,0.06), transparent 45%),
+    linear-gradient(135deg, #f8f1dc, #efe2c3);
 
-  border: 14px solid #f5d061;
+  border: 14px solid #caa24d;
   border-radius: 40px;
 
   box-shadow:
-    0 0 80px rgba(168, 85, 247, 0.9),
-    inset 0 0 40px rgba(0,0,0,0.25);
+    0 40px 80px rgba(0,0,0,0.45),
+    inset 0 0 50px rgba(0,0,0,0.15);
 }
 
-/* ===== SCROLL EDGES ===== */
+/* ===== SCROLL ROLLS ===== */
 .scroll::before,
 .scroll::after {
   content: "";
   position: absolute;
-  top: -30px;
-  bottom: -30px;
-  width: 60px;
-  background: linear-gradient(180deg, #f5d061, #b8860b);
-  border-radius: 30px;
+  top: -35px;
+  bottom: -35px;
+  width: 70px;
+
+  background: linear-gradient(180deg, #d6b15e, #9c7a2e);
+  border-radius: 35px;
 }
 
-.scroll::before { left: -35px; }
-.scroll::after  { right: -35px; }
+.scroll::before { left: -45px; }
+.scroll::after  { right: -45px; }
 
 /* ===== TEXT ===== */
 .title {
   font-family: 'Great Vibes', cursive;
-  font-size: 56px;
-  margin-bottom: 20px;
+  font-size: 54px;
+  margin-bottom: 18px;
+  color: #4b2e10;
 }
 
 .title span {
-  color: #fde68a;
-  text-shadow: 0 0 14px rgba(253, 230, 138, 0.8);
+  color: #7a3aed;
 }
 
 .small {
-  font-size: 17px;
-  opacity: 0.9;
+  font-size: 16px;
   margin-top: 12px;
+  color: #3a2a12;
 }
 
 #certName {
-  font-size: 44px;
+  font-size: 42px;
   margin: 26px 0;
-  color: #facc15;
+  color: #7a3aed;
   letter-spacing: 2px;
+  font-weight: 600;
 }
 
 #certRole {
-  color: #fde68a;
-  font-weight: bold;
+  font-weight: 600;
+  color: #7a3aed;
 }
 
 .approved {
   margin-top: 42px;
   font-size: 15px;
   font-style: italic;
-  opacity: 0.85;
+  color: #3a2a12;
 }
 
 /* ===== ANIMATION ===== */
 @keyframes scrollOpen {
   from {
-    transform: scaleY(0.15);
+    transform: scaleY(0.2);
     opacity: 0;
   }
   to {
@@ -135,7 +137,7 @@ button {
     radial-gradient(2px 2px at 40% 80%, #fff, transparent),
     radial-gradient(1px 1px at 90% 60%, #fff, transparent),
     radial-gradient(1.5px 1.5px at 10% 70%, #fff, transparent);
-  opacity: 0.4;
+  opacity: 0.35;
   animation: twinkle 6s infinite alternate;
   pointer-events: none;
 }
