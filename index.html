@@ -1,1 +1,42 @@
-index.html
+i<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Community Certificate</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>Join our Community</h2>
+
+  <input id="name" placeholder="Your name or nickname">
+
+  <select id="role">
+    <option>Member</option>
+    <option>Contributor</option>
+    <option>Creator</option>
+    <option>OG</option>
+  </select>
+
+  <br><br>
+
+  <button onclick="generate()">Generate Certificate</button>
+
+  <div id="certificate" style="display:none;">
+    <h1>Certificate of Community Membership</h1>
+
+    <p>This certifies that</p>
+
+    <h2 id="certName"></h2>
+
+    <p>is an official <b id="certRole"></b> of the community</p>
+
+    <p>Member since: <span id="certDate"></span></p>
+    <p>Certificate ID: <span id="certId"></span></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+ndex.html
