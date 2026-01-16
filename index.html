@@ -3,80 +3,75 @@
 <head>
   <meta charset="UTF-8" />
   <title>MagicBlock Certificate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- PDF libs -->
+  <!-- PDF -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div class="controls">
-    <h1>Join MagicBlock Community</h1>
+<h1 class="title">Join MagicBlock Community</h1>
 
-    <input id="name" placeholder="Your name" />
+<div class="controls">
+  <input id="name" placeholder="Your name" />
 
-    <select id="role">
-      <option>Gaming Magician</option>
-      <option>Wizard</option>
-      <option>Art Magician</option>
-      <option>Apprentice</option>
-      <option>Sorcerer</option>
-      <option>Adept</option>
-      <option>Inner Circle</option>
-      <option>Mod</option>
-      <option>Team</option>
-    </select>
+  <select id="role">
+    <option>Gaming Magician</option>
+    <option>Wizard</option>
+    <option>Art Magician</option>
+    <option>Apprentice</option>
+    <option>Sorcerer</option>
+    <option>Adept</option>
+    <option>Inner Circle</option>
+    <option>Mod</option>
+    <option>Team</option>
+  </select>
 
-    <input type="date" id="joinDate" />
+  <input type="date" id="date" />
 
-    <button onclick="generate()">Generate Certificate</button>
-    <button onclick="downloadPDF()">Download PDF</button>
-  </div>
+  <button onclick="generate()">Generate Certificate</button>
+  <button onclick="downloadPDF()">Download PDF</button>
+</div>
 
-  <!-- Certificate Scene -->
-  <div class="scene">
+<div class="scene">
 
-    <!-- Wizard Left -->
-    <img src="wizard.png" class="wizard left" />
+  <!-- Left Wizard -->
+  <img src="wizard-left.png" class="wizard left" />
 
-    <!-- Wizard Right -->
-    <img src="wizard.png" class="wizard right" />
+  <!-- Scroll -->
+  <div id="certificate" class="scroll hidden">
+    <div class="scroll-content">
+      <h2 class="script-title">
+        Certificate of <span>MagicBlock</span> Community Member
+      </h2>
 
-    <!-- Scroll -->
-    <div id="certificate" class="scroll hidden">
-      <div class="scroll-inner">
+      <p class="small">This certifies that</p>
 
-        <h2 class="title">
-          Certificate of <span>MagicBlock</span> Community Member
-        </h2>
+      <h1 id="certName">Name</h1>
 
-        <p class="small">This certifies that</p>
+      <p class="role">
+        is an official <span id="certRole"></span> of the MagicBlock community
+      </p>
 
-        <h3 id="certName">NAME</h3>
+      <p class="date">
+        Member since: <span id="certDate"></span>
+      </p>
 
-        <p class="small">
-          is an official <b id="certRole">ROLE</b> of the MagicBlock community
-        </p>
-
-        <p class="small">
-          Member since: <span id="certDate"></span>
-        </p>
-
-        <p class="approved">
-          Approved by MagicBlock Team
-        </p>
-
-      </div>
+      <p class="approved">Approved by MagicBlock Team</p>
     </div>
-
   </div>
 
-  <script src="script.js"></script>
+  <!-- Right Wizard -->
+  <img src="wizard-right.png" class="wizard right" />
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
