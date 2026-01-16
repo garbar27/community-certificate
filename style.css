@@ -15,10 +15,6 @@ body {
   padding: 24px 40px;
 }
 
-.top-panel h1 {
-  margin-bottom: 16px;
-}
-
 .controls {
   display: flex;
   gap: 12px;
@@ -29,7 +25,6 @@ input, select, button {
   padding: 10px 14px;
   border-radius: 8px;
   border: none;
-  font-size: 14px;
 }
 
 button {
@@ -45,6 +40,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 /* WIZARDS */
@@ -54,23 +50,50 @@ button {
   animation: float 4s ease-in-out infinite;
 }
 
-.wizard.left {
-  left: 80px;
-}
-
-.wizard.right {
-  right: 80px;
-}
+.wizard.left { left: 60px; }
+.wizard.right { right: 60px; }
 
 @keyframes float {
   0%,100% { transform: translateY(0); }
   50% { transform: translateY(-20px); }
 }
 
+/* HANDS */
+.hand {
+  position: absolute;
+  width: 220px;
+  opacity: 0;
+  z-index: 5;
+}
+
+.hand.top {
+  top: 20%;
+  animation: handTop 1.2s ease-out forwards;
+}
+
+.hand.bottom {
+  bottom: 20%;
+  animation: handBottom 1.2s ease-out forwards;
+}
+
+.show-hands .hand {
+  opacity: 1;
+}
+
+@keyframes handTop {
+  from { transform: translateY(-80px); }
+  to { transform: translateY(0); }
+}
+
+@keyframes handBottom {
+  from { transform: translateY(80px); }
+  to { transform: translateY(0); }
+}
+
 /* CERTIFICATE */
 .certificate {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .hidden {
@@ -79,14 +102,16 @@ button {
 
 /* SCROLL */
 .scroll {
-  width: 700px;
+  width: 720px;
   padding: 60px;
-  background: radial-gradient(circle at top, #fff8e6, #efe1c2);
-  border-radius: 20px;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  background: radial-gradient(circle at top, #fff6dc, #ead9b0);
+  border-radius: 18px;
   text-align: center;
   color: #3b2500;
-  animation: unroll 1.2s ease-out;
+  box-shadow: 0 40px 90px rgba(0,0,0,0.6);
+
+  transform-origin: top;
+  animation: unroll 1.4s ease-out forwards;
 }
 
 @keyframes unroll {
@@ -103,15 +128,15 @@ button {
 /* TEXT */
 .title {
   font-family: 'Great Vibes', cursive;
-  font-size: 40px;
+  font-size: 42px;
 }
 
 .title span {
-  color: #8a2be2;
+  color: #7b2cff;
 }
 
 .small {
-  margin-top: 20px;
+  margin-top: 18px;
   font-size: 12px;
   letter-spacing: 2px;
 }
@@ -127,6 +152,6 @@ button {
 }
 
 .approved {
-  margin-top: 28px;
+  margin-top: 26px;
   font-style: italic;
 }
