@@ -4,74 +4,70 @@
   <meta charset="UTF-8" />
   <title>MagicBlock Certificate</title>
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- HEADER / FORM -->
-  <header class="top-panel">
-    <h1>Join MagicBlock Community</h1>
+<header class="top-panel">
+  <h1>Join MagicBlock Community</h1>
 
-    <div class="controls">
-      <input id="name" placeholder="Your name" />
+  <div class="controls">
+    <input id="name" placeholder="Your name" />
+    <select id="role">
+      <option>Gaming Magician</option>
+      <option>Wizard</option>
+      <option>Art Magician</option>
+      <option>Apprentice</option>
+      <option>Sorcerer</option>
+      <option>Adept</option>
+      <option>Inner Circle</option>
+      <option>Mod</option>
+      <option>Team</option>
+    </select>
+    <input type="date" id="date" />
+    <button onclick="generate()">Generate Certificate</button>
+    <button onclick="downloadPDF()">Download PDF</button>
+  </div>
+</header>
 
-      <select id="role">
-        <option>Gaming Magician</option>
-        <option>Wizard</option>
-        <option>Art Magician</option>
-        <option>Apprentice</option>
-        <option>Sorcerer</option>
-        <option>Adept</option>
-        <option>Inner Circle</option>
-        <option>Mod</option>
-        <option>Team</option>
-      </select>
+<main class="stage">
 
-      <input type="date" id="date" />
+  <!-- WIZARDS -->
+  <img src="wizard-left.png" class="wizard left">
+  <img src="wizard-right.png" class="wizard right">
 
-      <button onclick="generate()">Generate Certificate</button>
-      <button onclick="downloadPDF()">Download PDF</button>
+  <!-- HANDS -->
+  <img src="hand-top.png" class="hand top">
+  <img src="hand-bottom.png" class="hand bottom">
+
+  <!-- CERTIFICATE -->
+  <section id="certificate" class="certificate hidden">
+    <div class="scroll">
+      <h2 class="title">
+        Certificate of <span>MagicBlock</span> Community Member
+      </h2>
+
+      <p class="small">This certifies that</p>
+
+      <h1 id="certName">NAME</h1>
+
+      <p class="role">
+        is an official <span id="certRole"></span> of the MagicBlock community
+      </p>
+
+      <p class="date">
+        Member since: <span id="certDate"></span>
+      </p>
+
+      <p class="approved">
+        Approved by MagicBlock Team
+      </p>
     </div>
-  </header>
+  </section>
 
-  <!-- STAGE -->
-  <main class="stage">
+</main>
 
-    <img src="wizard-left.png" class="wizard left" />
-    <img src="wizard-right.png" class="wizard right" />
-
-    <!-- CERTIFICATE -->
-    <section id="certificate" class="certificate hidden">
-      <div class="scroll">
-
-        <h2 class="title">
-          Certificate of <span>MagicBlock</span> Community Member
-        </h2>
-
-        <p class="small">This certifies that</p>
-
-        <h1 id="certName">NAME</h1>
-
-        <p class="role">
-          is an official <span id="certRole"></span> of the MagicBlock community
-        </p>
-
-        <p class="date">
-          Member since: <span id="certDate"></span>
-        </p>
-
-        <p class="approved">
-          Approved by MagicBlock Team
-        </p>
-
-      </div>
-    </section>
-
-  </main>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
