@@ -1,121 +1,127 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(circle at top, #4b1d74, #140018);
+  background: radial-gradient(circle at top, #4b1c78, #120018);
   font-family: 'Cinzel', serif;
   color: white;
+  text-align: center;
 }
 
-/* Controls */
+.title {
+  margin-top: 30px;
+  font-size: 32px;
+}
+
 .controls {
-  padding: 20px;
+  margin: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.controls input,
-.controls select {
-  padding: 10px;
-  margin-right: 10px;
-  border-radius: 6px;
-  border: none;
-}
-
-.controls button {
-  padding: 10px 18px;
-  border: none;
+input, select, button {
+  padding: 10px 14px;
   border-radius: 8px;
-  background: #8b5cf6;
+  border: none;
+  font-size: 14px;
+}
+
+button {
+  background: linear-gradient(135deg, #7b3fe4, #a56eff);
   color: white;
   cursor: pointer;
 }
 
-/* Scene */
 .scene {
   position: relative;
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-top: 60px;
+  height: 520px;
 }
 
-/* Wizards */
+.scroll {
+  width: 820px;
+  height: 420px;
+  margin: auto;
+  background: linear-gradient(#f7eed1, #ead9a6);
+  border-radius: 16px;
+  border-left: 40px solid #caa24a;
+  border-right: 40px solid #caa24a;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  animation: unroll 1.4s ease-out forwards;
+}
+
+.hidden {
+  display: none;
+}
+
+.scroll-content {
+  padding: 40px;
+  color: #3b2a18;
+}
+
+.script-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 38px;
+}
+
+.script-title span {
+  color: #7a3cff;
+}
+
+.small {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+#certName {
+  margin: 20px 0;
+  font-size: 42px;
+  color: #7a3cff;
+}
+
+.role {
+  font-size: 16px;
+}
+
+.date {
+  margin-top: 20px;
+}
+
+.approved {
+  margin-top: 30px;
+  font-style: italic;
+  font-size: 14px;
+}
+
 .wizard {
   position: absolute;
-  width: 220px;
+  bottom: 0;
+  width: 200px;
   animation: float 4s ease-in-out infinite;
-  pointer-events: none;
 }
 
 .wizard.left {
-  left: 5%;
+  left: 30px;
 }
 
 .wizard.right {
-  right: 5%;
-  transform: scaleX(-1);
+  right: 30px;
+  animation-delay: 2s;
 }
 
 @keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0); }
-}
-
-/* Scroll */
-.scroll {
-  width: 900px;
-  background: linear-gradient(#f6eed7, #efe2c3);
-  border-left: 50px solid #d6b35c;
-  border-right: 50px solid #d6b35c;
-  border-radius: 20px;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
-  animation: unroll 1.2s ease forwards;
-}
-
-.scroll.hidden {
-  display: none;
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
 }
 
 @keyframes unroll {
   from {
-    transform: scaleY(0.2);
+    transform: scaleY(0.3);
     opacity: 0;
   }
   to {
     transform: scaleY(1);
     opacity: 1;
   }
-}
-
-.scroll-inner {
-  padding: 60px;
-  text-align: center;
-  color: #3b2a18;
-}
-
-/* Text */
-.title {
-  font-family: 'Great Vibes', cursive;
-  font-size: 42px;
-}
-
-.title span {
-  color: #7c3aed;
-}
-
-.small {
-  font-size: 16px;
-}
-
-#certName {
-  font-size: 38px;
-  color: #7c3aed;
-}
-
-.approved {
-  margin-top: 30px;
-  font-style: italic;
 }
