@@ -2,12 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>MagicBlock Certificate</title>
+  <title>MagicBlock Scroll Certificate</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css" />
+  <!-- PDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -16,7 +20,7 @@
 <div class="form">
   <h2>JOIN MAGICBLOCK COMMUNITY</h2>
 
-  <input id="name" placeholder="Your name or nickname" />
+  <input id="name" placeholder="Your name or nickname">
 
   <select id="role">
     <option>Gaming Magician</option>
@@ -30,11 +34,21 @@
     <option>Team</option>
   </select>
 
-  <input type="date" id="joinDate" />
+  <input type="date" id="joinDate">
 
   <button onclick="generate()">Generate Certificate</button>
+  <button onclick="downloadPDF()">Download PDF</button>
 </div>
 
+<!-- MAGICIANS -->
+<div class="mage left"></div>
+<div class="mage right"></div>
+
+<!-- HANDS -->
+<div class="hand top"></div>
+<div class="hand bottom"></div>
+
+<!-- CERTIFICATE -->
 <div id="certificate">
   <div class="scroll">
 
@@ -42,15 +56,15 @@
       Certificate of <span>MagicBlock</span> Community Member
     </div>
 
-    <div class="small">THIS CERTIFIES THAT</div>
+    <div class="subtitle">THIS CERTIFIES THAT</div>
 
     <div id="certName">NAME</div>
 
-    <div class="small">
+    <div class="subtitle">
       IS AN OFFICIAL <span id="certRole">ROLE</span> OF THE MAGICBLOCK COMMUNITY
     </div>
 
-    <div class="small">
+    <div class="subtitle">
       MEMBER SINCE: <span id="certDate"></span>
     </div>
 
