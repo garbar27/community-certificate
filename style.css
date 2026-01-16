@@ -1,22 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(circle at top, #4b1c78, #120018);
+  background: radial-gradient(circle at top, #4b1f6f, #14001f);
   font-family: 'Cinzel', serif;
   color: white;
-  text-align: center;
 }
 
-.title {
-  margin-top: 30px;
-  font-size: 32px;
+/* HEADER */
+.top-panel {
+  padding: 24px 40px;
+}
+
+.top-panel h1 {
+  margin-bottom: 16px;
 }
 
 .controls {
-  margin: 20px;
   display: flex;
-  gap: 10px;
-  justify-content: center;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
@@ -28,86 +33,33 @@ input, select, button {
 }
 
 button {
-  background: linear-gradient(135deg, #7b3fe4, #a56eff);
+  background: linear-gradient(135deg, #9b5cff, #6c2bd9);
   color: white;
   cursor: pointer;
 }
 
-.scene {
+/* STAGE */
+.stage {
   position: relative;
-  margin-top: 60px;
-  height: 520px;
+  height: calc(100vh - 160px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.scroll {
-  width: 820px;
-  height: 420px;
-  margin: auto;
-  background: linear-gradient(#f7eed1, #ead9a6);
-  border-radius: 16px;
-  border-left: 40px solid #caa24a;
-  border-right: 40px solid #caa24a;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
-  animation: unroll 1.4s ease-out forwards;
-}
-
-.hidden {
-  display: none;
-}
-
-.scroll-content {
-  padding: 40px;
-  color: #3b2a18;
-}
-
-.script-title {
-  font-family: 'Great Vibes', cursive;
-  font-size: 38px;
-}
-
-.script-title span {
-  color: #7a3cff;
-}
-
-.small {
-  margin-top: 10px;
-  font-size: 14px;
-}
-
-#certName {
-  margin: 20px 0;
-  font-size: 42px;
-  color: #7a3cff;
-}
-
-.role {
-  font-size: 16px;
-}
-
-.date {
-  margin-top: 20px;
-}
-
-.approved {
-  margin-top: 30px;
-  font-style: italic;
-  font-size: 14px;
-}
-
+/* WIZARDS */
 .wizard {
   position: absolute;
-  bottom: 0;
-  width: 200px;
+  width: 180px;
   animation: float 4s ease-in-out infinite;
 }
 
 .wizard.left {
-  left: 30px;
+  left: 80px;
 }
 
 .wizard.right {
-  right: 30px;
-  animation-delay: 2s;
+  right: 80px;
 }
 
 @keyframes float {
@@ -115,13 +67,66 @@ button {
   50% { transform: translateY(-20px); }
 }
 
+/* CERTIFICATE */
+.certificate {
+  position: relative;
+  z-index: 2;
+}
+
+.hidden {
+  display: none;
+}
+
+/* SCROLL */
+.scroll {
+  width: 700px;
+  padding: 60px;
+  background: radial-gradient(circle at top, #fff8e6, #efe1c2);
+  border-radius: 20px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  text-align: center;
+  color: #3b2500;
+  animation: unroll 1.2s ease-out;
+}
+
 @keyframes unroll {
   from {
-    transform: scaleY(0.3);
+    transform: scaleY(0);
     opacity: 0;
   }
   to {
     transform: scaleY(1);
     opacity: 1;
   }
+}
+
+/* TEXT */
+.title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 40px;
+}
+
+.title span {
+  color: #8a2be2;
+}
+
+.small {
+  margin-top: 20px;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+#certName {
+  margin: 20px 0;
+  font-size: 36px;
+  color: #6a00c8;
+}
+
+.role, .date {
+  margin-top: 12px;
+}
+
+.approved {
+  margin-top: 28px;
+  font-style: italic;
 }
