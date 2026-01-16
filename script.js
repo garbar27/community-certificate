@@ -9,7 +9,7 @@ function generate() {
   }
 
   document.getElementById("certName").innerText = name.toUpperCase();
-  document.getElementById("certRole").innerText = role;
+  document.getElementById("certRole").innerText = role.toUpperCase();
   document.getElementById("certDate").innerText = joinDate;
 
   document.getElementById("certificate").style.display = "block";
