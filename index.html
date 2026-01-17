@@ -10,54 +10,61 @@
 <header class="top-bar">
   <h1>Join MagicBlock Community</h1>
 
-  <div class="controls">
-    <input id="userName" placeholder="Your name" />
-    <select id="userRole">
-      <option>@Wizard</option>
-      <option>@Art Magician</option>
-      <option>@Gaming Magician</option>
-      <option>@Apprentice</option>
-      <option>@Sorcerer</option>
-      <option>@Adept</option>
-      <option>@Inner Circle</option>
-      <option>Mod</option>
-      <option>Team</option>
-    </select>
-    <input id="date" type="date" />
-    <button onclick="generateCertificate()">Generate Certificate</button>
-    <button onclick="downloadPDF()">Download PDF</button>
-  </div>
+  <input type="text" id="userName" placeholder="Your name" />
+
+  <select id="role">
+    <option>@Wizard</option>
+    <option>@Art Magician</option>
+    <option>@Gaming Magician</option>
+    <option>@Apprentice</option>
+    <option>@Sorcerer</option>
+    <option>@Adept</option>
+    <option>@Inner Circle</option>
+    <option>Mod</option>
+    <option>Team</option>
+  </select>
+
+  <input type="date" id="date" />
+
+  <button onclick="generateCertificate()">Generate Certificate</button>
+  <button onclick="downloadPDF()">Download PDF</button>
 </header>
 
-<main>
+<main class="page">
   <div id="certificate">
 
     <!-- LOGO -->
-    <img src="assets/logo.png" class="logo" alt="MagicBlock logo">
+    <div class="logo">
+      <img src="assets/logo.png" alt="MagicBlock Logo">
+      <span>MagicBlock</span>
+    </div>
 
-    <!-- LEFT WIZARD -->
-    <img src="assets/wizard-left.png" class="wizard wizard-left" alt="Wizard left">
+    <!-- WIZARDS -->
+    <img src="assets/wizard-left.png" class="wizard wizard-left" alt="wizard left">
+    <img src="assets/wizard.png" class="wizard wizard-right" alt="wizard right">
 
-    <!-- RIGHT WIZARD -->
-    <img src="assets/wizard.png" class="wizard wizard-right" alt="Wizard right">
+    <!-- TEXT -->
+    <h2>Certificate of <span>MagicBlock</span> Community Member</h2>
 
-    <h2 class="title">Certificate of <span>MagicBlock</span> Community Member</h2>
+    <p class="small">This certifies that</p>
 
-    <p class="subtitle">This certifies that</p>
-
-    <p id="certName" class="name">NAME</p>
+    <h1 id="certName">NAME</h1>
 
     <p class="role">
       is an official <span id="certRole">ROLE</span> of the MagicBlock community
     </p>
 
-    <p id="certDate" class="date">Member since: —</p>
+    <p class="date">
+      Member since: <span id="certDate">—</span>
+    </p>
 
-    <p class="footer">Approved by MagicBlock Team</p>
+    <p class="approved">
+      Approved by MagicBlock Team
+    </p>
+
   </div>
 </main>
 
 <script src="script.js"></script>
 </body>
 </html>
-
