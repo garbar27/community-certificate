@@ -19,9 +19,7 @@ async function downloadPDF() {
     useCORS: true,
     backgroundColor: "#fff6d8",
     width: rect.width,
-    height: rect.height,
-    windowWidth: document.documentElement.scrollWidth,
-    windowHeight: document.documentElement.scrollHeight
+    height: rect.height
   });
 
   const imgData = canvas.toDataURL("image/png");
