@@ -39,18 +39,22 @@ body {
 }
 
 /* Certificate */
-#certificate { 
-  position: relative;          /* 🔥 КЛЮЧОВЕ */
-  width: 900px;
+#certificate {
+  position: relative;
+
+  width: 800px;          /* 👈 нормальний розмір */
   max-width: 90%;
-  margin: 80px auto;
+  height: auto;
+
+  margin: 100px auto;
+  padding: 60px 80px;
 
   background: #f9efcc;
   border-radius: 24px;
-  padding: 60px 80px;
 
   text-align: center;
 }
+
 .title {
   font-family: 'Great Vibes', cursive;
   font-size: 36px;
