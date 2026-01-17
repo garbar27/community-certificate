@@ -1,11 +1,15 @@
 function generate() {
-  const name = document.getElementById("nameInput").value || "NAME";
-  const role = document.getElementById("roleInput").value || "ROLE";
-  const date = document.getElementById("dateInput").value || "—";
+  const nameInput = document.getElementById("nameInput");
+  const roleInput = document.getElementById("roleInput");
+  const dateInput = document.getElementById("dateInput");
 
-  document.getElementById("certName").innerText = name;
-  document.getElementById("certRole").innerText = role;
-  document.getElementById("certDate").innerText = date;
+  const name = nameInput ? nameInput.value : "NAME";
+  const role = roleInput ? roleInput.value : "ROLE";
+  const date = dateInput ? dateInput.value : "—";
+
+  document.getElementById("certName").textContent = name;
+  document.getElementById("certRole").textContent = role;
+  document.getElementById("certDate").textContent = date;
 }
 
 async function downloadPDF() {
