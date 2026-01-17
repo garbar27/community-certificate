@@ -1,7 +1,7 @@
-function generateCertificate() {
-  const name = document.getElementById("userName").value || "NAME";
-  const role = document.getElementById("role").value || "ROLE";
-  const date = document.getElementById("date").value || "—";
+function generate() {
+  const name = document.getElementById("nameInput").value || "NAME";
+  const role = document.getElementById("roleInput").value || "ROLE";
+  const date = document.getElementById("dateInput").value || "—";
 
   document.getElementById("certName").innerText = name;
   document.getElementById("certRole").innerText = role;
@@ -9,5 +9,6 @@ function generateCertificate() {
 }
 
 function downloadPDF() {
-  alert("PDF generation can be added with html2pdf.js later.");
+  window.print();
 }
+
