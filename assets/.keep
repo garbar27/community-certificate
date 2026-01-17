@@ -1,6 +1,4 @@
 assets/
- ├ hands-top.png
- ├ hands-bottom.png
- ├ wizard-left.png
- ├ wizard-right.png
- └ .keep
+├── .keep
+├── logo.png        
+├── wizard.png
