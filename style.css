@@ -41,6 +41,7 @@ body {
 /* Certificate */
 #certificate {
   position: relative;
+}
   width: 900px;
   max-width: 90%;
   margin: 60px auto;
@@ -119,22 +120,12 @@ body {
 
 /* Wizard on certificate */
 .wizard-on-cert {
+ .wizard-on-cert {
   position: absolute;
-  right: -20px;     /* трохи ближче до сертифіката */
-  bottom: -50px;    /* опускаємо нижче */
-  height: 380px;    /* робимо більшим */
-  z-index: 3;
+  right: -10px;
+  bottom: -70px;     /* ↓ опускаємо */
+  height: 420px;     /* ↑ робимо більшим */
+  z-index: 5;
   pointer-events: none;
 }
 
-}
-right: -20px;
-height: 300px;
-.wizard-on-cert {
-  position: absolute;
-  right: -40px;      /* трохи виходить за край сертифіката */
-  bottom: -10px;     /* ОПУСКАЄМО НИЖЧЕ */
-  height: 320px;     /* РОБИМО БІЛЬШИМ */
-  z-index: 2;
-  pointer-events: none;
-}
