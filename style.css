@@ -62,11 +62,12 @@ body {
 /* WIZARDS — FINAL FIX */
 /* ===================== */
 
-.wizard {
+..wizard {
   position: absolute;
-  bottom: 10px;
-  width: 220px;       /* 🔥 ВЕЛИКІ */
+  bottom: 20px;      /* трохи підняли */
+  width: 300px;      /* ⬅️ ЗРОБИЛИ ЗНАЧНО БІЛЬШИМИ */
 }
+
 
 .wizard img {
   width: 100%;
