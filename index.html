@@ -11,7 +11,7 @@ body {
   background: linear-gradient(135deg, #3b145f, #5a1d82);
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header {
   padding: 20px 40px;
   color: white;
@@ -26,14 +26,14 @@ header {
   margin-right: 6px;
 }
 
-/* CENTER */
+/* ===== CENTER ===== */
 .scene {
   display: flex;
   justify-content: center;
   margin: 40px 0;
 }
 
-/* CERTIFICATE */
+/* ===== CERTIFICATE ===== */
 .certificate {
   position: relative;
   width: 1000px;
@@ -46,7 +46,7 @@ header {
   box-shadow: 0 20px 40px rgba(0,0,0,.3);
 }
 
-/* TEXT */
+/* ===== TEXT ===== */
 .logo {
   position: absolute;
   top: 20px;
@@ -57,12 +57,11 @@ header {
 
 .title {
   font-size: 36px;
-  margin-bottom: 10px;
 }
 
 .subtitle {
   font-size: 14px;
-  margin-bottom: 20px;
+  margin: 12px 0;
 }
 
 .name {
@@ -75,16 +74,16 @@ header {
   margin: 8px 0;
 }
 
-/* =========================
+/* =====================
    WIZARDS
-========================= */
-
+===================== */
 .wizard {
   position: absolute;
-  bottom: 20px;
-  width: 300px;
+  bottom: 18px;
+  width: 320px;
 }
 
+/* IMAGE */
 .wizard img {
   width: 100%;
   display: block;
@@ -101,32 +100,39 @@ header {
   right: 40px;
 }
 
-/* =========================
-   MAGIC STARS — ПАЛИЧКА
-========================= */
-
-/* контейнер зірок ПРИВʼЯЗАНИЙ до чарівника */
-.magic {
+/* =====================
+   WAND TIP (ANCHOR)
+===================== */
+.wand-tip {
   position: absolute;
-  top: 92px;   /* рівень палички — ПЕРЕВІРЕНИЙ */
-  right: -48px; /* після палички */
-  font-size: 22px;
-  display: flex;
-  gap: 6px;
-  animation: sparkle 1.4s infinite alternate;
+  top: 110px;   /* ТОЧКА ПАЛИЧКИ */
+  right: 30px; /* кінець палички */
+  width: 1px;
+  height: 1px;
 }
 
 /* дзеркало для лівого */
-.wizard.left .magic {
+.wizard.left .wand-tip {
   right: auto;
-  left: -48px;
-  transform: scaleX(-1);
+  left: 30px;
 }
 
-/* animation */
+/* =====================
+   MAGIC STARS
+===================== */
+.stars {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 22px;
+  display: flex;
+  gap: 6px;
+  animation: sparkle 1.3s infinite alternate;
+}
+
 @keyframes sparkle {
   from { opacity: .6; transform: translateX(0); }
-  to   { opacity: 1;  transform: translateX(6px); }
+  to   { opacity: 1; transform: translateX(8px); }
 }
 </style>
 </head>
@@ -144,12 +150,12 @@ header {
     </select>
     <input type="date" id="dateInput">
     <button onclick="generate()">Generate Certificate</button>
-    <button onclick="downloadPDF()">Download PDF</button>
+    <button onclick="window.print()">Download PDF</button>
   </div>
 </header>
 
 <main class="scene">
-  <div class="certificate" id="certificate">
+  <div class="certificate">
 
     <div class="logo">MagicBlock ✨</div>
 
@@ -176,13 +182,17 @@ header {
     <!-- LEFT WIZARD -->
     <div class="wizard left">
       <img src="assets/6009133115600735042-removebg-preview.png">
-      <div class="magic">✨ ✨ ✨</div>
+      <div class="wand-tip">
+        <div class="stars">✨ ✨ ✨</div>
+      </div>
     </div>
 
     <!-- RIGHT WIZARD -->
     <div class="wizard right">
       <img src="assets/6009133115600735042-removebg-preview.png">
-      <div class="magic">✨ ✨ ✨</div>
+      <div class="wand-tip">
+        <div class="stars">✨ ✨ ✨</div>
+      </div>
     </div>
 
   </div>
@@ -198,10 +208,6 @@ function generate() {
 
   document.getElementById('certDate').innerText =
     document.getElementById('dateInput').value || '—';
-}
-
-function downloadPDF() {
-  window.print();
 }
 </script>
 
