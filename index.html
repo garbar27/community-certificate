@@ -18,24 +18,26 @@ body {
   display: flex;
   gap: 10px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .header input,
 .header select,
 .header button {
-  padding: 6px 10px;
-  border-radius: 6px;
+  padding: 8px 12px;
+  border-radius: 8px;
   border: none;
 }
 
 .header button {
   cursor: pointer;
+  background: white;
 }
 
 /* ===== CERTIFICATE ===== */
 .certificate {
-  width: 900px;
-  height: 420px;
+  width: 920px;
+  height: 440px;
   background: #fbf2cf;
   border-radius: 28px;
   margin: 40px auto;
@@ -55,7 +57,7 @@ body {
 
 .title {
   text-align: center;
-  font-size: 30px;
+  font-size: 32px;
 }
 
 .subtitle {
@@ -79,19 +81,19 @@ body {
 .wizard {
   position: absolute;
   bottom: 20px;
-  width: 160px;
+  width: 180px;
 }
 
 .wizard.left {
-  left: 30px;
+  left: 20px;
 }
 
 .wizard.right {
-  right: 30px;
+  right: 20px;
   transform: scaleX(-1);
 }
 
-/* ===== STARS ===== */
+/* ===== STARS (FIXED TO WANDS) ===== */
 .stars {
   position: absolute;
   font-size: 26px;
@@ -99,13 +101,13 @@ body {
 }
 
 .stars.left {
-  left: 185px;
-  bottom: 160px;
+  left: 190px;
+  bottom: 170px;
 }
 
 .stars.right {
-  right: 185px;
-  bottom: 160px;
+  right: 190px;
+  bottom: 170px;
 }
 </style>
 </head>
@@ -115,12 +117,23 @@ body {
 <!-- HEADER -->
 <div class="header">
   <h2 style="margin-right:20px;">Join MagicBlock Community</h2>
+
   <input placeholder="Your name">
+
   <select>
-    <option>Apprentice</option>
-    <option>Wizard</option>
+    <option>@Wizard</option>
+    <option>@Art Magician</option>
+    <option>@Gaming Magician</option>
+    <option>@Apprentice</option>
+    <option>@Sorcerer</option>
+    <option>@Adept</option>
+    <option>@Inner Circle</option>
+    <option>Mod</option>
+    <option>Team</option>
   </select>
+
   <input type="date">
+
   <button>Generate Certificate</button>
   <button>Download PDF</button>
 </div>
@@ -146,10 +159,10 @@ body {
   <div class="footer-text"><i>Approved by MagicBlock Team</i></div>
 
   <!-- WIZARDS -->
-  <img src="wizard.png" class="wizard left">
-  <img src="wizard.png" class="wizard right">
+  <img src="wizard.png" class="wizard left" alt="wizard">
+  <img src="wizard.png" class="wizard right" alt="wizard">
 
-  <!-- STARS (FROM WANDS) -->
+  <!-- STARS FROM WANDS -->
   <div class="stars left">✨<br>✨<br>✨</div>
   <div class="stars right">✨<br>✨<br>✨</div>
 
@@ -157,4 +170,3 @@ body {
 
 </body>
 </html>
-
