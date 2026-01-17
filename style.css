@@ -107,3 +107,13 @@ body {
   margin-top: 30px;
   font-style: italic;
 }
+#certificate {
+  position: relative;
+  z-index: 10;
+  background: #f6ebc9;
+  width: 700px;
+  margin: 120px auto;
+  padding: 60px;
+  border-radius: 20px;
+  text-align: center;
+}
