@@ -1,34 +1,17 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  min-height: 100vh;
-  background: radial-gradient(circle at top, #4b1c6b, #1a0228);
+  margin: 0;
   font-family: 'Playfair Display', serif;
+  background: radial-gradient(#4b1c6b, #1b0727);
+  color: #2b1b12;
 }
 
 /* CONTROLS */
 .controls {
-  padding: 20px 40px;
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
   color: white;
-}
-
-.controls input,
-.controls select,
-.controls button {
-  margin-right: 8px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: none;
-}
-
-.controls button {
-  background: #7a4cff;
-  color: white;
-  cursor: pointer;
 }
 
 /* SCENE */
@@ -40,12 +23,12 @@ body {
 
 /* CERTIFICATE */
 #certificate {
-  position: relative;
+  position: relative; /* 🔥 КРИТИЧНО */
   width: 900px;
   height: 420px;
-  background: #fff4cf;
-  border-radius: 26px;
-  padding: 50px 120px;
+  background: #fbf2cf;
+  border-radius: 24px;
+  padding: 40px;
   text-align: center;
 }
 
@@ -54,18 +37,18 @@ body {
   position: absolute;
   top: 20px;
   left: 30px;
-  color: #8b5cff;
+  color: #9b5cff;
   font-weight: bold;
 }
 
-/* TEXT */
+/* TITLES */
 .title {
   font-family: 'Great Vibes', cursive;
   font-size: 36px;
 }
 
 .title span {
-  color: #8b5cff;
+  color: #9b5cff;
 }
 
 .subtitle {
@@ -73,66 +56,48 @@ body {
 }
 
 #certName {
+  color: #9b5cff;
   font-size: 42px;
-  color: #8b5cff;
-  margin: 18px 0;
-}
-
-.role,
-.date,
-.approved {
-  margin-top: 6px;
+  margin: 20px 0;
 }
 
 /* WIZARDS */
 .wizard {
   position: absolute;
   bottom: 25px;
-  width: 170px; /* ⬅️ ЗБІЛЬШИЛИ */
+  width: 160px;
 }
 
 .wizard img {
   width: 100%;
-  display: block;
 }
 
-/* LEFT WIZARD */
+/* LEFT */
 .wizard.left {
-  left: 30px;
+  left: 20px;
   transform: scaleX(-1);
 }
 
-/* RIGHT WIZARD */
+/* RIGHT */
 .wizard.right {
-  right: 30px;
+  right: 20px;
 }
 
 /* SPARKLES */
 .sparkle {
   position: absolute;
+  top: 55px;   /* біля палички */
+  right: 20px;
   font-size: 26px;
-  animation: sparkle 1.5s infinite alternate;
-  pointer-events: none;
+  animation: sparkle 1.4s infinite alternate;
 }
 
-/* Sparkles from wand tip */
 .wizard.left .sparkle {
-  top: 48px;      /* ⬅️ ПІДГАНЯЛИ ПІД ПАЛИЧКУ */
-  left: 95px;
-}
-
-.wizard.right .sparkle {
-  top: 48px;
-  right: 95px;
+  left: 20px;
+  right: auto;
 }
 
 @keyframes sparkle {
-  from {
-    opacity: 0.5;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1.25);
-  }
+  from { opacity: 0.5; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1.3); }
 }
