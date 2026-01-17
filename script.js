@@ -20,3 +20,13 @@ async function downloadPDF() {
   pdf.save("MagicBlock_Certificate.pdf");
 }
 
+function generate() {
+  document.getElementById("certName").textContent =
+    document.getElementById("nameInput").value || "NAME";
+
+  document.getElementById("certRole").textContent =
+    document.getElementById("roleInput").value;
+
+  const d = document.getElementById("dateInput").value;
+  document.getElementById("certDate").textContent = d || "—";
+}
