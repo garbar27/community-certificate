@@ -55,17 +55,20 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 120%;
+  z-index: 20;
   pointer-events: none;
 }
 
 .hands-top {
-  top: -140px;
+  top: -40px;
+  width: 420px;
 }
 
 .hands-bottom {
-  bottom: -160px;
+  bottom: -60px;
+  width: 420px;
 }
+
 
 /* CERTIFICATE */
 .certificate {
