@@ -7,145 +7,152 @@
 <style>
 body {
   margin: 0;
-  font-family: serif;
-  background: radial-gradient(circle at top, #5a2b82, #2b0f45);
+  font-family: Georgia, serif;
+  background: radial-gradient(circle at top, #5b2b82, #2b0a3d);
   min-height: 100vh;
 }
 
-/* ===== CERTIFICATE ===== */
-.certificate-wrapper {
+/* HEADER */
+header {
+  padding: 20px 40px;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* CERTIFICATE WRAPPER */
+.scene {
   display: flex;
   justify-content: center;
-  margin-top: 120px;
+  margin-top: 40px;
 }
 
 .certificate {
   position: relative;
-  width: 1000px;
-  height: 520px;
-  background: #fbf3cf;
-  border-radius: 28px;
-  padding: 40px 80px;
+  width: 900px;
+  height: 420px;
+  background: #fbf2cf;
+  border-radius: 26px;
+  padding: 40px 60px;
   box-sizing: border-box;
 }
 
-/* ===== TEXT ===== */
+/* LOGO */
 .logo {
   position: absolute;
-  top: 18px;
-  left: 26px;
-  color: #9b59ff;
+  top: 20px;
+  left: 30px;
   font-weight: bold;
+  color: #8b5cf6;
 }
 
+/* TEXT */
 .title {
   text-align: center;
   font-size: 34px;
-  margin-top: 10px;
+  margin: 0;
+}
+
+.title span {
+  color: #8b5cf6;
 }
 
 .subtitle {
   text-align: center;
-  margin-top: 16px;
+  margin-top: 10px;
 }
 
 .name {
   text-align: center;
   font-size: 42px;
-  color: #9b59ff;
-  margin: 24px 0;
+  color: #8b5cf6;
+  margin: 20px 0;
 }
 
 .text {
   text-align: center;
 }
 
-/* ===== WIZARDS ===== */
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  font-style: italic;
+}
+
+/* WIZARDS */
 .wizard {
   position: absolute;
-  bottom: 28px;
-  width: 190px;
+  bottom: 20px;
+  width: 170px;
 }
 
-/* LEFT */
 .wizard.left {
-  left: 40px;
+  left: 30px;
 }
 
-/* RIGHT */
 .wizard.right {
-  right: 40px;
+  right: 30px;
   transform: scaleX(-1);
 }
 
-.wizard img {
-  width: 100%;
-}
-
-/* ===== STARS — ПРИВʼЯЗАНІ ДО ПАЛИЧКИ ===== */
+/* STARS */
 .stars {
   position: absolute;
-  font-size: 22px;
-  display: flex;
-  gap: 6px;
-  animation: sparkle 1.2s infinite alternate;
+  top: 110px;
+  font-size: 20px;
 }
 
-/* ⭐ LEFT WAND TIP */
-.wizard.left .stars {
-  top: 120px;     /* РІВЕНЬ КІНЧИКА ПАЛИЧКИ */
-  left: 160px;    /* ПІСЛЯ ПАЛИЧКИ */
+.stars.left {
+  left: 200px;
 }
 
-/* ⭐ RIGHT WAND TIP */
-.wizard.right .stars {
-  top: 120px;
-  right: 160px;
-}
-
-/* ===== ANIMATION ===== */
-@keyframes sparkle {
-  from { opacity: 0.6; transform: scale(0.9); }
-  to   { opacity: 1; transform: scale(1.1); }
+.stars.right {
+  right: 200px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="certificate-wrapper">
-  <div class="certificate">
+<header>Join MagicBlock Community</header>
+
+<main class="scene">
+  <section class="certificate">
 
     <div class="logo">MagicBlock ✨</div>
 
-    <div class="title">
-      Certificate of <span style="color:#9b59ff;">MagicBlock</span> Community Member
-    </div>
+    <h2 class="title">
+      Certificate of <span>MagicBlock</span> Community Member
+    </h2>
 
-    <div class="subtitle">This certifies that</div>
+    <p class="subtitle">This certifies that</p>
+
     <div class="name">NAME</div>
 
-    <div class="text">
-      is an official <span style="color:#9b59ff;">ROLE</span> of the MagicBlock community<br><br>
-      Member since: —<br><br>
-      Approved by MagicBlock Team
-    </div>
+    <p class="text">
+      is an official <span style="color:#8b5cf6;">ROLE</span> of the MagicBlock community
+    </p>
+
+    <p class="text">Member since: —</p>
+
+    <p class="footer">Approved by MagicBlock Team</p>
 
     <!-- LEFT WIZARD -->
     <div class="wizard left">
-      <img src="wizard.png" alt="wizard">
-      <div class="stars">✨ ✨ ✨</div>
+      <img src="wizard.png" width="100%">
     </div>
 
     <!-- RIGHT WIZARD -->
     <div class="wizard right">
-      <img src="wizard.png" alt="wizard">
-      <div class="stars">✨ ✨ ✨</div>
+      <img src="wizard.png" width="100%">
     </div>
 
-  </div>
-</div>
+    <!-- STARS -->
+    <div class="stars left">✨ ✨ ✨</div>
+    <div class="stars right">✨ ✨ ✨</div>
+
+  </section>
+</main>
 
 </body>
 </html>
-
