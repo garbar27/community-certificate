@@ -5,38 +5,44 @@
   <title>MagicBlock Certificate</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
+
+  <!-- PDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 
 <body>
 
 <header class="controls">
   <h1>Join MagicBlock Community</h1>
-  <input placeholder="Your name">
-  <select>
+  <input id="nameInput" placeholder="Your name">
+  <select id="roleInput">
     <option>Apprentice</option>
     <option>Wizard</option>
   </select>
-  <input type="date">
-  <button>Generate Certificate</button>
+  <input type="date" id="dateInput">
+  <button onclick="generate()">Generate Certificate</button>
+  <button onclick="downloadPDF()">Download PDF</button>
 </header>
 
 <main class="scene">
 
-  <div class="certificate">
+  <section id="certificate" class="certificate">
 
     <div class="logo">MagicBlock ✨</div>
 
     <!-- LEFT WIZARD -->
     <div class="wizard left">
       <img src="assets/6009133115600735042-removebg-preview.png">
-      <div class="stars">✨ ✨</div>
+      <div class="stars">✨ ✨ ✨</div>
     </div>
 
     <!-- RIGHT WIZARD -->
     <div class="wizard right">
       <img src="assets/6009133115600735042-removebg-preview.png">
-      <div class="stars">✨ ✨</div>
+      <div class="stars">✨ ✨ ✨</div>
     </div>
 
     <h2 class="title">
@@ -44,18 +50,23 @@
     </h2>
 
     <p class="subtitle">This certifies that</p>
-    <h1 class="name">NAME</h1>
+
+    <h1 id="certName" class="name">NAME</h1>
 
     <p class="role">
-      is an official <span>ROLE</span> of the MagicBlock community
+      is an official <span id="certRole">ROLE</span> of the MagicBlock community
     </p>
 
-    <p class="date">Member since: —</p>
+    <p class="date">
+      Member since: <span id="certDate">—</span>
+    </p>
+
     <p class="approved">Approved by MagicBlock Team</p>
 
-  </div>
+  </section>
 
 </main>
 
+<script src="script.js"></script>
 </body>
 </html>
