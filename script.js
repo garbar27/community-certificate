@@ -19,3 +19,4 @@ async function downloadPDF() {
   pdf.addImage(imgData, "PNG", 0, 0, canvas.width, canvas.height);
   pdf.save("MagicBlock_Certificate.pdf");
 }
+
