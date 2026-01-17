@@ -95,20 +95,30 @@ body {
 .scene{
   position: relative;
 }
-
-.wizard-right{
-  position: absolute;
-  right: 60px;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 380px;
-  width: auto;
-  z-index: 2;
-  pointer-events: none;
-}
-.scene {
+/* обовʼязково */
+#certificate {
   position: relative;
 }
+
+/* правий чарівник */
+.wizard-right {
+  position: absolute;
+  right: 40px;
+  bottom: 30px;
+  height: 300px;
+  pointer-events: none;
+}
+
+/* лівий чарівник (дзеркально) */
+.wizard-left {
+  position: absolute;
+  left: 40px;
+  bottom: 30px;
+  height: 300px;
+  transform: scaleX(-1);
+  pointer-events: none;
+}
+
 
 .wizard-right {
   position: absolute;
