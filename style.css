@@ -40,13 +40,19 @@ body {
 
 /* Certificate */
 #certificate {
-  position: relative;   /* 🔴 ОБОВʼЯЗКОВО */
-  background: #f7edc8;
-  border-radius: 24px;
+  position: relative;
+  background-color: #f7edc8; /* БЕЖЕВА ОСНОВА */
+  border-radius: 28px;
+
+  width: 900px;
+  min-height: 420px;
+
+  margin: 120px auto;
   padding: 60px 80px;
-  max-width: 900px;
-  margin: 80px auto;
+
+  box-shadow: 0 30px 60px rgba(0,0,0,0.25);
 }
+
 
 
 
@@ -112,20 +118,22 @@ body {
   pointer-events: none;
 }
 #certificate {
-  position: relative; /* обовʼязково */
+ #certificate * {
+  position: relative;
+  z-index: 1;
 }
 
 .wizard-on-cert {
+ .wizard-on-cert {
   position: absolute;
 
-  right: 30px;
-  bottom: 10px;
+  right: 20px;
+  bottom: 20px;
 
   height: 360px;
 
   z-index: 2;
   pointer-events: none;
 }
-
 
 
