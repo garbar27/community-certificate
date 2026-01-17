@@ -2,7 +2,6 @@ body {
   margin: 0;
   font-family: "Playfair Display", serif;
   background: radial-gradient(circle at top, #4b1c6b, #1a0629);
-  color: #2b1b10;
 }
 
 /* CONTROLS */
@@ -11,11 +10,7 @@ body {
   display: flex;
   gap: 10px;
   align-items: center;
-}
-
-.controls h1 {
-  margin-right: 20px;
-  color: #fff;
+  color: white;
 }
 
 .controls input,
@@ -28,7 +23,7 @@ body {
 
 .controls button {
   background: #7b3ff2;
-  color: #fff;
+  color: white;
   cursor: pointer;
 }
 
@@ -47,15 +42,23 @@ body {
   background: #fbf1cf;
   border-radius: 24px;
   padding: 40px 80px;
-  box-sizing: border-box;
   text-align: center;
+  box-sizing: border-box;
+}
+
+/* LOGO */
+.logo {
+  position: absolute;
+  top: 18px;
+  left: 30px;
+  font-weight: 700;
+  color: #7b3ff2;
 }
 
 /* TEXT */
 .title {
   font-family: "Great Vibes", cursive;
   font-size: 36px;
-  margin-bottom: 10px;
 }
 
 .title span {
@@ -63,36 +66,49 @@ body {
 }
 
 .subtitle {
-  font-size: 15px;
-  margin-bottom: 18px;
+  margin-top: 10px;
 }
 
 #certName {
   font-size: 42px;
   color: #7b3ff2;
-  margin: 10px 0;
-}
-
-.role,
-.date,
-.approved {
-  font-size: 14px;
-  margin-top: 10px;
+  margin: 12px 0;
 }
 
 /* WIZARDS */
-.wizard {
+.wizard-wrap {
   position: absolute;
   bottom: 10px;
+  width: 180px;
   height: 260px;
   pointer-events: none;
 }
 
-.wizard-left {
+.wizard-wrap.left {
   left: -40px;
+}
+
+.wizard-wrap.right {
+  right: -40px;
   transform: scaleX(-1);
 }
 
-.wizard-right {
-  right: -40px;
+.wizard {
+  height: 100%;
+}
+
+/* STARS */
+.stars::before {
+  content: "✨ ✨ ✨";
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  font-size: 18px;
+  animation: sparkle 2s infinite ease-in-out;
+}
+
+@keyframes sparkle {
+  0% { opacity: 0; transform: translateY(10px); }
+  50% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
 }
