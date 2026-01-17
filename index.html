@@ -5,20 +5,16 @@
 <title>MagicBlock Certificate</title>
 
 <style>
-/* ===== BASE ===== */
 body {
   margin: 0;
   font-family: Georgia, serif;
   background: linear-gradient(135deg, #3b145f, #5a1d82);
 }
 
+/* HEADER */
 header {
   padding: 20px 40px;
   color: white;
-}
-
-header h1 {
-  margin-bottom: 12px;
 }
 
 .controls input,
@@ -30,18 +26,18 @@ header h1 {
   margin-right: 6px;
 }
 
-/* ===== SCENE ===== */
+/* CENTER */
 .scene {
   display: flex;
   justify-content: center;
   margin: 40px 0;
 }
 
-/* ===== CERTIFICATE ===== */
+/* CERTIFICATE */
 .certificate {
   position: relative;
-  width: 920px;
-  height: 420px;
+  width: 960px;
+  height: 440px;
   background: #fff4cf;
   border-radius: 28px;
   padding: 40px 60px;
@@ -50,7 +46,7 @@ header h1 {
   box-shadow: 0 20px 40px rgba(0,0,0,.3);
 }
 
-/* ===== TEXT ===== */
+/* TEXT */
 .logo {
   position: absolute;
   top: 20px;
@@ -79,40 +75,40 @@ header h1 {
   margin: 8px 0;
 }
 
-/* ===== WIZARDS ===== */
+/* WIZARDS */
 .wizard {
   position: absolute;
-  bottom: 25px;
-  width: 160px; /* 🔥 БІЛЬШІ */
+  bottom: 18px;
+  width: 220px; /* 🔥 ВЕЛИКІ */
 }
 
 .wizard img {
   width: 100%;
+  display: block;
 }
 
-/* LEFT */
+/* LEFT WIZARD */
 .wizard.left {
-  left: 35px;
+  left: 30px;
   transform: scaleX(-1);
 }
 
-/* RIGHT */
+/* RIGHT WIZARD */
 .wizard.right {
-  right: 35px;
+  right: 30px;
 }
 
-/* ===== MAGIC STARS (ATTACHED TO WAND) ===== */
-.wizard::after {
-  content: "✨ ✨ ✨";
+/* STARS – ПРИВʼЯЗАНІ ДО ПАЛИЧКИ */
+.stars {
   position: absolute;
-  font-size: 20px;
-  top: 45px;   /* 🔥 біля палички */
-  right: -22px;
+  font-size: 22px;
+  top: 70px;      /* точка біля палички */
+  right: 18px;
 }
 
-/* left side correction */
-.wizard.left::after {
-  left: -22px;
+/* поправка для лівого */
+.wizard.left .stars {
+  left: 18px;
   right: auto;
 }
 </style>
@@ -163,11 +159,13 @@ header h1 {
     <!-- LEFT WIZARD -->
     <div class="wizard left">
       <img src="assets/6009133115600735042-removebg-preview.png">
+      <div class="stars">✨ ✨ ✨</div>
     </div>
 
     <!-- RIGHT WIZARD -->
     <div class="wizard right">
       <img src="assets/6009133115600735042-removebg-preview.png">
+      <div class="stars">✨ ✨ ✨</div>
     </div>
 
   </div>
