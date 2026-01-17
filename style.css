@@ -1,35 +1,78 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
   font-family: Georgia, serif;
-  background: linear-gradient(180deg, #4b1d6b, #2a083d);
+}
+
+body {
+  background: linear-gradient(180deg, #4b136b, #2a063a);
+  min-height: 100vh;
   color: #000;
 }
 
-.title {
+/* TOP BAR */
+.top-bar {
+  padding: 20px 40px;
   color: white;
-  padding: 20px;
 }
 
+.controls {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.controls input,
+.controls select,
+.controls button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+}
+
+/* PAGE */
+.page {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* CERTIFICATE */
 .certificate {
   position: relative;
-  background: #fff6d5;
   width: 900px;
-  margin: 40px auto;
-  padding: 60px 80px;
+  background: #fff6d5;
   border-radius: 30px;
+  padding: 40px 80px 80px;
   text-align: center;
 }
 
+/* LOGO */
 .logo {
   position: absolute;
   top: 25px;
   left: 30px;
-  height: 45px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
+.logo img {
+  width: 36px;
+  height: auto;
+}
+
+.logo span {
+  font-weight: bold;
+  color: #8a4fff;
+}
+
+/* TEXT */
 .certificate h2 {
-  margin-top: 10px;
   font-size: 32px;
+  margin-bottom: 20px;
 }
 
 .certificate h2 span {
@@ -37,19 +80,21 @@ body {
 }
 
 .small {
-  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 .name {
   font-size: 40px;
   color: #8a4fff;
-  margin: 20px 0;
+  margin-bottom: 20px;
 }
 
-.role,
-.since,
-.approved {
-  margin: 12px 0;
+.role {
+  margin-bottom: 20px;
+}
+
+.date {
+  margin-bottom: 20px;
 }
 
 .approved {
@@ -60,7 +105,7 @@ body {
 .wizard {
   position: absolute;
   bottom: 20px;
-  height: 220px; /* ⬅️ ЗБІЛЬШЕНІ */
+  width: 120px; /* ← РОЗМІР ЧАРІВНИКА */
 }
 
 .wizard.left {
@@ -69,5 +114,7 @@ body {
 
 .wizard.right {
   right: 30px;
+  transform: scaleX(-1);
 }
+
 
