@@ -93,25 +93,28 @@ body {
 }
 
 /* LEFT */
+/* LEFT wizard — дивиться В СЕРЕДИНУ */
 .wizard.left {
   left: 20px;
+  transform: scaleX(-1);
 }
 
-/* RIGHT */
+/* RIGHT wizard — дивиться В СЕРЕДИНУ */
 .wizard.right {
   right: 20px;
-  transform: scaleX(-1);   /* 👉 ДИВЛИТЬСЯ В СЕРЕДИНУ */
+  transform: none;
 }
+
 
 /* ✨ STARS */
 .stars {
   position: absolute;
-  top: 65px;        /* 🎯 БІЛЯ ПАЛИЧКИ */
+  top: 65px;
   right: -10px;
-  font-size: 24px;
 }
 
 .wizard.right .stars {
   left: -10px;
   right: auto;
 }
+
