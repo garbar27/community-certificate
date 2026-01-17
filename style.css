@@ -127,3 +127,11 @@ body {
 }
 right: -20px;
 height: 300px;
+.wizard-on-cert {
+  position: absolute;
+  right: -40px;      /* трохи виходить за край сертифіката */
+  bottom: -10px;     /* ОПУСКАЄМО НИЖЧЕ */
+  height: 320px;     /* РОБИМО БІЛЬШИМ */
+  z-index: 2;
+  pointer-events: none;
+}
