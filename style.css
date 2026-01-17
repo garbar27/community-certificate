@@ -6,7 +6,6 @@ body {
   margin: 0;
   font-family: "Playfair Display", serif;
   background: radial-gradient(circle at top, #5b2b82, #2a0f45);
-  color: #3a2a1a;
 }
 
 .controls {
@@ -17,10 +16,10 @@ body {
 .controls input,
 .controls select,
 .controls button {
-  margin-right: 8px;
   padding: 8px 12px;
   border-radius: 8px;
   border: none;
+  margin-right: 6px;
 }
 
 .scene {
@@ -29,20 +28,22 @@ body {
   padding: 40px 0;
 }
 
+/* ✅ ОСНОВА */
 .certificate {
-  position: relative;
+  position: relative;              /* 🔒 КЛЮЧ */
   width: 900px;
   height: 420px;
   background: #fbf2cf;
   border-radius: 28px;
   padding: 40px 80px;
   text-align: center;
+  overflow: hidden;                /* 🔒 нічого не вилізе */
 }
 
 /* LOGO */
 .logo {
   position: absolute;
-  top: 18px;
+  top: 16px;
   left: 24px;
   font-weight: 700;
   color: #8a4bff;
@@ -52,7 +53,6 @@ body {
 .title {
   font-family: "Great Vibes", cursive;
   font-size: 36px;
-  margin-bottom: 10px;
 }
 
 .title span {
@@ -80,11 +80,11 @@ body {
   margin-top: 6px;
 }
 
-/* WIZARDS */
+/* 🧙‍♂️ WIZARDS */
 .wizard {
   position: absolute;
   bottom: 20px;
-  width: 130px;
+  width: 180px;        /* ⬅️ КОНТРОЛЬ РОЗМІРУ */
 }
 
 .wizard img {
@@ -93,24 +93,24 @@ body {
 
 /* LEFT */
 .wizard.left {
-  left: 20px;
+  left: 10px;
 }
 
 /* RIGHT */
 .wizard.right {
-  right: 20px;
+  right: 10px;
   transform: scaleX(-1);
 }
 
-/* STARS */
+/* ✨ STARS */
 .stars {
   position: absolute;
-  top: 32px;
-  right: -20px;
-  font-size: 20px;
+  top: 40px;          /* ⬅️ БІЛЯ ПАЛИЧКИ */
+  right: -18px;
+  font-size: 22px;
 }
 
 .wizard.right .stars {
-  left: -20px;
+  left: -18px;
   right: auto;
 }
