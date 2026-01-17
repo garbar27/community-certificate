@@ -39,16 +39,18 @@ body {
 }
 
 /* Certificate */
-#certificate { 
+#certificate {
   position: relative;
-}
-  width: 720px;
-  padding: 50px;
-  background: #f6ebc9;
-  border-radius: 18px;
+  width: 900px;
+  max-width: 90%;
+  margin: 60px auto;
+  padding: 60px 80px;
+  background: #f6ebc8;
+  border-radius: 20px;
   text-align: center;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
 }
+
 
 .title {
   font-family: 'Great Vibes', cursive;
