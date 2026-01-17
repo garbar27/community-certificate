@@ -10,27 +10,48 @@ body {
   font-family: Georgia, serif;
   background: radial-gradient(circle at top, #5b2b82, #2b0a3d);
   min-height: 100vh;
+  color: #000;
 }
 
-/* HEADER */
-header {
+/* HEADER + CONTROLS */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   padding: 20px 40px;
   color: white;
-  font-size: 32px;
-  font-weight: bold;
 }
 
-/* CERTIFICATE WRAPPER */
-.scene {
+.header h1 {
+  margin: 0;
+  margin-right: 20px;
+  font-size: 32px;
+}
+
+.header input,
+.header select,
+.header button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+}
+
+.header button {
+  cursor: pointer;
+}
+
+/* CERTIFICATE */
+.wrapper {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .certificate {
   position: relative;
   width: 900px;
-  height: 420px;
+  height: 430px;
   background: #fbf2cf;
   border-radius: 26px;
   padding: 40px 60px;
@@ -83,7 +104,7 @@ header {
 .wizard {
   position: absolute;
   bottom: 20px;
-  width: 170px;
+  width: 190px;
 }
 
 .wizard.left {
@@ -98,26 +119,42 @@ header {
 /* STARS */
 .stars {
   position: absolute;
-  top: 110px;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .stars.left {
-  left: 200px;
+  left: 215px;
+  bottom: 160px;
 }
 
 .stars.right {
-  right: 200px;
+  right: 215px;
+  bottom: 160px;
 }
 </style>
 </head>
 
 <body>
 
-<header>Join MagicBlock Community</header>
+<!-- HEADER -->
+<div class="header">
+  <h1>Join MagicBlock Community</h1>
 
-<main class="scene">
-  <section class="certificate">
+  <input type="text" id="nameInput" placeholder="Your name">
+  <select id="roleInput">
+    <option>Apprentice</option>
+    <option>Mage</option>
+    <option>Wizard</option>
+  </select>
+  <input type="date" id="dateInput">
+
+  <button onclick="generate()">Generate Certificate</button>
+  <button onclick="downloadPDF()">Download PDF</button>
+</div>
+
+<!-- CERTIFICATE -->
+<div class="wrapper">
+  <div class="certificate" id="certificate">
 
     <div class="logo">MagicBlock ✨</div>
 
@@ -127,13 +164,13 @@ header {
 
     <p class="subtitle">This certifies that</p>
 
-    <div class="name">NAME</div>
+    <div class="name" id="certName">NAME</div>
 
     <p class="text">
-      is an official <span style="color:#8b5cf6;">ROLE</span> of the MagicBlock community
+      is an official <span style="color:#8b5cf6;" id="certRole">ROLE</span> of the MagicBlock community
     </p>
 
-    <p class="text">Member since: —</p>
+    <p class="text" id="certDate">Member since: —</p>
 
     <p class="footer">Approved by MagicBlock Team</p>
 
@@ -147,12 +184,41 @@ header {
       <img src="wizard.png" width="100%">
     </div>
 
-    <!-- STARS -->
+    <!-- STARS FROM WANDS -->
     <div class="stars left">✨ ✨ ✨</div>
     <div class="stars right">✨ ✨ ✨</div>
 
-  </section>
-</main>
+  </div>
+</div>
+
+<!-- PDF SCRIPT -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+function generate() {
+  document.getElementById('certName').innerText =
+    document.getElementById('nameInput').value || 'NAME';
+
+  document.getElementById('certRole').innerText =
+    document.getElementById('roleInput').value;
+
+  const date = document.getElementById('dateInput').value;
+  document.getElementById('certDate').innerText =
+    date ? 'Member since: ' + date : 'Member since: —';
+}
+
+async function downloadPDF() {
+  const { jsPDF } = window.jspdf;
+  const canvas = await html2canvas(document.getElementById('certificate'));
+  const imgData = canvas.toDataURL('image/png');
+
+  const pdf = new jsPDF('landscape', 'px', [canvas.width, canvas.height]);
+  pdf.addImage(imgData, 'PNG', 0, 0);
+  pdf.save('MagicBlock_Certificate.pdf');
+}
+</script>
 
 </body>
 </html>
+
