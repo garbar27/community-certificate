@@ -39,7 +39,9 @@ body {
 }
 
 /* Certificate */
-#certificate {
+#certificate { 
+  position: relative;
+}
   width: 720px;
   padding: 50px;
   background: #f6ebc9;
