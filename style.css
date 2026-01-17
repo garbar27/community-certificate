@@ -40,17 +40,14 @@ body {
 
 /* Certificate */
 #certificate {
-  position: relative;
-}
-  width: 900px;
-  max-width: 90%;
-  margin: 60px auto;
+  position: relative;   /* 🔴 ОБОВʼЯЗКОВО */
+  background: #f7edc8;
+  border-radius: 24px;
   padding: 60px 80px;
-  background: #f6ebc8;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  max-width: 900px;
+  margin: 80px auto;
 }
+
 
 
 .title {
@@ -121,14 +118,14 @@ body {
 .wizard-on-cert {
   position: absolute;
 
-  right: 20px;      /* ← всередину сертифіката */
-  bottom: 20px;     /* ← підняли знизу */
+  right: 30px;
+  bottom: 10px;
 
-  height: 380px;    /* ← розмір (можеш міняти 360–420) */
+  height: 360px;
 
-  z-index: 5;
+  z-index: 2;
   pointer-events: none;
 }
 
-}
+
 
