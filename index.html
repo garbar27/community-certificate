@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <title>MagicBlock Certificate</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 
-  <!-- PDF libs -->
+  <!-- PDF -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
@@ -18,7 +18,7 @@
 <header class="controls">
   <h1>Join MagicBlock Community</h1>
 
-  <input id="name" placeholder="Your name" />
+  <input id="name" placeholder="Your name">
 
   <select id="role">
     <option>Gaming Magician</option>
@@ -32,54 +32,18 @@
     <option>Team</option>
   </select>
 
-  <input type="date" id="date" />
+  <input type="date" id="date">
 
   <button onclick="generate()">Generate Certificate</button>
   <button onclick="downloadPDF()">Download PDF</button>
 </header>
 
-<main class="scene"> <!-- Wizards -->
-<img src="assets/wizard-left.png" class="wizard left">
+<main class="scene">
 
-<!-- Hands holding certificate -->
-<img src="assets/hands-top.png" class="hands top">
-<img src="assets/hands-bottom.png" class="hands bottom">
+  <!-- LEFT WIZARD -->
+  <img src="assets/wizard-left.png" class="wizard wizard-left">
 
+  <!-- CERTIFICATE + HANDS -->
+  <div class="certificate-wrap" id="pdf-area">
 
-
-  <!-- Wizards -->
-  <img src="assets/wizard-left.png" class="wizard left" />
-  <img src="assets/wizard-right.png" class="wizard right" />
-
-  <!-- Hands -->
-  <img src="assets/hands-top.png" class="hands top" />
-  <img src="assets/hands-bottom.png" class="hands bottom" />
-
-  <!-- Certificate -->
-  <section id="certificate">
-    <h2 class="title">
-      Certificate of <span>MagicBlock</span> Community Member
-    </h2>
-
-    <p class="subtitle">This certifies that</p>
-
-    <h1 id="certName">NAME</h1>
-
-    <p class="role">
-      is an official <span id="certRole">ROLE</span> of the MagicBlock community
-    </p>
-
-    <p class="date">
-      Member since: <span id="certDate"></span>
-    </p>
-
-    <p class="approved">
-      Approved by MagicBlock Team
-    </p>
-  </section>
-
-</main>
-
-<script src="script.js"></script>
-</body>
-</html>
+    <img src="assets/hands-top.png" class="hands hands-top">
