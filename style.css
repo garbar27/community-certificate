@@ -5,7 +5,7 @@
 
 body {
   margin: 0;
-  background: linear-gradient(180deg, #4b166f, #2b0b3f);
+  background: radial-gradient(circle at top, #5b2b82, #2a0f3a);
   color: #000;
 }
 
@@ -22,32 +22,25 @@ body {
 .top-bar select,
 .top-bar button {
   padding: 8px 12px;
-  border-radius: 8px;
+  border-radius: 6px;
   border: none;
-}
-
-.top-bar button {
-  cursor: pointer;
-  font-weight: bold;
 }
 
 /* PAGE */
 .page {
   display: flex;
   justify-content: center;
-  padding: 40px 0;
+  padding: 40px;
 }
 
 /* CERTIFICATE */
-#certificate {
+.certificate {
   position: relative;
   width: 900px;
-  min-height: 520px;
-  background: #fff4cf;
-  border-radius: 30px;
-  padding: 60px 80px;
+  background: #fff5d6;
+  border-radius: 24px;
+  padding: 60px 80px 80px;
   text-align: center;
-  line-height: 1.6;
 }
 
 /* LOGO */
@@ -59,64 +52,55 @@ body {
   align-items: center;
   gap: 8px;
   font-weight: bold;
-  color: #8b5cf6;
+  color: #7b3cff;
 }
 
 .logo img {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
+}
+
+/* TEXT */
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+h2 span {
+  color: #7b3cff;
+}
+
+.small {
+  margin-top: 30px;
+}
+
+h1 {
+  font-size: 42px;
+  color: #8b5cf6;
+  margin: 25px 0;
+}
+
+.text {
+  margin: 12px 0;
+  line-height: 1.6;
+}
+
+.sign {
+  margin-top: 30px;
+  font-style: italic;
 }
 
 /* WIZARDS */
 .wizard {
   position: absolute;
   bottom: 20px;
-  height: 220px;
+  width: 180px;
 }
 
-.wizard-left {
+.wizard.left {
   left: 20px;
 }
 
-.wizard-right {
+.wizard.right {
   right: 20px;
-  transform: scaleX(-1);
-}
-
-/* TEXT */
-h2 {
-  font-size: 34px;
-  margin-bottom: 30px;
-}
-
-h2 span {
-  color: #8b5cf6;
-}
-
-.small {
-  margin-bottom: 10px;
-}
-
-#certName {
-  font-size: 42px;
-  color: #8b5cf6;
-  margin: 20px 0;
-}
-
-.role {
-  margin-top: 20px;
-}
-
-.role span {
-  color: #8b5cf6;
-  font-weight: bold;
-}
-
-.date {
-  margin-top: 18px;
-}
-
-.approved {
-  margin-top: 28px;
-  font-style: italic;
 }
