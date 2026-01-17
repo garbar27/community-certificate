@@ -7,7 +7,6 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 
   <!-- PDF libs -->
@@ -17,68 +16,68 @@
 
 <body>
 
-  <!-- CONTROLS -->
-  <header class="controls">
-    <h1>Join MagicBlock Community</h1>
+<header class="controls">
+  <h1>Join MagicBlock Community</h1>
 
-    <input id="nameInput" placeholder="Your name">
+  <input id="nameInput" placeholder="Your name">
+  
+  <select id="roleInput">
+    <option>Apprentice</option>
+    <option>Wizard</option>
+    <option>Sorcerer</option>
+    <option>Gaming Magician</option>
+    <option>Art Magician</option>
+  </select>
 
-    <select id="roleInput">
-      <option>Gaming Magician</option>
-      <option>Art Magician</option>
-      <option>Wizard</option>
-      <option>Sorcerer</option>
-      <option>Apprentice</option>
-    </select>
+  <input type="date" id="dateInput">
 
-    <input type="date" id="dateInput">
+  <button onclick="generate()">Generate Certificate</button>
+  <button onclick="downloadPDF()">Download PDF</button>
+</header>
 
-    <button onclick="generate()">Generate Certificate</button>
-    <button onclick="downloadPDF()">Download PDF</button>
-  </header>
+<main class="scene">
 
-  <!-- CERTIFICATE -->
-  <main class="scene">
-    <section id="certificate">
+  <section id="certificate">
 
-      <!-- LOGO -->
-      <div class="logo">MagicBlock ✨</div>
+    <!-- LOGO -->
+    <div class="logo">MagicBlock ✨</div>
 
-      <!-- LEFT WIZARD -->
-      <div class="wizard-wrap left">
-        <img src="assets/6009133115600735042-removebg-preview.png" class="wizard">
-        <div class="stars"></div>
-      </div>
+    <!-- LEFT WIZARD -->
+    <div class="wizard-wrap left">
+      <img src="assets/6009133115600735042-removebg-preview.png" class="wizard">
+      <span class="sparkle">✨✨</span>
+    </div>
 
-      <!-- RIGHT WIZARD -->
-      <div class="wizard-wrap right">
-        <img src="assets/6009133115600735042-removebg-preview.png" class="wizard">
-        <div class="stars"></div>
-      </div>
+    <!-- RIGHT WIZARD -->
+    <div class="wizard-wrap right">
+      <img src="assets/6009133115600735042-removebg-preview.png" class="wizard">
+      <span class="sparkle">✨✨</span>
+    </div>
 
-      <h2 class="title">
-        Certificate of <span>MagicBlock</span> Community Member
-      </h2>
+    <!-- TEXT -->
+    <h2 class="title">
+      Certificate of <span>MagicBlock</span> Community Member
+    </h2>
 
-      <p class="subtitle">This certifies that</p>
+    <p class="subtitle">This certifies that</p>
 
-      <h1 id="certName">NAME</h1>
+    <h1 id="certName">NAME</h1>
 
-      <p class="role">
-        is an official <span id="certRole">ROLE</span> of the MagicBlock community
-      </p>
+    <p class="role">
+      is an official <span id="certRole">ROLE</span> of the MagicBlock community
+    </p>
 
-      <p class="date">
-        Member since: <span id="certDate">—</span>
-      </p>
+    <p class="date">
+      Member since: <span id="certDate">—</span>
+    </p>
 
-      <p class="approved">
-        Approved by MagicBlock Team
-      </p>
+    <p class="approved">
+      Approved by MagicBlock Team
+    </p>
 
-    </section>
-  </main>
+  </section>
+</main>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
