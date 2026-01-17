@@ -1,140 +1,71 @@
-* {
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&display=swap');
 
 body {
   margin: 0;
-  min-height: 100vh;
-  background: radial-gradient(circle at top, #4b1c6b, #1a0827);
-  color: white;
-  font-family: "Playfair Display", serif;
+  font-family: 'Cinzel', serif;
+  background: radial-gradient(circle at top, #4b1b6d, #1b0729);
+  color: #3b2a1a;
 }
 
-/* ===== CONTROLS ===== */
-
-.controls {
-  padding: 20px 40px;
-}
-
-.controls h1 {
-  margin-bottom: 15px;
-}
-
-.controls input,
-.controls select {
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  margin-right: 8px;
-}
-
-.controls button {
-  padding: 10px 16px;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  background: #8f5bff;
-  color: white;
-  font-weight: bold;
-}
-
-/* ===== SCENE ===== */
-
-.scene {
+/* === CERTIFICATE === */
+.certificate {
   position: relative;
-  width: 100%;
-  height: calc(100vh - 140px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* ===== WIZARDS ===== */
-
-.wizard {
-  position: absolute;
-  bottom: 0;
-  width: 220px;
-  z-index: 1;
-}
-
-.wizard.left {
-  left: 40px;
-}
-
-.wizard.right {
-  right: 40px;
-}
-
-/* ===== HANDS ===== */
-
-.hands {
-  position: absolute;
-  width: 380px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-}
-
-.hands.top {
-  top: 120px;
-}
-
-.hands.bottom {
-  bottom: 120px;
-}
-
-/* ===== CERTIFICATE ===== */
-
-#certificate {
-  position: relative;
-  width: 700px;
-  padding: 60px 40px;
-  background: linear-gradient(#f6eed7, #efe2be);
+  width: 760px;
+  margin: 80px auto;
+  padding: 60px;
+  background: linear-gradient(180deg, #fff4d6, #f3e2b8);
   border-radius: 18px;
-  box-shadow: 0 30px 80px rgba(0,0,0,.6);
+  box-shadow: 0 30px 80px rgba(0,0,0,.4);
   text-align: center;
-  z-index: 2;
 }
 
-.title {
-  font-family: "Great Vibes", cursive;
-  font-size: 42px;
+/* === TITLES === */
+.certificate h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+  color: #6b3fc9;
   margin-bottom: 10px;
 }
 
-.title span {
-  color: #7b3fe4;
+.certificate h2 {
+  font-size: 42px;
+  color: #7a4dd8;
+  margin: 20px 0;
 }
 
-.subtitle {
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
-}
-
-#certName {
-  font-size: 40px;
-  color: #7b3fe4;
-  margin: 10px 0;
-}
-
-.role {
+.certificate p {
   font-size: 16px;
+  color: #4a3624;
 }
 
-.role span {
-  color: #7b3fe4;
-  font-weight: bold;
+/* === HANDS === */
+.hand-top, .hand-bottom {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  pointer-events: none;
 }
 
-.date {
-  margin-top: 20px;
+.hand-top {
+  top: -110px;
 }
 
-.approved {
-  margin-top: 30px;
-  font-style: italic;
-  font-size: 14px;
+.hand-bottom {
+  bottom: -110px;
+}
+
+/* === WIZARDS === */
+.wizard {
+  position: absolute;
+  bottom: -10px;
+  width: 220px;
+}
+
+.wizard.left {
+  left: -230px;
+}
+
+.wizard.right {
+  right: -230px;
 }
