@@ -28,16 +28,16 @@ body {
   padding: 40px 0;
 }
 
-/* ✅ ОСНОВА */
+/* 🧾 CERTIFICATE */
 .certificate {
-  position: relative;              /* 🔒 КЛЮЧ */
+  position: relative;              /* 🔒 ЯКІР */
   width: 900px;
   height: 420px;
   background: #fbf2cf;
   border-radius: 28px;
   padding: 40px 80px;
   text-align: center;
-  overflow: hidden;                /* 🔒 нічого не вилізе */
+  overflow: hidden;                /* 🔒 PDF-safe */
 }
 
 /* LOGO */
@@ -84,7 +84,8 @@ body {
 .wizard {
   position: absolute;
   bottom: 20px;
-  width: 180px;        /* ⬅️ КОНТРОЛЬ РОЗМІРУ */
+  width: 220px;          /* 🔥 ВЕЛИКІ */
+  pointer-events: none;
 }
 
 .wizard img {
@@ -93,24 +94,24 @@ body {
 
 /* LEFT */
 .wizard.left {
-  left: 10px;
+  left: 20px;
 }
 
 /* RIGHT */
 .wizard.right {
-  right: 10px;
-  transform: scaleX(-1);
+  right: 20px;
+  transform: scaleX(-1);   /* 👉 ДИВЛИТЬСЯ В СЕРЕДИНУ */
 }
 
 /* ✨ STARS */
 .stars {
   position: absolute;
-  top: 40px;          /* ⬅️ БІЛЯ ПАЛИЧКИ */
-  right: -18px;
-  font-size: 22px;
+  top: 65px;        /* 🎯 БІЛЯ ПАЛИЧКИ */
+  right: -10px;
+  font-size: 24px;
 }
 
 .wizard.right .stars {
-  left: -18px;
+  left: -10px;
   right: auto;
 }
