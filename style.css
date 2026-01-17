@@ -87,14 +87,13 @@ body {
 /* SPARKLES — БІЛЯ ПАЛИЧКИ */
 .sparkle {
   position: absolute;
-  top: 90px;
-  right: 40px;
-  font-size: 30px;
-  animation: sparkle 1.2s infinite alternate;
+  top: 55px;        /* ⬅️ ПІДНЯЛИ ВГОРУ */
+  right: 15px;      /* ⬅️ БЛИЖЧЕ ДО ПАЛИЧКИ */
+  font-size: 34px;  /* ✨ БІЛЬШІ ЗІРКИ */
 }
 
 .wizard.left .sparkle {
-  left: 40px;
+  left: 15px;     /* ⬅️ БЛИЖЧЕ ДО ПАЛИЧКИ */
   right: auto;
 }
 
