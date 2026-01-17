@@ -22,7 +22,7 @@
     <h1>Join MagicBlock Community</h1>
 
     <input id="nameInput" placeholder="Your name">
-    
+
     <select id="roleInput">
       <option>Gaming Magician</option>
       <option>Art Magician</option>
@@ -37,61 +37,45 @@
     <button onclick="downloadPDF()">Download PDF</button>
   </header>
 
-  <!-- Certificate -->
+  <!-- Scene -->
   <main class="scene">
-  
-    <section id="certificate"><section id="certificate">
+    <section id="certificate">
 
-  <!-- Лівий чарівник -->
-  <img
-    src="assets/6009133115600735042-removebg-preview.png"
-    class="wizard-left"
-    alt="Wizard left"
-  />
+      <!-- LEFT WIZARD -->
+      <img
+        src="assets/6009133115600735042-removebg-preview.png"
+        class="wizard wizard-left"
+        alt="Wizard left"
+      >
 
-  <!-- Правий чарівник -->
-  <img
-    src="assets/6009133115600735042-removebg-preview.png"
-    class="wizard-right"
-    alt="Wizard right"
-  />
+      <!-- RIGHT WIZARD -->
+      <img
+        src="assets/6009133115600735042-removebg-preview.png"
+        class="wizard wizard-right"
+        alt="Wizard right"
+      >
 
-  <!-- ✨ Зірочки -->
-  <div class="magic magic-left"></div>
-  <div class="magic magic-right"></div>
+      <h2 class="title">
+        Certificate of <span>MagicBlock</span> Community Member
+      </h2>
 
-  <!-- текст -->
-</section>
+      <p class="subtitle">This certifies that</p>
 
+      <h1 id="certName">NAME</h1>
 
-  <img
-    src="assets/6009133115600735042-removebg-preview.png"
-    class="wizard-on-cert"
-    alt="Wizard"
-  />
+      <p class="role">
+        is an official <span id="certRole">ROLE</span> of the MagicBlock community
+      </p>
 
-  <h2 class="title">
-    Certificate of <span>MagicBlock</span> Community Member
-  </h2>
+      <p class="date">
+        Member since: <span id="certDate">—</span>
+      </p>
 
-  <p class="subtitle">This certifies that</p>
+      <p class="approved">
+        Approved by MagicBlock Team
+      </p>
 
-  <h1 id="certName">NAME</h1>
-
-  <p class="role">
-    is an official <span id="certRole">ROLE</span> of the MagicBlock community
-  </p>
-
-  <p class="date">
-    Member since: <span id="certDate">—</span>
-  </p>
-
-  <p class="approved">
-    Approved by MagicBlock Team
-  </p>
-
-</section>
-
+    </section>
   </main>
 
   <script src="script.js"></script>
