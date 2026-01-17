@@ -1,25 +1,21 @@
 function generate() {
-  const name = document.getElementById('name').value;
-  const role = document.getElementById('role').value;
-  const date = document.getElementById('date').value;
+  const name = document.getElementById("nameInput").value || "NAME";
+  const role = document.getElementById("roleInput").value || "ROLE";
+  const date = document.getElementById("dateInput").value || "—";
 
-  if (!name || !date) {
-    alert('Please fill name and date');
-    return;
-  }
-
-  document.getElementById('certName').innerText = name;
-  document.getElementById('certRole').innerText = role;
-  document.getElementById('certDate').innerText = date;
+  document.getElementById("certName").innerText = name;
+  document.getElementById("certRole").innerText = role;
+  document.getElementById("certDate").innerText = date;
 }
 
 async function downloadPDF() {
-  const area = document.getElementById('pdf-area');
-  const canvas = await html2canvas(area, { scale: 2 });
-  const img = canvas.toDataURL('image/png');
-
   const { jsPDF } = window.jspdf;
-  const pdf = new jsPDF('landscape', 'px', [canvas.width, canvas.height]);
-  pdf.addImage(img, 'PNG', 0, 0, canvas.width, canvas.height);
-  pdf.save('MagicBlock-Certificate.pdf');
+  const cert = document.getElementById("certificate");
+
+  const canvas = await html2canvas(cert, { scale: 2 });
+  const imgData = canvas.toDataURL("image/png");
+
+  const pdf = new jsPDF("landscape", "px", [canvas.width, canvas.height]);
+  pdf.addImage(imgData, "PNG", 0, 0, canvas.width, canvas.height);
+  pdf.save("MagicBlock_Certificate.pdf");
 }
