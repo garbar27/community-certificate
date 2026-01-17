@@ -141,4 +141,19 @@ body {
   font-size: 18px;
   letter-spacing: 1px;
 }
+.scene {
+  position: relative;
+}
+
+.wizard-side {
+  position: absolute;
+
+  right: 80px;     /* 👉 збоку сертифікату */
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  height: 300px;   /* 👈 нормальний розмір */
+  pointer-events: none;
+}
 
