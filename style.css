@@ -2,23 +2,22 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Georgia, serif;
+  font-family: 'Cinzel', serif;
 }
 
 body {
   background: linear-gradient(180deg, #4b136b, #2a063a);
   min-height: 100vh;
-  color: #000;
 }
 
-/* TOP BAR */
+/* TOP */
 .top-bar {
-  padding: 20px 40px;
-  color: white;
+  padding: 24px 40px;
+  color: #e9d5ff;
 }
 
 .controls {
-  margin-top: 10px;
+  margin-top: 12px;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
@@ -27,7 +26,7 @@ body {
 .controls input,
 .controls select,
 .controls button {
-  padding: 8px 12px;
+  padding: 10px 14px;
   border-radius: 8px;
   border: none;
 }
@@ -43,78 +42,74 @@ body {
 .certificate {
   position: relative;
   width: 900px;
-  background: #fff6d5;
+  background: #fff6d8;
   border-radius: 30px;
-  padding: 40px 80px 80px;
+  padding: 60px 80px 140px;
   text-align: center;
 }
 
 /* LOGO */
 .logo {
-  position: absolute;
-  top: 25px;
-  left: 30px;
   display: flex;
   align-items: center;
   gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .logo img {
   width: 36px;
-  height: auto;
 }
 
 .logo span {
-  font-weight: bold;
-  color: #8a4fff;
+  font-weight: 700;
+  color: #8b5cf6;
 }
 
 /* TEXT */
-.certificate h2 {
-  font-size: 32px;
+h2 {
+  font-family: 'Uncial Antiqua', cursive;
+  font-size: 42px;
   margin-bottom: 20px;
 }
 
-.certificate h2 span {
-  color: #8a4fff;
+h2 span {
+  color: #8b5cf6;
 }
 
 .small {
-  margin-bottom: 20px;
+  font-size: 14px;
+  margin-bottom: 16px;
 }
 
 .name {
-  font-size: 40px;
-  color: #8a4fff;
-  margin-bottom: 20px;
+  font-size: 48px;
+  color: #8b5cf6;
+  margin: 18px 0;
 }
 
-.role {
-  margin-bottom: 20px;
-}
-
+.role,
 .date {
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .approved {
+  margin-top: 20px;
   font-style: italic;
 }
 
 /* WIZARDS */
 .wizard {
   position: absolute;
-  bottom: 20px;
-  width: 120px; /* ← РОЗМІР ЧАРІВНИКА */
+  bottom: 30px;
+  width: 150px;
 }
 
 .wizard.left {
-  left: 30px;
-}
-
-.wizard.right {
-  right: 30px;
+  left: 40px;
   transform: scaleX(-1);
 }
 
-
+.wizard.right {
+  right: 40px;
+}
