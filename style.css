@@ -120,12 +120,13 @@ body {
 /* Wizard on certificate */
 .wizard-on-cert {
   position: absolute;
-  right: -40px;      /* трохи виходить за край */
-  top: 50%;
-  transform: translateY(-50%);
-  height: 260px;     /* регулюй розмір */
-  pointer-events: none;
+  right: -20px;     /* трохи ближче до сертифіката */
+  bottom: -50px;    /* опускаємо нижче */
+  height: 380px;    /* робимо більшим */
   z-index: 3;
+  pointer-events: none;
+}
+
 }
 right: -20px;
 height: 300px;
