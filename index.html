@@ -6,18 +6,23 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Uncial+Antiqua&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <!-- PDF libs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
   <script src="script.js" defer></script>
 </head>
 
 <body>
 
-  <!-- TOP -->
   <div class="top-bar">
     <h1>Join MagicBlock Community</h1>
 
     <div class="controls">
       <input id="nameInput" type="text" placeholder="Your name">
       <select id="roleSelect">
+        <option>Team</option>
         <option>@Wizard</option>
         <option>@Art Magician</option>
         <option>@Gaming Magician</option>
@@ -26,21 +31,20 @@
         <option>@Adept</option>
         <option>@Inner Circle</option>
         <option>Mod</option>
-        <option>Team</option>
       </select>
       <input id="dateInput" type="date">
       <button onclick="generateCertificate()">Generate Certificate</button>
+      <button onclick="downloadPDF()">Download PDF</button>
     </div>
   </div>
 
-  <!-- PAGE -->
   <div class="page">
-    <div class="certificate">
+    <div class="certificate" id="certificate">
 
       <!-- LOGO -->
       <div class="logo">
         <img src="assets/logo.png" alt="MagicBlock logo">
-        <span>MagicBlock</span>
+        <span>MAGICBLOCK</span>
       </div>
 
       <h2>
