@@ -87,42 +87,52 @@ body {
 /* WIZARDS */
 .wizard {
   position: absolute;
-  bottom: 20px;
-  width: 120px;
+  bottom: 25px;
+  width: 170px; /* ⬅️ ЗБІЛЬШИЛИ */
 }
 
 .wizard img {
   width: 100%;
+  display: block;
 }
 
-/* LEFT */
+/* LEFT WIZARD */
 .wizard.left {
-  left: 20px;
+  left: 30px;
   transform: scaleX(-1);
 }
 
-/* RIGHT */
+/* RIGHT WIZARD */
 .wizard.right {
-  right: 20px;
+  right: 30px;
 }
 
 /* SPARKLES */
 .sparkle {
   position: absolute;
-  top: 30px;
-  font-size: 22px;
+  font-size: 26px;
   animation: sparkle 1.5s infinite alternate;
+  pointer-events: none;
 }
 
+/* Sparkles from wand tip */
 .wizard.left .sparkle {
-  left: -10px;
+  top: 48px;      /* ⬅️ ПІДГАНЯЛИ ПІД ПАЛИЧКУ */
+  left: 95px;
 }
 
 .wizard.right .sparkle {
-  right: -10px;
+  top: 48px;
+  right: 95px;
 }
 
 @keyframes sparkle {
-  from { opacity: 0.4; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1.2); }
+  from {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.25);
+  }
 }
