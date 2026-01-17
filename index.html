@@ -1,83 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>MagicBlock Certificate</title>
+<main class="scene">
+  <section id="certificate">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Wizard LEFT -->
+    <img
+      src="assets/6009133115600735042-removebg-preview.png"
+      class="wizard wizard-left"
+      alt="Wizard left"
+    />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css">
+    <!-- Wizard RIGHT -->
+    <img
+      src="assets/6009133115600735042-removebg-preview.png"
+      class="wizard wizard-right"
+      alt="Wizard right"
+    />
 
-  <!-- PDF libs -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-</head>
+    <h2 class="title">
+      Certificate of <span>MagicBlock</span> Community Member
+    </h2>
 
-<body>
+    <p class="subtitle">This certifies that</p>
 
-  <!-- Controls -->
-  <header class="controls">
-    <h1>Join MagicBlock Community</h1>
+    <h1 id="certName">NAME</h1>
 
-    <input id="nameInput" placeholder="Your name">
+    <p class="role">
+      is an official <span id="certRole">ROLE</span> of the MagicBlock community
+    </p>
 
-    <select id="roleInput">
-      <option>Gaming Magician</option>
-      <option>Art Magician</option>
-      <option>Wizard</option>
-      <option>Sorcerer</option>
-      <option>Apprentice</option>
-    </select>
+    <p class="date">
+      Member since: <span id="certDate">—</span>
+    </p>
 
-    <input type="date" id="dateInput">
+    <p class="approved">
+      Approved by MagicBlock Team
+    </p>
 
-    <button onclick="generate()">Generate Certificate</button>
-    <button onclick="downloadPDF()">Download PDF</button>
-  </header>
-
-  <!-- Scene -->
-  <main class="scene">
-    <section id="certificate">
-
-      <!-- LEFT WIZARD -->
-      <img
-        src="assets/6009133115600735042-removebg-preview.png"
-        class="wizard wizard-left"
-        alt="Wizard left"
-      >
-
-      <!-- RIGHT WIZARD -->
-      <img
-        src="assets/6009133115600735042-removebg-preview.png"
-        class="wizard wizard-right"
-        alt="Wizard right"
-      >
-
-      <h2 class="title">
-        Certificate of <span>MagicBlock</span> Community Member
-      </h2>
-
-      <p class="subtitle">This certifies that</p>
-
-      <h1 id="certName">NAME</h1>
-
-      <p class="role">
-        is an official <span id="certRole">ROLE</span> of the MagicBlock community
-      </p>
-
-      <p class="date">
-        Member since: <span id="certDate">—</span>
-      </p>
-
-      <p class="approved">
-        Approved by MagicBlock Team
-      </p>
-
-    </section>
-  </main>
-
-  <script src="script.js"></script>
-</body>
-</html>
+  </section>
+</main>
