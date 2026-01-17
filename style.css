@@ -1,102 +1,66 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
   font-family: Georgia, serif;
-  background: linear-gradient(180deg, #3a0f63, #2b0b4a);
+  background: linear-gradient(180deg, #4b1d6b, #2a083d);
   color: #000;
 }
 
-.top {
-  padding: 20px;
+.title {
   color: white;
-}
-
-.controls {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.controls input,
-.controls select,
-.controls button {
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: none;
-}
-
-.wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
+  padding: 20px;
 }
 
 .certificate {
   position: relative;
+  background: #fff6d5;
   width: 900px;
-  min-height: 480px;
-  background: #fff6d8;
+  margin: 40px auto;
+  padding: 60px 80px;
   border-radius: 30px;
-  padding: 50px 60px;
   text-align: center;
 }
 
 .logo {
   position: absolute;
   top: 25px;
-  left: 35px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  color: #8b5cf6;
+  left: 30px;
+  height: 45px;
 }
 
-.logo img {
-  width: 26px;
-  height: auto;
-}
-
-h2 {
+.certificate h2 {
   margin-top: 10px;
-  font-size: 30px;
+  font-size: 32px;
 }
 
-.brand {
-  color: #8b5cf6;
+.certificate h2 span {
+  color: #8a4fff;
 }
 
 .small {
-  margin-top: 20px;
-}
-
-h1 {
-  margin: 20px 0;
-  font-size: 42px;
-  color: #8b5cf6;
-}
-
-.role {
-  margin-top: 10px;
-}
-
-.date {
-  margin-top: 20px;
-}
-
-.footer {
   margin-top: 30px;
+}
+
+.name {
+  font-size: 40px;
+  color: #8a4fff;
+  margin: 20px 0;
+}
+
+.role,
+.since,
+.approved {
+  margin: 12px 0;
+}
+
+.approved {
   font-style: italic;
 }
 
 /* WIZARDS */
 .wizard {
   position: absolute;
-  bottom: 25px;
-  height: 220px;   /* ← ОТУТ РОЗМІР */
+  bottom: 20px;
+  height: 220px; /* ⬅️ ЗБІЛЬШЕНІ */
 }
 
 .wizard.left {
@@ -106,3 +70,4 @@ h1 {
 .wizard.right {
   right: 30px;
 }
+
