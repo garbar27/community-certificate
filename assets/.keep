@@ -1,4 +1,9 @@
-assets/
-├── .keep
-├── logo.png        
-├── wizard.png
+community-certificate/
+│
+├── index.html
+├── style.css
+├── script.js
+│
+└── assets/
+    ├── logo.png        ✅ СПРАВЖНЯ картинка (png/svg)
+    └── wizard.png      ✅ один чарівник (буде зліва і справа)
