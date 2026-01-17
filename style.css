@@ -1,73 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: 'Playfair Display', serif;
-  background: radial-gradient(#4b1c6b, #1b0727);
-  color: #2b1b0f;
+  font-family: "Playfair Display", serif;
+  background: radial-gradient(circle at top, #5b2b82, #2a0f45);
+  color: #3a2a1a;
 }
 
 .controls {
   padding: 20px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
   color: white;
+}
+
+.controls input,
+.controls select,
+.controls button {
+  margin-right: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
 }
 
 .scene {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  padding: 40px 0;
 }
 
-#certificate {
+.certificate {
   position: relative;
   width: 900px;
   height: 420px;
   background: #fbf2cf;
-  border-radius: 24px;
-  padding: 40px;
+  border-radius: 28px;
+  padding: 40px 80px;
   text-align: center;
 }
 
 /* LOGO */
 .logo {
   position: absolute;
-  top: 20px;
-  left: 30px;
-  color: #9b5cff;
-  font-weight: bold;
+  top: 18px;
+  left: 24px;
+  font-weight: 700;
+  color: #8a4bff;
 }
 
 /* TEXT */
 .title {
-  font-family: 'Great Vibes', cursive;
+  font-family: "Great Vibes", cursive;
   font-size: 36px;
+  margin-bottom: 10px;
 }
 
 .title span {
-  color: #9b5cff;
+  color: #8a4bff;
 }
 
-#certName {
-  color: #9b5cff;
+.subtitle {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.name {
   font-size: 42px;
-  margin: 20px 0;
+  color: #8a4bff;
+  margin: 12px 0;
 }
 
+.role span {
+  color: #8a4bff;
+}
+
+.date,
 .approved {
-  margin-top: 20px;
+  font-size: 14px;
+  margin-top: 6px;
 }
 
-/* ===================== */
-/* WIZARDS — FINAL FIX */
-/* ===================== */
-
-..wizard {
+/* WIZARDS */
+.wizard {
   position: absolute;
-  bottom: 20px;      /* трохи підняли */
-  width: 300px;      /* ⬅️ ЗРОБИЛИ ЗНАЧНО БІЛЬШИМИ */
+  bottom: 20px;
+  width: 130px;
 }
-
 
 .wizard img {
   width: 100%;
@@ -76,28 +94,23 @@ body {
 /* LEFT */
 .wizard.left {
   left: 20px;
-  transform: scaleX(-1);
 }
 
 /* RIGHT */
 .wizard.right {
   right: 20px;
+  transform: scaleX(-1);
 }
 
-/* SPARKLES — БІЛЯ ПАЛИЧКИ */
-.sparkle {
+/* STARS */
+.stars {
   position: absolute;
-  top: 55px;        /* ⬅️ ПІДНЯЛИ ВГОРУ */
-  right: 15px;      /* ⬅️ БЛИЖЧЕ ДО ПАЛИЧКИ */
-  font-size: 34px;  /* ✨ БІЛЬШІ ЗІРКИ */
+  top: 32px;
+  right: -20px;
+  font-size: 20px;
 }
 
-.wizard.left .sparkle {
-  left: 15px;     /* ⬅️ БЛИЖЧЕ ДО ПАЛИЧКИ */
+.wizard.right .stars {
+  left: -20px;
   right: auto;
-}
-
-@keyframes sparkle {
-  from { opacity: 0.6; transform: scale(1); }
-  to { opacity: 1; transform: scale(1.4); }
 }
