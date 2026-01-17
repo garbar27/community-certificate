@@ -1,40 +1,42 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
+  min-height: 100vh;
   font-family: 'Playfair Display', serif;
-  background: radial-gradient(circle at top, #5a2a82, #2a003e);
-  color: #2b1a0f;
+  background: radial-gradient(circle at top, #4b1c6b, #1a0228);
+  color: #2b1b10;
 }
 
 /* CONTROLS */
 .controls {
   padding: 20px 40px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.controls h1 {
   color: white;
-  margin-right: 20px;
 }
 
 .controls input,
 .controls select,
 .controls button {
-  padding: 8px 12px;
-  border-radius: 8px;
+  margin-right: 8px;
+  padding: 6px 10px;
+  border-radius: 6px;
   border: none;
+}
+
+.controls button {
+  background: #7a4cff;
+  color: white;
+  cursor: pointer;
 }
 
 /* SCENE */
 .scene {
   display: flex;
   justify-content: center;
-  padding: 40px 0 80px;
+  margin-top: 40px;
 }
 
 /* CERTIFICATE */
@@ -42,8 +44,8 @@ body {
   position: relative;
   width: 900px;
   height: 420px;
-  background: #fff5d6;
-  border-radius: 24px;
+  background: #fff4cf;
+  border-radius: 26px;
   padding: 50px 80px;
   text-align: center;
 }
@@ -53,73 +55,71 @@ body {
   position: absolute;
   top: 20px;
   left: 30px;
-  font-weight: bold;
-  color: #8b4cff;
+  font-weight: 700;
+  color: #8b5cff;
 }
 
 /* TITLES */
 .title {
   font-family: 'Great Vibes', cursive;
   font-size: 36px;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 
 .title span {
-  color: #8b4cff;
+  color: #8b5cff;
 }
 
 .subtitle {
-  margin-top: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
 #certName {
-  font-size: 44px;
-  color: #8b4cff;
-  margin: 20px 0;
+  font-size: 42px;
+  color: #8b5cff;
+  margin: 16px 0;
 }
 
-.role span {
-  color: #8b4cff;
-}
-
+.role,
+.date,
 .approved {
-  margin-top: 20px;
-  font-style: italic;
+  font-size: 16px;
+  margin-top: 6px;
 }
 
 /* WIZARDS */
 .wizard-wrap {
   position: absolute;
-  bottom: 10px;
-  width: 170px;
-  height: 260px;
+  bottom: 20px;
+  width: 130px;
   pointer-events: none;
 }
 
 .wizard-wrap.left {
-  left: -40px;
+  left: 20px;
   transform: scaleX(-1);
 }
 
 .wizard-wrap.right {
-  right: -40px;
+  right: 20px;
 }
 
 .wizard {
-  height: 100%;
+  width: 100%;
 }
 
-/* MAGIC */
+/* STARS */
 .sparkle {
   position: absolute;
   top: 40px;
-  right: -10px;
+  right: -6px;
   font-size: 22px;
-  animation: sparkle 1.5s infinite alternate;
+  animation: sparkle 1.4s infinite alternate;
 }
 
 .wizard-wrap.left .sparkle {
-  left: -10px;
+  left: -6px;
   right: auto;
 }
 
@@ -127,4 +127,3 @@ body {
   from { opacity: 0.4; transform: scale(0.9); }
   to   { opacity: 1; transform: scale(1.1); }
 }
-
