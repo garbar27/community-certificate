@@ -125,14 +125,14 @@ body {
 }
 
 .wizard-on-cert {
+ .wizard-on-cert {
   position: absolute;
-
-  right: 40px;     /* всередині сертифікату */
-  bottom: 30px;    /* стоїть на “підлозі” */
-
-  height: 260px;   /* розмір */
+  right: 40px;      /* притиснутий до правого краю сертифіката */
+  bottom: 30px;     /* стоїть на “підлозі” сертифіката */
+  height: 320px;    /* контрольований розмір */
   pointer-events: none;
 }
+
 
 .subtitle {
   margin-top: 20px;
