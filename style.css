@@ -1,68 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: "Playfair Display", serif;
-  background: radial-gradient(circle at top, #4b1c6b, #1a0629);
+  font-family: 'Playfair Display', serif;
+  background: radial-gradient(circle at top, #5a2a82, #2a003e);
+  color: #2b1a0f;
 }
 
 /* CONTROLS */
 .controls {
   padding: 20px 40px;
   display: flex;
-  gap: 10px;
   align-items: center;
+  gap: 10px;
+}
+
+.controls h1 {
   color: white;
+  margin-right: 20px;
 }
 
 .controls input,
 .controls select,
 .controls button {
-  padding: 6px 10px;
-  border-radius: 6px;
+  padding: 8px 12px;
+  border-radius: 8px;
   border: none;
-}
-
-.controls button {
-  background: #7b3ff2;
-  color: white;
-  cursor: pointer;
 }
 
 /* SCENE */
 .scene {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  padding: 40px 0 80px;
 }
 
 /* CERTIFICATE */
 #certificate {
   position: relative;
   width: 900px;
-  height: 480px;
-  background: #fbf1cf;
+  height: 420px;
+  background: #fff5d6;
   border-radius: 24px;
-  padding: 40px 80px;
+  padding: 50px 80px;
   text-align: center;
-  box-sizing: border-box;
 }
 
 /* LOGO */
 .logo {
   position: absolute;
-  top: 18px;
+  top: 20px;
   left: 30px;
-  font-weight: 700;
-  color: #7b3ff2;
+  font-weight: bold;
+  color: #8b4cff;
 }
 
-/* TEXT */
+/* TITLES */
 .title {
-  font-family: "Great Vibes", cursive;
+  font-family: 'Great Vibes', cursive;
   font-size: 36px;
+  margin-bottom: 10px;
 }
 
 .title span {
-  color: #7b3ff2;
+  color: #8b4cff;
 }
 
 .subtitle {
@@ -70,45 +73,58 @@ body {
 }
 
 #certName {
-  font-size: 42px;
-  color: #7b3ff2;
-  margin: 12px 0;
+  font-size: 44px;
+  color: #8b4cff;
+  margin: 20px 0;
+}
+
+.role span {
+  color: #8b4cff;
+}
+
+.approved {
+  margin-top: 20px;
+  font-style: italic;
 }
 
 /* WIZARDS */
 .wizard-wrap {
   position: absolute;
   bottom: 10px;
-  width: 180px;
+  width: 170px;
   height: 260px;
   pointer-events: none;
 }
 
 .wizard-wrap.left {
   left: -40px;
+  transform: scaleX(-1);
 }
 
 .wizard-wrap.right {
   right: -40px;
-  transform: scaleX(-1);
 }
 
 .wizard {
   height: 100%;
 }
 
-/* STARS */
-.stars::before {
-  content: "✨ ✨ ✨";
+/* MAGIC */
+.sparkle {
   position: absolute;
-  top: 60px;
-  left: 60px;
-  font-size: 18px;
-  animation: sparkle 2s infinite ease-in-out;
+  top: 40px;
+  right: -10px;
+  font-size: 22px;
+  animation: sparkle 1.5s infinite alternate;
+}
+
+.wizard-wrap.left .sparkle {
+  left: -10px;
+  right: auto;
 }
 
 @keyframes sparkle {
-  0% { opacity: 0; transform: translateY(10px); }
-  50% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(-10px); }
+  from { opacity: 0.4; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1.1); }
 }
+
