@@ -1,175 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>MagicBlock Certificate</title>
+<meta charset="UTF-8" />
+<title>MagicBlock Certificate</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: Georgia, "Times New Roman", serif;
-    }
+<!-- html2pdf -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: linear-gradient(180deg, #4b176d, #2b0a3d);
-      padding: 40px;
-      color: #2b1b00;
-    }
+<style>
+* {
+  box-sizing: border-box;
+  font-family: "Georgia", serif;
+}
 
-    /* ===== TOP BAR ===== */
-    .top-bar {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #4b136f, #2a0b40);
+  color: #fff;
+}
 
-    .top-bar h1 {
-      color: #fff;
-      margin-right: 20px;
-      font-size: 28px;
-    }
+/* ---------- HEADER ---------- */
+.header {
+  padding: 24px 32px;
+}
 
-    .top-bar input,
-    .top-bar select,
-    .top-bar button {
-      padding: 8px 12px;
-      border-radius: 8px;
-      border: none;
-      font-size: 14px;
-    }
+.header h1 {
+  margin: 0 0 16px 0;
+}
 
-    .top-bar button {
-      cursor: pointer;
-      background: #ffffff;
-    }
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 
-    /* ===== CERTIFICATE ===== */
-    .certificate-wrapper {
-      display: flex;
-      justify-content: center;
-    }
+.controls input,
+.controls select,
+.controls button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+}
 
-    .certificate {
-      width: 900px;
-      background: #fff5d6;
-      border-radius: 24px;
-      padding: 50px 70px;
-      position: relative;
-    }
+.controls button {
+  cursor: pointer;
+  font-weight: bold;
+}
 
-    .brand {
-      font-size: 16px;
-      color: #9b4dff;
-      margin-bottom: 10px;
-    }
+/* ---------- CERTIFICATE ---------- */
+.certificate-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 80px;
+}
 
-    .title {
-      text-align: center;
-      font-size: 34px;
-      margin: 20px 0 30px;
-    }
+#certificate {
+  position: relative;
+  width: 900px;
+  min-height: 480px;
+  background: #fbf1cf;
+  border-radius: 26px;
+  padding: 48px 80px;
+  color: #000;
+}
 
-    .subtitle {
-      text-align: center;
-      font-size: 16px;
-      margin-bottom: 20px;
-    }
+/* logo */
+.logo {
+  position: absolute;
+  top: 24px;
+  left: 32px;
+  font-weight: bold;
+  color: #8c52ff;
+}
 
-    .name {
-      text-align: center;
-      font-size: 42px;
-      color: #8f63ff;
-      margin: 25px 0;
-    }
+/* title */
+.title {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 24px;
+}
 
-    .text {
-      text-align: center;
-      font-size: 18px;
-      line-height: 1.9; /* 👈 більша відстань між рядками */
-      margin-bottom: 15px;
-    }
+.title span {
+  color: #8c52ff;
+}
 
-    .footer-text {
-      text-align: center;
-      margin-top: 25px;
-      font-style: italic;
-    }
-  </style>
+/* text spacing FIX */
+.content {
+  text-align: center;
+  line-height: 1.9; /* <-- більша відстань між рядками */
+  font-size: 16px;
+}
+
+.name {
+  font-size: 34px;
+  margin: 22px 0;
+  color: #8c52ff;
+}
+
+/* ---------- WIZARDS ---------- */
+.wizard {
+  position: absolute;
+  bottom: 20px;
+  width: 140px;
+}
+
+.wizard.left {
+  left: 30px;
+}
+
+.wizard.right {
+  right: 30px;
+  transform: scaleX(-1);
+}
+
+/* ---------- FOOTER ---------- */
+.footer-text {
+  margin-top: 24px;
+  font-style: italic;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- ===== TOP BAR ===== -->
-  <div class="top-bar">
-    <h1>Join MagicBlock Community</h1>
+<div class="header">
+  <h1>Join MagicBlock Community</h1>
 
-    <input id="userName" type="text" placeholder="Your name" />
+  <div class="controls">
+    <input id="nameInput" placeholder="Your name" />
 
-    <select id="userRole">
-      <option>@Wizard</option>
-      <option>@Art Magician</option>
-      <option>@Gaming Magician</option>
-      <option>@Apprentice</option>
-      <option>@Sorcerer</option>
-      <option>@Adept</option>
-      <option>@Inner Circle</option>
+    <select id="roleInput">
+      <option>Wizard</option>
+      <option>Art Magician</option>
+      <option>Gaming Magician</option>
+      <option>Apprentice</option>
+      <option>Sorcerer</option>
+      <option>Adept</option>
+      <option>Inner Circle</option>
       <option>Mod</option>
       <option>Team</option>
     </select>
 
-    <input id="userDate" type="date" />
+    <input id="dateInput" type="date" />
 
     <button onclick="generateCertificate()">Generate Certificate</button>
     <button onclick="downloadPDF()">Download PDF</button>
   </div>
+</div>
 
-  <!-- ===== CERTIFICATE ===== -->
-  <div class="certificate-wrapper">
-    <div class="certificate" id="certificate">
-      <div class="brand">MagicBlock ✨</div>
+<div class="certificate-wrapper">
+  <div id="certificate">
 
-      <div class="title">
-        Certificate of <span style="color:#8f63ff">MagicBlock</span> Community Member
+    <div class="logo">MagicBlock ✨</div>
+
+    <div class="title">
+      Certificate of <span>MagicBlock</span> Community Member
+    </div>
+
+    <div class="content">
+      <div>This certifies that</div>
+
+      <div id="certName" class="name">NAME</div>
+
+      <div>
+        is an official <strong id="certRole">ROLE</strong> of the MagicBlock community
       </div>
 
-      <div class="subtitle">This certifies that</div>
-
-      <div class="name" id="certName">NAME</div>
-
-      <div class="text">
-        is an official <span style="color:#8f63ff" id="certRole">ROLE</span> of the MagicBlock community
-      </div>
-
-      <div class="text">
-        Member since: <span id="certDate">—</span>
+      <div id="certDate" style="margin-top: 18px;">
+        Member since: —
       </div>
 
       <div class="footer-text">
         Approved by MagicBlock Team
       </div>
     </div>
+
+    <!-- Wizards -->
+    <img src="wizard-left.png" class="wizard left" />
+    <img src="wizard.png" class="wizard right" />
+
   </div>
+</div>
 
-  <!-- ===== SCRIPTS ===== -->
-  <script>
-    function generateCertificate() {
-      const name = document.getElementById("userName").value || "NAME";
-      const role = document.getElementById("userRole").value || "ROLE";
-      const date = document.getElementById("userDate").value || "—";
+<script>
+function generateCertificate() {
+  const name = document.getElementById("nameInput").value || "NAME";
+  const role = document.getElementById("roleInput").value;
+  const date = document.getElementById("dateInput").value;
 
-      document.getElementById("certName").innerText = name;
-      document.getElementById("certRole").innerText = role;
-      document.getElementById("certDate").innerText = date;
-    }
+  document.getElementById("certName").innerText = name;
+  document.getElementById("certRole").innerText = role;
+  document.getElementById("certDate").innerText =
+    date ? "Member since: " + date : "Member since: —";
+}
 
-    function downloadPDF() {
-      window.print();
-    }
-  </script>
+function downloadPDF() {
+  const element = document.getElementById("certificate");
+
+  html2pdf().from(element).set({
+    margin: 0,
+    filename: 'MagicBlock_Certificate.pdf',
+    html2canvas: { scale: 2 },
+    jsPDF: { orientation: 'landscape' }
+  }).save();
+}
+</script>
 
 </body>
 </html>
+
