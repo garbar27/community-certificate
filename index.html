@@ -75,11 +75,14 @@ header {
   margin: 8px 0;
 }
 
-/* WIZARDS */
+/* =========================
+   WIZARDS
+========================= */
+
 .wizard {
   position: absolute;
   bottom: 20px;
-  width: 280px; /* 🔥 СУТТЄВО БІЛЬШІ */
+  width: 300px;
 }
 
 .wizard img {
@@ -98,19 +101,26 @@ header {
   right: 40px;
 }
 
-/* STARS — ВИЛІТАЮТЬ З ПАЛИЧКИ */
-.stars {
+/* =========================
+   MAGIC STARS — ПАЛИЧКА
+========================= */
+
+/* контейнер зірок ПРИВʼЯЗАНИЙ до чарівника */
+.magic {
   position: absolute;
-  top: 95px;     /* рівень палички */
-  left: 210px;   /* ПІСЛЯ палички */
-  font-size: 24px;
-  animation: sparkle 1.6s infinite alternate;
+  top: 92px;   /* рівень палички — ПЕРЕВІРЕНИЙ */
+  right: -48px; /* після палички */
+  font-size: 22px;
+  display: flex;
+  gap: 6px;
+  animation: sparkle 1.4s infinite alternate;
 }
 
-/* для лівого (дзеркало) */
-.wizard.left .stars {
-  left: auto;
-  right: 210px;
+/* дзеркало для лівого */
+.wizard.left .magic {
+  right: auto;
+  left: -48px;
+  transform: scaleX(-1);
 }
 
 /* animation */
@@ -166,13 +176,13 @@ header {
     <!-- LEFT WIZARD -->
     <div class="wizard left">
       <img src="assets/6009133115600735042-removebg-preview.png">
-      <div class="stars">✨ ✨ ✨</div>
+      <div class="magic">✨ ✨ ✨</div>
     </div>
 
     <!-- RIGHT WIZARD -->
     <div class="wizard right">
       <img src="assets/6009133115600735042-removebg-preview.png">
-      <div class="stars">✨ ✨ ✨</div>
+      <div class="magic">✨ ✨ ✨</div>
     </div>
 
   </div>
