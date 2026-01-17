@@ -5,102 +5,93 @@
 
 body {
   margin: 0;
-  background: radial-gradient(circle at top, #5b2b82, #2a0f3a);
+  background: linear-gradient(180deg, #3b145f, #2a0a44);
   color: #000;
 }
 
-/* TOP BAR */
-.top-bar {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  padding: 20px;
+.top {
+  padding: 20px 40px;
   color: white;
 }
 
-.top-bar input,
-.top-bar select,
-.top-bar button {
-  padding: 8px 12px;
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.controls input,
+.controls select,
+.controls button {
+  padding: 6px 10px;
   border-radius: 6px;
   border: none;
 }
 
-/* PAGE */
 .page {
   display: flex;
   justify-content: center;
-  padding: 40px;
+  margin-top: 40px;
 }
 
-/* CERTIFICATE */
 .certificate {
   position: relative;
   width: 900px;
-  background: #fff5d6;
-  border-radius: 24px;
-  padding: 60px 80px 80px;
+  padding: 50px 60px 90px;
+  background: #fff6d8;
+  border-radius: 30px;
   text-align: center;
 }
 
-/* LOGO */
 .logo {
   position: absolute;
-  top: 20px;
-  left: 30px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: bold;
-  color: #7b3cff;
+  top: 25px;
+  left: 40px;
+  height: 40px;
 }
 
-.logo img {
-  width: 26px;
-  height: 26px;
-}
-
-/* TEXT */
 h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  font-size: 32px;
 }
 
 h2 span {
-  color: #7b3cff;
+  color: #8a4dff;
 }
 
 .small {
-  margin-top: 30px;
+  margin-top: 25px;
+  font-size: 14px;
 }
 
-h1 {
-  font-size: 42px;
-  color: #8b5cf6;
+h3 {
   margin: 25px 0;
+  font-size: 42px;
+  color: #8a4dff;
 }
 
 .text {
-  margin: 12px 0;
-  line-height: 1.6;
+  margin: 18px 0;
+  font-size: 16px;
+  line-height: 1.8;
 }
 
-.sign {
+.approved {
   margin-top: 30px;
   font-style: italic;
 }
 
-/* WIZARDS */
 .wizard {
   position: absolute;
   bottom: 20px;
-  width: 180px;
+  height: 160px; /* ← БІЛЬШИЙ РОЗМІР */
 }
 
 .wizard.left {
-  left: 20px;
+  left: 30px;
+  transform: scaleX(-1);
 }
 
 .wizard.right {
-  right: 20px;
+  right: 30px;
 }
