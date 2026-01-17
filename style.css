@@ -109,3 +109,17 @@ body {
   z-index: 5;
   pointer-events: none;
 }
+#certificate {
+  position: relative; /* обовʼязково */
+}
+
+/* Wizard on certificate */
+.wizard-on-cert {
+  position: absolute;
+  right: -40px;      /* трохи виходить за край */
+  top: 50%;
+  transform: translateY(-50%);
+  height: 260px;     /* регулюй розмір */
+  pointer-events: none;
+  z-index: 3;
+}
