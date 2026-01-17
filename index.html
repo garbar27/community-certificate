@@ -36,11 +36,11 @@ header {
 /* CERTIFICATE */
 .certificate {
   position: relative;
-  width: 960px;
-  height: 440px;
+  width: 1000px;
+  height: 460px;
   background: #fff4cf;
   border-radius: 28px;
-  padding: 40px 60px;
+  padding: 40px 70px;
   box-sizing: border-box;
   text-align: center;
   box-shadow: 0 20px 40px rgba(0,0,0,.3);
@@ -56,7 +56,7 @@ header {
 }
 
 .title {
-  font-size: 34px;
+  font-size: 36px;
   margin-bottom: 10px;
 }
 
@@ -66,7 +66,7 @@ header {
 }
 
 .name {
-  font-size: 42px;
+  font-size: 44px;
   color: #8e54ff;
 }
 
@@ -78,8 +78,8 @@ header {
 /* WIZARDS */
 .wizard {
   position: absolute;
-  bottom: 18px;
-  width: 220px; /* 🔥 ВЕЛИКІ */
+  bottom: 20px;
+  width: 280px; /* 🔥 СУТТЄВО БІЛЬШІ */
 }
 
 .wizard img {
@@ -87,29 +87,36 @@ header {
   display: block;
 }
 
-/* LEFT WIZARD */
+/* LEFT */
 .wizard.left {
-  left: 30px;
+  left: 40px;
   transform: scaleX(-1);
 }
 
-/* RIGHT WIZARD */
+/* RIGHT */
 .wizard.right {
-  right: 30px;
+  right: 40px;
 }
 
-/* STARS – ПРИВʼЯЗАНІ ДО ПАЛИЧКИ */
+/* STARS — ВИЛІТАЮТЬ З ПАЛИЧКИ */
 .stars {
   position: absolute;
-  font-size: 22px;
-  top: 70px;      /* точка біля палички */
-  right: 18px;
+  top: 95px;     /* рівень палички */
+  left: 210px;   /* ПІСЛЯ палички */
+  font-size: 24px;
+  animation: sparkle 1.6s infinite alternate;
 }
 
-/* поправка для лівого */
+/* для лівого (дзеркало) */
 .wizard.left .stars {
-  left: 18px;
-  right: auto;
+  left: auto;
+  right: 210px;
+}
+
+/* animation */
+@keyframes sparkle {
+  from { opacity: .6; transform: translateX(0); }
+  to   { opacity: 1;  transform: translateX(6px); }
 }
 </style>
 </head>
