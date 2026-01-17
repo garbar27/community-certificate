@@ -1,2 +1,5 @@
-wizard-left.png
-wizard-right.png
+assets/
+ ├─ wizard-left.png
+ ├─ wizard-right.png
+ ├─ hands-top.png
+ └─ hands-bottom.png
