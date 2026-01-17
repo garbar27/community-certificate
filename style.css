@@ -44,6 +44,9 @@ body {
   background-color: #f7edc8; /* БЕЖЕВА ОСНОВА */
   border-radius: 28px;
 
+  text-align: center;
+}
+
   width: 900px;
   min-height: 420px;
 
