@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
+<meta charset="UTF-8">
 <title>MagicBlock Certificate</title>
 
-<!-- PDF -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
@@ -16,16 +15,16 @@ body {
   color: #000;
 }
 
+/* HEADER */
 header {
   padding: 20px 40px;
-  color: #fff;
+  color: white;
 }
 
 .controls {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  align-items: center;
 }
 
 input, select, button {
@@ -36,10 +35,11 @@ input, select, button {
 }
 
 button {
-  cursor: pointer;
   font-weight: bold;
+  cursor: pointer;
 }
 
+/* CERTIFICATE */
 .container {
   display: flex;
   justify-content: center;
@@ -49,83 +49,68 @@ button {
 #certificate {
   position: relative;
   width: 900px;
-  height: 420px;
+  height: 450px;
   background: #fff6d5;
-  border-radius: 25px;
-  padding: 40px 60px;
+  border-radius: 28px;
+  padding: 50px 70px;
   box-sizing: border-box;
 }
 
 .logo {
   position: absolute;
-  top: 20px;
-  left: 30px;
-  font-weight: bold;
+  top: 25px;
+  left: 35px;
   color: #8a4dff;
+  font-weight: bold;
 }
 
+/* TEXT */
 h1 {
   text-align: center;
-  margin: 0;
   font-size: 34px;
+  margin-bottom: 25px;
 }
 
 .subtitle {
   text-align: center;
-  margin-top: 10px;
+  font-size: 16px;
+  margin-bottom: 30px;
 }
 
 .name {
   text-align: center;
-  font-size: 36px;
+  font-size: 38px;
   color: #8a4dff;
-  margin: 20px 0;
+  margin-bottom: 30px;
 }
 
 .text {
   text-align: center;
-  font-size: 16px;
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 20px;
 }
 
 .footer {
   text-align: center;
-  margin-top: 20px;
   font-style: italic;
+  margin-top: 35px;
 }
 
-/* Wizards */
+/* WIZARDS */
 .wizard {
   position: absolute;
-  bottom: 20px;
-  width: 160px;
+  bottom: 25px;
+  width: 180px;
 }
 
 .wizard.left {
   left: 20px;
-  transform: scaleX(1);
 }
 
 .wizard.right {
   right: 20px;
   transform: scaleX(-1);
-}
-
-/* Stars */
-.stars {
-  position: absolute;
-  display: flex;
-  gap: 6px;
-  font-size: 20px;
-}
-
-.stars.left {
-  left: 170px;
-  bottom: 160px;
-}
-
-.stars.right {
-  right: 170px;
-  bottom: 160px;
 }
 </style>
 </head>
@@ -135,7 +120,7 @@ h1 {
 <header>
   <h2>Join MagicBlock Community</h2>
   <div class="controls">
-    <input id="nameInput" placeholder="Your name" />
+    <input id="nameInput" placeholder="Your name">
     <select id="roleInput">
       <option>Wizard</option>
       <option>Art Magician</option>
@@ -147,7 +132,7 @@ h1 {
       <option>Mod</option>
       <option>Team</option>
     </select>
-    <input type="date" id="dateInput" />
+    <input type="date" id="dateInput">
     <button onclick="generate()">Generate Certificate</button>
     <button onclick="downloadPDF()">Download PDF</button>
   </div>
@@ -155,9 +140,11 @@ h1 {
 
 <div class="container">
   <div id="certificate">
+
     <div class="logo">MagicBlock ✨</div>
 
     <h1>Certificate of <span style="color:#8a4dff">MagicBlock</span> Community Member</h1>
+
     <div class="subtitle">This certifies that</div>
 
     <div class="name" id="certName">NAME</div>
@@ -170,13 +157,10 @@ h1 {
 
     <div class="footer">Approved by MagicBlock Team</div>
 
-    <!-- Wizards -->
+    <!-- WIZARDS -->
     <img src="wizard.png" class="wizard left">
     <img src="wizard.png" class="wizard right">
 
-    <!-- Stars -->
-    <div class="stars left">✨ ✨ ✨</div>
-    <div class="stars right">✨ ✨ ✨</div>
   </div>
 </div>
 
@@ -198,10 +182,10 @@ async function downloadPDF() {
   const cert = document.getElementById("certificate");
 
   const canvas = await html2canvas(cert, { scale: 2 });
-  const imgData = canvas.toDataURL("image/png");
+  const img = canvas.toDataURL("image/png");
 
   const pdf = new jsPDF("landscape", "px", [canvas.width, canvas.height]);
-  pdf.addImage(imgData, "PNG", 0, 0);
+  pdf.addImage(img, "PNG", 0, 0);
   pdf.save("MagicBlock_Certificate.pdf");
 }
 </script>
