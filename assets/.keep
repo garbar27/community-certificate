@@ -2,4 +2,5 @@ assets/
  ├ hands-top.png
  ├ hands-bottom.png
  ├ wizard-left.png
- └ wizard-right.png
+ ├ wizard-right.png
+ └ .keep
