@@ -2,7 +2,6 @@ body {
   margin: 0;
   font-family: 'Playfair Display', serif;
   background: radial-gradient(#4b1c6b, #1b0727);
-  color: #2b1b12;
 }
 
 /* CONTROLS */
@@ -23,7 +22,7 @@ body {
 
 /* CERTIFICATE */
 #certificate {
-  position: relative; /* 🔥 КРИТИЧНО */
+  position: relative;
   width: 900px;
   height: 420px;
   background: #fbf2cf;
@@ -41,7 +40,7 @@ body {
   font-weight: bold;
 }
 
-/* TITLES */
+/* TEXT */
 .title {
   font-family: 'Great Vibes', cursive;
   font-size: 36px;
@@ -61,43 +60,53 @@ body {
   margin: 20px 0;
 }
 
-/* WIZARDS */
+/* ========================= */
+/* WIZARDS (FIXED & BIG) */
+/* ========================= */
+
 .wizard {
   position: absolute;
-  bottom: 25px;
-  width: 160px;
+  bottom: 18px;
+  width: 240px;            /* 🔥 ОЦЕ ГОЛОВНЕ — ЗБІЛЬШЕННЯ */
 }
 
 .wizard img {
   width: 100%;
+  display: block;
 }
 
-/* LEFT */
+/* LEFT WIZARD */
 .wizard.left {
-  left: 20px;
+  left: 10px;
   transform: scaleX(-1);
 }
 
-/* RIGHT */
+/* RIGHT WIZARD */
 .wizard.right {
-  right: 20px;
+  right: 10px;
 }
 
-/* SPARKLES */
+/* SPARKLES — ПРЯМО БІЛЯ ПАЛИЧКИ */
 .sparkle {
   position: absolute;
-  top: 55px;   /* біля палички */
-  right: 20px;
-  font-size: 26px;
-  animation: sparkle 1.4s infinite alternate;
+  top: 105px;              /* 🔥 під паличку */
+  right: 35px;
+  font-size: 30px;
+  animation: sparkle 1.3s infinite alternate;
 }
 
 .wizard.left .sparkle {
-  left: 20px;
+  left: 35px;
   right: auto;
 }
 
 @keyframes sparkle {
-  from { opacity: 0.5; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1.3); }
+  from {
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.3);
+  }
 }
