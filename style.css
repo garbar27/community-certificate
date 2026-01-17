@@ -1,27 +1,32 @@
-body {
-  margin: 0;
-  min-height: 100vh;
-  background: radial-gradient(circle at top, #4b1d6b, #1b062d);
-  font-family: 'Playfair Display', serif;
-  color: #2d1a10;
+* {
+  box-sizing: border-box;
 }
 
-/* Controls */
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background: radial-gradient(circle at top, #4b1f6f, #2b0b3f);
+  color: #2b1b0f;
+}
+
+/* CONTROLS */
 .controls {
-  padding: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 20px 40px;
   color: white;
 }
 
 .controls h1 {
-  margin-bottom: 10px;
+  margin-right: 20px;
 }
 
 .controls input,
 .controls select,
 .controls button {
-  margin: 5px;
   padding: 8px 12px;
-  border-radius: 6px;
+  border-radius: 8px;
   border: none;
 }
 
@@ -31,139 +36,71 @@ body {
   cursor: pointer;
 }
 
-/* Scene */
+/* SCENE */
 .scene {
   display: flex;
   justify-content: center;
   margin-top: 40px;
 }
 
-/* Certificate */
+/* CERTIFICATE */
 #certificate {
-  position: relative;
-
-  width: 800px;          /* 👈 нормальний розмір */
-  max-width: 90%;
-  height: auto;
-
-  margin: 100px auto;
+  position: relative; /* 🔴 ОБОВʼЯЗКОВО */
+  width: 900px;
   padding: 60px 80px;
-
   background: #f9efcc;
-  border-radius: 24px;
-
+  border-radius: 28px;
   text-align: center;
 }
 
+/* TEXT */
 .title {
   font-family: 'Great Vibes', cursive;
   font-size: 36px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
-.title {
-  font-size: 32px;
-  margin-bottom: 20px;
+
+.title span {
+  color: #7c3aed;
 }
 
 .subtitle {
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 20px;
 }
 
 #certName {
-  font-size: 48px;
+  font-size: 42px;
+  color: #7c3aed;
   margin: 20px 0;
-  color: #8a4dff;
 }
 
-
+.role,
+.date,
+.approved {
+  font-size: 16px;
+  margin: 10px 0;
+}
 
 .role span {
   color: #7c3aed;
   font-weight: bold;
 }
 
-.date {
-  margin-top: 10px;
-}
-
-.approved {
-  margin-top: 30px;
-  font-style: italic;
-  font-size: 14px;
-}
-.scene{
-  position: relative;
-}
-/* обовʼязково */
-#certificate {
-  position: relative;
-}
-
-/* правий чарівник */
-.wizard-right {
+/* WIZARDS */
+.wizard {
   position: absolute;
-  right: 40px;
-  bottom: 30px;
-  height: 300px;
+  bottom: 20px;
+  width: 180px; /* 🔥 КОНТРОЛЬ РОЗМІРУ */
   pointer-events: none;
 }
 
-/* лівий чарівник (дзеркально) */
 .wizard-left {
-  position: absolute;
-  left: 40px;
-  bottom: 30px;
-  height: 300px;
+  left: -70px;
   transform: scaleX(-1);
-  pointer-events: none;
 }
-
 
 .wizard-right {
-  position: absolute;
-  right: 40px;
-  bottom: 40px;
-  height: 380px;
-  z-index: 5;
-  pointer-events: none;
-}
-#certificate {
- #certificate * {
-  position: relative;
-  z-index: 1;
-}
-
-.wizard-on-cert {
- .wizard-on-cert {
-  position: absolute;
-  right: 40px;      /* притиснутий до правого краю сертифіката */
-  bottom: 30px;     /* стоїть на “підлозі” сертифіката */
-  height: 320px;    /* контрольований розмір */
-  pointer-events: none;
-}
-
-
-.subtitle {
-  margin-top: 20px;
-  margin-bottom: 20px;
-
-  font-size: 18px;
-  letter-spacing: 1px;
-}
-.scene {
-  position: relative;
-}
-
-.wizard-side {
-  position: absolute;
-
-  right: 80px;     /* 👉 збоку сертифікату */
-  top: 50%;
-
-  transform: translateY(-50%);
-
-  height: 300px;   /* 👈 нормальний розмір */
-  pointer-events: none;
+  right: -70px;
 }
 
