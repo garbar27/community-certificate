@@ -109,12 +109,19 @@ body {
 /* ✨ STARS */
 .stars {
   position: absolute;
-  top: 65px;
-  right: -10px;
+  top: 0;
+  left: 6px; /* для лівого чаклуна */
+  font-size: 22px;
+  display: flex;
+  gap: 6px;
+  animation: sparkle 1.3s infinite alternate;
 }
 
+/* ⭐ ЗІРКИ ДЛЯ ПРАВОГО ЧАКЛУНА */
 .wizard.right .stars {
-  left: -10px;
-  right: auto;
+  left: auto;
+  right: 6px;       /* зірки йдуть ВЛІВО */
+  transform: translateX(-100%);
 }
+
 
