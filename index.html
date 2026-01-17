@@ -7,34 +7,57 @@
 </head>
 <body>
 
-  <h1 class="title">Join MagicBlock Community</h1>
+<header class="top-bar">
+  <h1>Join MagicBlock Community</h1>
 
-  <div class="certificate">
+  <div class="controls">
+    <input type="text" placeholder="Your name" />
+    <select>
+      <option>@Wizard</option>
+      <option>@Art Magician</option>
+      <option>@Gaming Magician</option>
+      <option>@Apprentice</option>
+      <option>@Sorcerer</option>
+      <option>@Adept</option>
+      <option>@Inner Circle</option>
+      <option>Mod</option>
+      <option>Team</option>
+    </select>
+    <input type="date" />
+    <button>Generate Certificate</button>
+    <button>Download PDF</button>
+  </div>
+</header>
+
+<main class="page">
+
+  <section class="certificate">
 
     <!-- LOGO -->
-    <img src="assets/logo.png" alt="MagicBlock Logo" class="logo" />
+    <div class="logo">
+      <img src="assets/logo.png" alt="MagicBlock Logo">
+      <span>MagicBlock</span>
+    </div>
 
-    <h2>
-      Certificate of <span>MagicBlock</span> Community Member
-    </h2>
-
+    <!-- CONTENT -->
+    <h2>Certificate of <span>MagicBlock</span> Community Member</h2>
     <p class="small">This certifies that</p>
-
     <h1 class="name">NAME</h1>
 
     <p class="role">
-      is an official <b>ROLE</b> of the MagicBlock community
+      is an official <strong>ROLE</strong> of the MagicBlock community
     </p>
 
-    <p class="since">Member since: —</p>
-
+    <p class="date">Member since: —</p>
     <p class="approved">Approved by MagicBlock Team</p>
 
     <!-- WIZARDS -->
-    <img src="assets/wizard-left.png" class="wizard left" alt="Wizard Left">
-    <img src="assets/wizard.png" class="wizard right" alt="Wizard Right">
+    <img src="assets/wizard.png" class="wizard left" alt="Wizard">
+    <img src="assets/wizard.png" class="wizard right" alt="Wizard">
 
-  </div>
+  </section>
+
+</main>
 
 </body>
 </html>
