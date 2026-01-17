@@ -3,61 +3,191 @@
 <head>
   <meta charset="UTF-8" />
   <title>MagicBlock Certificate</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Magical font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(180deg, #4b176d, #2a0b3f);
+      font-family: "Cinzel", serif;
+      color: #000;
+    }
+
+    /* ===== TOP BAR ===== */
+    .top {
+      padding: 24px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .top h1 {
+      margin: 0;
+      font-size: 36px;
+      color: #caa6ff;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .controls {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .controls input,
+    .controls select,
+    .controls button {
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: none;
+      font-size: 14px;
+    }
+
+    .controls button {
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    /* ===== CERTIFICATE ===== */
+    .wrap {
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .certificate {
+      position: relative;
+      width: 900px;
+      background: #fff6d6;
+      border-radius: 28px;
+      padding: 50px 60px 80px;
+    }
+
+    /* ===== LOGO ===== */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: absolute;
+      top: 24px;
+      left: 28px;
+    }
+
+    .logo img {
+      width: 36px;
+      height: 36px;
+    }
+
+    .logo span {
+      font-weight: 700;
+      color: #8b5cf6;
+      font-size: 18px;
+    }
+
+    /* ===== TEXT ===== */
+    .title {
+      text-align: center;
+      font-size: 34px;
+      font-weight: 700;
+      margin-top: 20px;
+    }
+
+    .subtitle {
+      text-align: center;
+      margin-top: 14px;
+      font-size: 14px;
+    }
+
+    .name {
+      text-align: center;
+      font-size: 42px;
+      color: #8b5cf6;
+      margin: 24px 0;
+      font-family: "Uncial Antiqua", serif;
+    }
+
+    .role,
+    .since,
+    .approved {
+      text-align: center;
+      margin-top: 14px;
+      font-size: 15px;
+    }
+
+    .approved {
+      margin-top: 26px;
+      font-style: italic;
+    }
+
+    /* ===== WIZARDS ===== */
+    .wizard {
+      position: absolute;
+      bottom: 20px;
+      width: 150px; /* BIGGER */
+    }
+
+    .wizard.left {
+      left: 40px;
+      transform: scaleX(-1); /* looks inside */
+    }
+
+    .wizard.right {
+      right: 40px;
+    }
+  </style>
 </head>
+
 <body>
+  <div class="top">
+    <h1>Join MagicBlock Community</h1>
 
-<header class="top-bar">
-  <h1>Join MagicBlock Community</h1>
-
-  <div class="controls">
-    <input type="text" placeholder="Your name" />
-    <select>
-      <option>@Wizard</option>
-      <option>@Art Magician</option>
-      <option>@Gaming Magician</option>
-      <option>@Apprentice</option>
-      <option>@Sorcerer</option>
-      <option>@Adept</option>
-      <option>@Inner Circle</option>
-      <option>Mod</option>
-      <option>Team</option>
-    </select>
-    <input type="date" />
-    <button>Generate Certificate</button>
-    <button>Download PDF</button>
-  </div>
-</header>
-
-<main class="page">
-
-  <section class="certificate">
-
-    <!-- LOGO -->
-    <div class="logo">
-      <img src="assets/logo.png" alt="MagicBlock Logo">
-      <span>MagicBlock</span>
+    <div class="controls">
+      <input placeholder="Your name" />
+      <select>
+        <option>@Wizard</option>
+        <option>@Art Magician</option>
+        <option>@Gaming Magician</option>
+        <option>@Apprentice</option>
+        <option>@Sorcerer</option>
+        <option>@Adept</option>
+        <option>@Inner Circle</option>
+        <option>Mod</option>
+        <option>Team</option>
+      </select>
+      <input type="date" />
+      <button>Generate Certificate</button>
+      <button>Download PDF</button>
     </div>
+  </div>
 
-    <!-- CONTENT -->
-    <h2>Certificate of <span>MagicBlock</span> Community Member</h2>
-    <p class="small">This certifies that</p>
-    <h1 class="name">NAME</h1>
+  <div class="wrap">
+    <div class="certificate">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="assets/logo.png" alt="MagicBlock">
+        <span>MagicBlock</span>
+      </div>
 
-    <p class="role">
-      is an official <strong>ROLE</strong> of the MagicBlock community
-    </p>
+      <!-- Text -->
+      <div class="title">Certificate of MagicBlock Community Member</div>
+      <div class="subtitle">This certifies that</div>
+      <div class="name">NAME</div>
+      <div class="role">is an official ROLE of the MagicBlock community</div>
+      <div class="since">Member since: —</div>
+      <div class="approved">Approved by MagicBlock Team</div>
 
-    <p class="date">Member since: —</p>
-    <p class="approved">Approved by MagicBlock Team</p>
-
-    <!-- WIZARDS -->
-    <img src="assets/wizard.png" class="wizard left" alt="Wizard">
-    <img src="assets/wizard.png" class="wizard right" alt="Wizard">
-
-  </section>
-
-</main>
-
+      <!-- Wizards -->
+      <img src="assets/wizard.png" class="wizard left" alt="Wizard left">
+      <img src="assets/wizard.png" class="wizard right" alt="Wizard right">
+    </div>
+  </div>
 </body>
 </html>
