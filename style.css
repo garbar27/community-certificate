@@ -97,3 +97,15 @@ body {
   z-index: 2;
   pointer-events: none;
 }
+.scene {
+  position: relative;
+}
+
+.wizard-right {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  height: 380px;
+  z-index: 5;
+  pointer-events: none;
+}
