@@ -8,206 +8,210 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <style>
-* {
-  box-sizing: border-box;
-  font-family: "Georgia", serif;
-}
+    * {
+        box-sizing: border-box;
+        font-family: "Georgia", serif;
+    }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  background: linear-gradient(180deg, #4b136f, #2a0b40);
-  color: #fff;
-}
+    body {
+        margin: 0;
+        min-height: 100vh;
+        background: linear-gradient(180deg, #4b176a, #2b0a3d);
+        color: #000;
+    }
 
-/* ---------- HEADER ---------- */
-.header {
-  padding: 24px 32px;
-}
+    /* ===== HEADER ===== */
+    .header {
+        padding: 24px 32px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
 
-.header h1 {
-  margin: 0 0 16px 0;
-}
+    .header h1 {
+        color: #fff;
+        margin-right: 20px;
+        font-size: 28px;
+        white-space: nowrap;
+    }
 
-.controls {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
+    .header input,
+    .header select,
+    .header button {
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: none;
+        font-size: 14px;
+    }
 
-.controls input,
-.controls select,
-.controls button {
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: none;
-  font-size: 14px;
-}
+    .header button {
+        cursor: pointer;
+        background: #fff;
+        font-weight: bold;
+    }
 
-.controls button {
-  cursor: pointer;
-  font-weight: bold;
-}
+    /* ===== PAGE ===== */
+    .page {
+        display: flex;
+        justify-content: center;
+        padding: 40px 0 80px;
+    }
 
-/* ---------- CERTIFICATE ---------- */
-.certificate-wrapper {
-  display: flex;
-  justify-content: center;
-  margin: 40px 0 80px;
-}
+    /* ===== CERTIFICATE ===== */
+    .certificate {
+        position: relative;
+        width: 900px;
+        height: 480px;
+        background: #fff6d5;
+        border-radius: 24px;
+        padding: 40px 60px;
+    }
 
-#certificate {
-  position: relative;
-  width: 900px;
-  min-height: 480px;
-  background: #fbf1cf;
-  border-radius: 26px;
-  padding: 48px 80px;
-  color: #000;
-}
+    /* Logo */
+    .logo {
+        position: absolute;
+        top: 20px;
+        left: 24px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: bold;
+        color: #8b5cf6;
+    }
 
-/* logo */
-.logo {
-  position: absolute;
-  top: 24px;
-  left: 32px;
-  font-weight: bold;
-  color: #8c52ff;
-}
+    .logo img {
+        width: 28px;
+        height: 28px;
+    }
 
-/* title */
-.title {
-  text-align: center;
-  font-size: 34px;
-  margin-bottom: 24px;
-}
+    /* Wizards */
+    .wizard {
+        position: absolute;
+        bottom: 20px;
+        width: 140px;
+    }
 
-.title span {
-  color: #8c52ff;
-}
+    .wizard.left {
+        left: 40px;
+    }
 
-/* text spacing FIX */
-.content {
-  text-align: center;
-  line-height: 1.9; /* <-- більша відстань між рядками */
-  font-size: 16px;
-}
+    .wizard.right {
+        right: 40px;
+        transform: scaleX(-1);
+    }
 
-.name {
-  font-size: 34px;
-  margin: 22px 0;
-  color: #8c52ff;
-}
+    /* Text */
+    .cert-content {
+        text-align: center;
+        margin-top: 40px;
+        line-height: 1.8; /* БІЛЬША ВІДСТАНЬ МІЖ РЯДКАМИ */
+    }
 
-/* ---------- WIZARDS ---------- */
-.wizard {
-  position: absolute;
-  bottom: 20px;
-  width: 140px;
-}
+    .cert-title {
+        font-size: 32px;
+        margin-bottom: 16px;
+    }
 
-.wizard.left {
-  left: 30px;
-}
+    .cert-title span {
+        color: #8b5cf6;
+    }
 
-.wizard.right {
-  right: 30px;
-  transform: scaleX(-1);
-}
+    .cert-name {
+        font-size: 36px;
+        color: #8b5cf6;
+        margin: 18px 0;
+    }
 
-/* ---------- FOOTER ---------- */
-.footer-text {
-  margin-top: 24px;
-  font-style: italic;
-}
+    .cert-footer {
+        margin-top: 20px;
+        font-style: italic;
+    }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <div class="header">
-  <h1>Join MagicBlock Community</h1>
+    <h1>Join MagicBlock Community</h1>
 
-  <div class="controls">
-    <input id="nameInput" placeholder="Your name" />
+    <input type="text" id="nameInput" placeholder="Your name" />
 
     <select id="roleInput">
-      <option>Wizard</option>
-      <option>Art Magician</option>
-      <option>Gaming Magician</option>
-      <option>Apprentice</option>
-      <option>Sorcerer</option>
-      <option>Adept</option>
-      <option>Inner Circle</option>
-      <option>Mod</option>
-      <option>Team</option>
+        <option>@Wizard</option>
+        <option>@Art Magician</option>
+        <option>@Gaming Magician</option>
+        <option>@Apprentice</option>
+        <option>@Sorcerer</option>
+        <option>@Adept</option>
+        <option>@Inner Circle</option>
+        <option>Mod</option>
+        <option>Team</option>
     </select>
 
-    <input id="dateInput" type="date" />
+    <input type="date" id="dateInput" />
 
-    <button onclick="generateCertificate()">Generate Certificate</button>
+    <button onclick="generateCert()">Generate Certificate</button>
     <button onclick="downloadPDF()">Download PDF</button>
-  </div>
 </div>
 
-<div class="certificate-wrapper">
-  <div id="certificate">
+<!-- PAGE -->
+<div class="page">
+    <div class="certificate" id="certificate">
 
-    <div class="logo">MagicBlock ✨</div>
+        <!-- Logo -->
+        <div class="logo">
+            <img src="logo.png" alt="logo">
+            MagicBlock
+        </div>
 
-    <div class="title">
-      Certificate of <span>MagicBlock</span> Community Member
+        <!-- Wizards -->
+        <img src="wizard-left.png" class="wizard left" alt="wizard left">
+        <img src="wizard.png" class="wizard right" alt="wizard right">
+
+        <!-- Content -->
+        <div class="cert-content">
+            <div class="cert-title">
+                Certificate of <span>MagicBlock</span> Community Member
+            </div>
+
+            <div>This certifies that</div>
+
+            <div class="cert-name" id="certName">NAME</div>
+
+            <div>
+                is an official <span style="color:#8b5cf6" id="certRole">ROLE</span>
+                of the MagicBlock community
+            </div>
+
+            <div id="certDate">Member since: —</div>
+
+            <div class="cert-footer">
+                Approved by MagicBlock Team
+            </div>
+        </div>
+
     </div>
-
-    <div class="content">
-      <div>This certifies that</div>
-
-      <div id="certName" class="name">NAME</div>
-
-      <div>
-        is an official <strong id="certRole">ROLE</strong> of the MagicBlock community
-      </div>
-
-      <div id="certDate" style="margin-top: 18px;">
-        Member since: —
-      </div>
-
-      <div class="footer-text">
-        Approved by MagicBlock Team
-      </div>
-    </div>
-
-    <!-- Wizards -->
-    <img src="wizard-left.png" class="wizard left" />
-    <img src="wizard.png" class="wizard right" />
-
-  </div>
 </div>
 
 <script>
-function generateCertificate() {
-  const name = document.getElementById("nameInput").value || "NAME";
-  const role = document.getElementById("roleInput").value;
-  const date = document.getElementById("dateInput").value;
+function generateCert() {
+    const name = document.getElementById("nameInput").value || "NAME";
+    const role = document.getElementById("roleInput").value;
+    const date = document.getElementById("dateInput").value;
 
-  document.getElementById("certName").innerText = name;
-  document.getElementById("certRole").innerText = role;
-  document.getElementById("certDate").innerText =
-    date ? "Member since: " + date : "Member since: —";
+    document.getElementById("certName").innerText = name;
+    document.getElementById("certRole").innerText = role;
+    document.getElementById("certDate").innerText =
+        date ? "Member since: " + date : "Member since: —";
 }
 
 function downloadPDF() {
-  const element = document.getElementById("certificate");
-
-  html2pdf().from(element).set({
-    margin: 0,
-    filename: 'MagicBlock_Certificate.pdf',
-    html2canvas: { scale: 2 },
-    jsPDF: { orientation: 'landscape' }
-  }).save();
+    const element = document.getElementById("certificate");
+    html2pdf().from(element).save("MagicBlock_Certificate.pdf");
 }
 </script>
 
 </body>
 </html>
-
