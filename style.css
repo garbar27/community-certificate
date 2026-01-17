@@ -39,7 +39,9 @@ body {
 }
 
 /* Certificate */
-#certificate {
+#certificate { 
+  text-align: center;
+}
   position: relative;
   background-color: #f7edc8; /* БЕЖЕВА ОСНОВА */
   border-radius: 28px;
@@ -120,8 +122,6 @@ body {
 #certificate {
  #certificate * {
   position: relative;
-    text-align: center;
-}
   z-index: 1;
 }
 
