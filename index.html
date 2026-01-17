@@ -15,11 +15,12 @@
 
   <input id="nameInput" placeholder="Your name">
   <select id="roleInput">
-    <option>Wizard</option>
     <option>Apprentice</option>
-    <option>Magician</option>
+    <option>Wizard</option>
+    <option>Sorcerer</option>
   </select>
   <input type="date" id="dateInput">
+
   <button onclick="generate()">Generate Certificate</button>
 </header>
 
@@ -27,6 +28,24 @@
   <section id="certificate">
 
     <div class="logo">MagicBlock ✨</div>
+
+    <h2 class="title">
+      Certificate of <span>MagicBlock</span> Community Member
+    </h2>
+
+    <p class="subtitle">This certifies that</p>
+
+    <h1 id="certName">NAME</h1>
+
+    <p>
+      is an official <span id="certRole">ROLE</span> of the MagicBlock community
+    </p>
+
+    <p>
+      Member since: <span id="certDate">—</span>
+    </p>
+
+    <p class="approved">Approved by MagicBlock Team</p>
 
     <!-- LEFT WIZARD -->
     <div class="wizard left">
@@ -40,26 +59,21 @@
       <div class="sparkle">✨✨</div>
     </div>
 
-    <h2 class="title">
-      Certificate of <span>MagicBlock</span> Community Member
-    </h2>
-
-    <p class="subtitle">This certifies that</p>
-    <h1 id="certName">NAME</h1>
-
-    <p class="role">
-      is an official <span id="certRole">ROLE</span> of the MagicBlock community
-    </p>
-
-    <p class="date">
-      Member since: <span id="certDate">—</span>
-    </p>
-
-    <p class="approved">Approved by MagicBlock Team</p>
-
   </section>
 </main>
 
-<script src="script.js"></script>
+<script>
+function generate() {
+  document.getElementById("certName").innerText =
+    document.getElementById("nameInput").value || "NAME";
+
+  document.getElementById("certRole").innerText =
+    document.getElementById("roleInput").value;
+
+  document.getElementById("certDate").innerText =
+    document.getElementById("dateInput").value || "—";
+}
+</script>
+
 </body>
 </html>
