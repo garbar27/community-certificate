@@ -1,14 +1,13 @@
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   min-height: 100vh;
-  font-family: 'Playfair Display', serif;
   background: radial-gradient(circle at top, #4b1c6b, #1a0228);
-  color: #2b1b10;
+  font-family: 'Playfair Display', serif;
 }
 
 /* CONTROLS */
@@ -46,7 +45,7 @@ body {
   height: 420px;
   background: #fff4cf;
   border-radius: 26px;
-  padding: 50px 80px;
+  padding: 50px 120px;
   text-align: center;
 }
 
@@ -55,15 +54,14 @@ body {
   position: absolute;
   top: 20px;
   left: 30px;
-  font-weight: 700;
   color: #8b5cff;
+  font-weight: bold;
 }
 
-/* TITLES */
+/* TEXT */
 .title {
   font-family: 'Great Vibes', cursive;
   font-size: 36px;
-  margin-bottom: 16px;
 }
 
 .title span {
@@ -71,59 +69,60 @@ body {
 }
 
 .subtitle {
-  font-size: 16px;
-  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 #certName {
   font-size: 42px;
   color: #8b5cff;
-  margin: 16px 0;
+  margin: 18px 0;
 }
 
 .role,
 .date,
 .approved {
-  font-size: 16px;
   margin-top: 6px;
 }
 
 /* WIZARDS */
-.wizard-wrap {
+.wizard {
   position: absolute;
   bottom: 20px;
-  width: 130px;
-  pointer-events: none;
+  width: 120px;
 }
 
-.wizard-wrap.left {
+.wizard img {
+  width: 100%;
+}
+
+/* LEFT */
+.wizard.left {
   left: 20px;
   transform: scaleX(-1);
 }
 
-.wizard-wrap.right {
+/* RIGHT */
+.wizard.right {
   right: 20px;
 }
 
-.wizard {
-  width: 100%;
-}
-
-/* STARS */
+/* SPARKLES */
 .sparkle {
   position: absolute;
-  top: 40px;
-  right: -6px;
+  top: 30px;
   font-size: 22px;
-  animation: sparkle 1.4s infinite alternate;
+  animation: sparkle 1.5s infinite alternate;
 }
 
-.wizard-wrap.left .sparkle {
-  left: -6px;
-  right: auto;
+.wizard.left .sparkle {
+  left: -10px;
+}
+
+.wizard.right .sparkle {
+  right: -10px;
 }
 
 @keyframes sparkle {
   from { opacity: 0.4; transform: scale(0.9); }
-  to   { opacity: 1; transform: scale(1.1); }
+  to { opacity: 1; transform: scale(1.2); }
 }
