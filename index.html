@@ -1,215 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 <title>MagicBlock Certificate</title>
 
 <style>
 body {
   margin: 0;
-  font-family: Georgia, serif;
-  background: linear-gradient(135deg, #3b145f, #5a1d82);
-}
-
-/* ===== HEADER ===== */
-header {
-  padding: 20px 40px;
-  color: white;
-}
-
-.controls input,
-.controls select,
-.controls button {
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: none;
-  margin-right: 6px;
-}
-
-/* ===== CENTER ===== */
-.scene {
-  display: flex;
-  justify-content: center;
-  margin: 40px 0;
+  font-family: serif;
+  background: radial-gradient(circle at top, #5a2b82, #2b0f45);
+  min-height: 100vh;
 }
 
 /* ===== CERTIFICATE ===== */
+.certificate-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 120px;
+}
+
 .certificate {
   position: relative;
   width: 1000px;
-  height: 460px;
-  background: #fff4cf;
+  height: 520px;
+  background: #fbf3cf;
   border-radius: 28px;
-  padding: 40px 70px;
+  padding: 40px 80px;
   box-sizing: border-box;
-  text-align: center;
-  box-shadow: 0 20px 40px rgba(0,0,0,.3);
 }
 
 /* ===== TEXT ===== */
 .logo {
   position: absolute;
-  top: 20px;
-  left: 30px;
-  color: #9a5cff;
+  top: 18px;
+  left: 26px;
+  color: #9b59ff;
   font-weight: bold;
 }
 
 .title {
-  font-size: 36px;
+  text-align: center;
+  font-size: 34px;
+  margin-top: 10px;
 }
 
 .subtitle {
-  font-size: 14px;
-  margin: 12px 0;
+  text-align: center;
+  margin-top: 16px;
 }
 
 .name {
-  font-size: 44px;
-  color: #8e54ff;
+  text-align: center;
+  font-size: 42px;
+  color: #9b59ff;
+  margin: 24px 0;
 }
 
 .text {
-  font-size: 16px;
-  margin: 8px 0;
+  text-align: center;
 }
 
-/* =====================
-   WIZARDS
-===================== */
+/* ===== WIZARDS ===== */
 .wizard {
   position: absolute;
-  bottom: 18px;
-  width: 320px;
-}
-
-/* IMAGE */
-.wizard img {
-  width: 100%;
-  display: block;
+  bottom: 28px;
+  width: 190px;
 }
 
 /* LEFT */
 .wizard.left {
   left: 40px;
-  transform: scaleX(-1);
 }
 
 /* RIGHT */
 .wizard.right {
   right: 40px;
+  transform: scaleX(-1);
 }
 
-/* =====================
-   WAND TIP (ANCHOR)
-===================== */
-.wand-tip {
-  position: absolute;
-  top: 110px;   /* ТОЧКА ПАЛИЧКИ */
-  right: 30px; /* кінець палички */
-  width: 1px;
-  height: 1px;
+.wizard img {
+  width: 100%;
 }
 
-/* дзеркало для лівого */
-.wizard.left .wand-tip {
-  right: auto;
-  left: 30px;
-}
-
-/* =====================
-   MAGIC STARS
-===================== */
+/* ===== STARS — ПРИВʼЯЗАНІ ДО ПАЛИЧКИ ===== */
 .stars {
   position: absolute;
-  left: 0;
-  top: 0;
   font-size: 22px;
   display: flex;
   gap: 6px;
-  animation: sparkle 1.3s infinite alternate;
+  animation: sparkle 1.2s infinite alternate;
 }
 
+/* ⭐ LEFT WAND TIP */
+.wizard.left .stars {
+  top: 120px;     /* РІВЕНЬ КІНЧИКА ПАЛИЧКИ */
+  left: 160px;    /* ПІСЛЯ ПАЛИЧКИ */
+}
+
+/* ⭐ RIGHT WAND TIP */
+.wizard.right .stars {
+  top: 120px;
+  right: 160px;
+}
+
+/* ===== ANIMATION ===== */
 @keyframes sparkle {
-  from { opacity: .6; transform: translateX(0); }
-  to   { opacity: 1; transform: translateX(8px); }
+  from { opacity: 0.6; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1.1); }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Join MagicBlock Community</h1>
-  <div class="controls">
-    <input id="nameInput" placeholder="Your name">
-    <select id="roleInput">
-      <option>Apprentice</option>
-      <option>Magician</option>
-      <option>Wizard</option>
-    </select>
-    <input type="date" id="dateInput">
-    <button onclick="generate()">Generate Certificate</button>
-    <button onclick="window.print()">Download PDF</button>
-  </div>
-</header>
-
-<main class="scene">
+<div class="certificate-wrapper">
   <div class="certificate">
 
     <div class="logo">MagicBlock ✨</div>
 
     <div class="title">
-      Certificate of <span style="color:#8e54ff">MagicBlock</span> Community Member
+      Certificate of <span style="color:#9b59ff;">MagicBlock</span> Community Member
     </div>
 
     <div class="subtitle">This certifies that</div>
-
-    <div class="name" id="certName">NAME</div>
-
-    <div class="text">
-      is an official <span style="color:#8e54ff" id="certRole">ROLE</span> of the MagicBlock community
-    </div>
+    <div class="name">NAME</div>
 
     <div class="text">
-      Member since: <span id="certDate">—</span>
-    </div>
-
-    <div class="text" style="margin-top:18px;">
+      is an official <span style="color:#9b59ff;">ROLE</span> of the MagicBlock community<br><br>
+      Member since: —<br><br>
       Approved by MagicBlock Team
     </div>
 
     <!-- LEFT WIZARD -->
     <div class="wizard left">
-      <img src="assets/6009133115600735042-removebg-preview.png">
-      <div class="wand-tip">
-        <div class="stars">✨ ✨ ✨</div>
-      </div>
+      <img src="wizard.png" alt="wizard">
+      <div class="stars">✨ ✨ ✨</div>
     </div>
 
     <!-- RIGHT WIZARD -->
     <div class="wizard right">
-      <img src="assets/6009133115600735042-removebg-preview.png">
-      <div class="wand-tip">
-        <div class="stars">✨ ✨ ✨</div>
-      </div>
+      <img src="wizard.png" alt="wizard">
+      <div class="stars">✨ ✨ ✨</div>
     </div>
 
   </div>
-</main>
-
-<script>
-function generate() {
-  document.getElementById('certName').innerText =
-    document.getElementById('nameInput').value || 'NAME';
-
-  document.getElementById('certRole').innerText =
-    document.getElementById('roleInput').value;
-
-  document.getElementById('certDate').innerText =
-    document.getElementById('dateInput').value || '—';
-}
-</script>
+</div>
 
 </body>
 </html>
+
