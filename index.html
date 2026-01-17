@@ -13,67 +13,52 @@
 <header class="controls">
   <h1>Join MagicBlock Community</h1>
 
-  <input id="nameInput" placeholder="Your name">
-  <select id="roleInput">
+  <input placeholder="Your name">
+  <select>
     <option>Apprentice</option>
     <option>Wizard</option>
     <option>Sorcerer</option>
   </select>
-  <input type="date" id="dateInput">
-
-  <button onclick="generate()">Generate Certificate</button>
+  <input type="date">
+  <button>Generate Certificate</button>
 </header>
 
 <main class="scene">
-  <section id="certificate">
+  <section class="certificate">
 
+    <!-- LOGO -->
     <div class="logo">MagicBlock ✨</div>
 
+    <!-- LEFT WIZARD -->
+    <div class="wizard left">
+      <img src="assets/6009133115600735042-removebg-preview.png" alt="">
+      <div class="stars">✨ ✨</div>
+    </div>
+
+    <!-- RIGHT WIZARD -->
+    <div class="wizard right">
+      <img src="assets/6009133115600735042-removebg-preview.png" alt="">
+      <div class="stars">✨ ✨</div>
+    </div>
+
+    <!-- TEXT -->
     <h2 class="title">
       Certificate of <span>MagicBlock</span> Community Member
     </h2>
 
     <p class="subtitle">This certifies that</p>
+    <h1 class="name">NAME</h1>
 
-    <h1 id="certName">NAME</h1>
-
-    <p>
-      is an official <span id="certRole">ROLE</span> of the MagicBlock community
+    <p class="role">
+      is an official <span>ROLE</span> of the MagicBlock community
     </p>
 
-    <p>
-      Member since: <span id="certDate">—</span>
-    </p>
-
+    <p class="date">Member since: —</p>
     <p class="approved">Approved by MagicBlock Team</p>
-
-    <!-- LEFT WIZARD -->
-    <div class="wizard left">
-      <img src="assets/6009133115600735042-removebg-preview.png">
-      <div class="sparkle">✨✨</div>
-    </div>
-
-    <!-- RIGHT WIZARD -->
-    <div class="wizard right">
-      <img src="assets/6009133115600735042-removebg-preview.png">
-      <div class="sparkle">✨✨</div>
-    </div>
 
   </section>
 </main>
 
-<script>
-function generate() {
-  document.getElementById("certName").innerText =
-    document.getElementById("nameInput").value || "NAME";
-
-  document.getElementById("certRole").innerText =
-    document.getElementById("roleInput").value;
-
-  document.getElementById("certDate").innerText =
-    document.getElementById("dateInput").value || "—";
-}
-</script>
-
 </body>
 </html>
+
