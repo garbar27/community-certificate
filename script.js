@@ -1,14 +1,9 @@
-function generate() {
+function generateCertificate() {
   const name = document.getElementById("nameInput").value || "NAME";
-  const role = document.getElementById("roleInput").value || "ROLE";
-  const date = document.getElementById("dateInput").value || "—";
+  const role = document.getElementById("roleSelect").value;
+  const dateInput = document.getElementById("dateInput").value;
 
-  document.getElementById("certName").innerText = name;
-  document.getElementById("certRole").innerText = role;
-  document.getElementById("certDate").innerText = date;
+  document.getElementById("certName").textContent = name;
+  document.getElementById("certRole").textContent = role;
+  document.getElementById("certDate").textContent = dateInput || "—";
 }
-
-function downloadPDF() {
-  window.print();
-}
-
