@@ -69,3 +69,48 @@ body {
 .wizard.right {
   right: -230px;
 }
+.scene {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Certificate */
+#certificate {
+  position: relative;
+  z-index: 2;
+}
+
+/* Wizards */
+.wizard {
+  position: absolute;
+  bottom: 0;
+  width: 220px;
+  z-index: 1;
+}
+
+.wizard.left {
+  left: 40px;
+}
+
+.wizard.right {
+  right: 40px;
+  transform: scaleX(-1);
+}
+
+/* Hands */
+.hands {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 420px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hands.top {
+  top: 35%;
+}
+
+.hands.bottom {
+  bottom: 25%;
+}
