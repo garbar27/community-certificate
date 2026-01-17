@@ -1,58 +1,77 @@
 * {
   box-sizing: border-box;
+  font-family: Georgia, serif;
 }
 
 body {
   margin: 0;
-  font-family: "Playfair Display", serif;
-  background: radial-gradient(circle at top, #5b2b82, #2a0f45);
+  background: linear-gradient(180deg, #4b136b, #2a083d);
+  color: #000;
+}
+
+/* TOP BAR */
+.top-bar {
+  padding: 20px;
+  color: white;
 }
 
 .controls {
-  padding: 20px;
-  color: white;
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .controls input,
 .controls select,
 .controls button {
   padding: 8px 12px;
-  border-radius: 8px;
+  border-radius: 6px;
   border: none;
-  margin-right: 6px;
 }
 
-.scene {
+/* CERTIFICATE */
+main {
   display: flex;
   justify-content: center;
-  padding: 40px 0;
+  margin-top: 40px;
 }
 
-/* 🧾 CERTIFICATE */
-.certificate {
-  position: relative;              /* 🔒 ЯКІР */
+#certificate {
+  position: relative;
   width: 900px;
-  height: 420px;
-  background: #fbf2cf;
+  background: #fff6d5;
   border-radius: 28px;
-  padding: 40px 80px;
+  padding: 70px 120px;
   text-align: center;
-  overflow: hidden;                /* 🔒 PDF-safe */
 }
 
 /* LOGO */
 .logo {
   position: absolute;
-  top: 16px;
-  left: 24px;
-  font-weight: 700;
-  color: #8a4bff;
+  top: 20px;
+  left: 30px;
+  width: 120px;
+}
+
+/* WIZARDS */
+.wizard {
+  position: absolute;
+  bottom: 20px;
+  width: 170px;
+}
+
+.wizard-left {
+  left: 20px;
+}
+
+.wizard-right {
+  right: 20px;
 }
 
 /* TEXT */
 .title {
-  font-family: "Great Vibes", cursive;
   font-size: 36px;
+  margin-bottom: 25px;
 }
 
 .title span {
@@ -60,76 +79,29 @@ body {
 }
 
 .subtitle {
-  font-size: 14px;
-  margin-top: 10px;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
 .name {
   font-size: 42px;
   color: #8a4bff;
-  margin: 12px 0;
+  margin-bottom: 25px;
+}
+
+.role {
+  font-size: 18px;
+  margin-bottom: 18px;
 }
 
 .role span {
   color: #8a4bff;
 }
 
-.date,
-.approved {
-  font-size: 14px;
-  margin-top: 6px;
+.date {
+  margin-bottom: 30px;
 }
 
-/* 🧙‍♂️ WIZARDS */
-.wizard {
-  position: absolute;
-  bottom: 20px;
-  width: 220px;          /* 🔥 ВЕЛИКІ */
-  pointer-events: none;
+.footer {
+  font-style: italic;
 }
-
-.wizard img {
-  width: 100%;
-}
-
-/* LEFT */
-/* LEFT wizard — дивиться В СЕРЕДИНУ */
-.wizard.left {
-  left: 20px;
-  transform: scaleX(-1);
-}
-
-/* RIGHT wizard — дивиться В СЕРЕДИНУ */
-.wizard.right {
-  right: 20px;
-  transform: none;
-}
-
-
-/* ⭐ БАЗОВІ ЗІРКИ */
-.stars {
-  position: absolute;
-  font-size: 22px;
-  display: flex;
-  gap: 6px;
-  animation: sparkle 1.3s infinite alternate;
-}
-
-/* 🧙‍♂️ ЛІВИЙ ЧАКЛУН — зірки з кінчика палички */
-.wizard.left .stars {
-  left: 95px;        /* після палички */
-  top: 92px;         /* ВАЖЛИВО: рівень кінчика палички */
-}
-
-/* 🧙‍♂️ ПРАВИЙ ЧАКЛУН — зірки перед паличкою */
-.wizard.right .stars {
-  right: 95px;       /* перед паличкою */
-  top: 92px;         /* той самий рівень */
-  transform: translateX(-100%);
-}
-
-.wizard img {
-  filter: drop-shadow(0 0 6px rgba(255, 200, 120, 0.8));
-}
-
-
