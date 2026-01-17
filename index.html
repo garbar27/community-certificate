@@ -1,71 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
+<meta charset="UTF-8">
 <title>MagicBlock Certificate</title>
 
 <style>
-/* ====== GLOBAL ====== */
+/* ===== BASE ===== */
 body {
   margin: 0;
   font-family: Georgia, serif;
   background: linear-gradient(135deg, #3b145f, #5a1d82);
-  color: #2c1a00;
 }
 
 header {
   padding: 20px 40px;
-  color: #fff;
+  color: white;
 }
 
 header h1 {
-  margin: 0 0 15px;
+  margin-bottom: 12px;
 }
 
 .controls input,
 .controls select,
 .controls button {
   padding: 6px 10px;
-  margin-right: 8px;
   border-radius: 6px;
   border: none;
+  margin-right: 6px;
 }
 
-.controls button {
-  cursor: pointer;
-}
-
-/* ====== CERTIFICATE AREA ====== */
+/* ===== SCENE ===== */
 .scene {
   display: flex;
   justify-content: center;
   margin: 40px 0;
 }
 
+/* ===== CERTIFICATE ===== */
 .certificate {
   position: relative;
-  width: 900px;
+  width: 920px;
   height: 420px;
-  background: #fff5d6;
-  border-radius: 26px;
-  box-shadow: 0 20px 40px rgba(0,0,0,.25);
+  background: #fff4cf;
+  border-radius: 28px;
   padding: 40px 60px;
   box-sizing: border-box;
   text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,.3);
 }
 
-/* ====== TEXT ====== */
+/* ===== TEXT ===== */
 .logo {
   position: absolute;
   top: 20px;
   left: 30px;
+  color: #9a5cff;
   font-weight: bold;
-  color: #9b5cff;
 }
 
 .title {
   font-size: 34px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .subtitle {
@@ -76,52 +72,48 @@ header h1 {
 .name {
   font-size: 42px;
   color: #8e54ff;
-  margin: 10px 0;
 }
 
 .text {
   font-size: 16px;
-  margin: 6px 0;
+  margin: 8px 0;
 }
 
-/* ====== WIZARDS ====== */
+/* ===== WIZARDS ===== */
 .wizard {
   position: absolute;
-  bottom: 30px;
-  width: 130px;
+  bottom: 25px;
+  width: 160px; /* 🔥 БІЛЬШІ */
 }
 
 .wizard img {
   width: 100%;
 }
 
-/* LEFT wizard */
+/* LEFT */
 .wizard.left {
-  left: 30px;
+  left: 35px;
   transform: scaleX(-1);
 }
 
-/* RIGHT wizard */
+/* RIGHT */
 .wizard.right {
-  right: 30px;
+  right: 35px;
 }
 
-/* ====== STARS ====== */
-.stars {
+/* ===== MAGIC STARS (ATTACHED TO WAND) ===== */
+.wizard::after {
+  content: "✨ ✨ ✨";
   position: absolute;
   font-size: 20px;
-  pointer-events: none;
+  top: 45px;   /* 🔥 біля палички */
+  right: -22px;
 }
 
-/* stars near wand */
-.wizard.left .stars {
-  top: 55px;
-  left: 85px;
-}
-
-.wizard.right .stars {
-  top: 55px;
-  right: 85px;
+/* left side correction */
+.wizard.left::after {
+  left: -22px;
+  right: auto;
 }
 </style>
 </head>
@@ -168,16 +160,14 @@ header h1 {
       Approved by MagicBlock Team
     </div>
 
-    <!-- LEFT wizard -->
+    <!-- LEFT WIZARD -->
     <div class="wizard left">
       <img src="assets/6009133115600735042-removebg-preview.png">
-      <div class="stars">✨ ✨ ✨</div>
     </div>
 
-    <!-- RIGHT wizard -->
+    <!-- RIGHT WIZARD -->
     <div class="wizard right">
       <img src="assets/6009133115600735042-removebg-preview.png">
-      <div class="stars">✨ ✨ ✨</div>
     </div>
 
   </div>
