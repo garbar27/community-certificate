@@ -2,66 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>MagicBlock Community Certificate</title>
+  <title>MagicBlock Certificate</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header class="top">
-  <h1>Join MagicBlock Community</h1>
+  <h1 class="title">Join MagicBlock Community</h1>
 
-  <div class="controls">
-    <input id="nameInput" placeholder="Your name" />
-    <select id="roleSelect">
-      <option>@Wizard</option>
-      <option>@Art Magician</option>
-      <option>@Gaming Magician</option>
-      <option>@Apprentice</option>
-      <option>@Sorcerer</option>
-      <option>@Adept</option>
-      <option>@Inner Circle</option>
-      <option>Mod</option>
-      <option>Team</option>
-    </select>
-    <input type="date" id="dateInput" />
-    <button onclick="generateCertificate()">Generate Certificate</button>
-    <button>Download PDF</button>
-  </div>
-</header>
-
-<main class="wrapper">
-  <div class="certificate" id="certificate">
+  <div class="certificate">
 
     <!-- LOGO -->
-    <div class="logo">
-      <img src="assets/magicblock-labs.htm" alt="MagicBlock Logo">
-      <span>MagicBlock ✨</span>
-    </div>
+    <img src="assets/logo.png" alt="MagicBlock Logo" class="logo" />
 
     <h2>
-      Certificate of <span class="brand">MagicBlock</span> Community Member
+      Certificate of <span>MagicBlock</span> Community Member
     </h2>
 
     <p class="small">This certifies that</p>
 
-    <h1 id="certName">NAME</h1>
+    <h1 class="name">NAME</h1>
 
     <p class="role">
-      is an official <span id="certRole">ROLE</span> of the MagicBlock community
+      is an official <b>ROLE</b> of the MagicBlock community
     </p>
 
-    <p class="date">Member since: <span id="certDate">—</span></p>
+    <p class="since">Member since: —</p>
 
-    <p class="footer">Approved by MagicBlock Team</p>
+    <p class="approved">Approved by MagicBlock Team</p>
 
     <!-- WIZARDS -->
     <img src="assets/wizard-left.png" class="wizard left" alt="Wizard Left">
     <img src="assets/wizard.png" class="wizard right" alt="Wizard Right">
 
   </div>
-</main>
 
-<script src="script.js"></script>
 </body>
 </html>
-
