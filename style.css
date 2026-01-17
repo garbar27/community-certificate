@@ -138,3 +138,35 @@ header.controls {
   border-radius: 20px;
   text-align: center;
 }
+.wizard {
+  position: absolute;
+  bottom: 0;
+  width: 260px;
+  z-index: 5;
+}
+
+.wizard.left {
+  left: 40px;
+}
+
+.wizard.right {
+  right: 40px;
+}
+
+.hands-top,
+.hands-bottom {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.hands-top {
+  top: -120px;
+}
+
+.hands-bottom {
+  bottom: -140px;
+}
