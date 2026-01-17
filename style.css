@@ -118,14 +118,17 @@ body {
   position: relative; /* обовʼязково */
 }
 
-/* Wizard on certificate */
 .wizard-on-cert {
- .wizard-on-cert {
   position: absolute;
-  right: -10px;
-  bottom: -70px;     /* ↓ опускаємо */
-  height: 420px;     /* ↑ робимо більшим */
+
+  right: 20px;      /* ← всередину сертифіката */
+  bottom: 20px;     /* ← підняли знизу */
+
+  height: 380px;    /* ← розмір (можеш міняти 360–420) */
+
   z-index: 5;
   pointer-events: none;
+}
+
 }
 
