@@ -4,9 +4,7 @@
   <meta charset="UTF-8" />
   <title>MagicBlock Certificate</title>
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -25,7 +23,6 @@
   </select>
 
   <input type="date" id="dateInput">
-
   <button onclick="generate()">Generate Certificate</button>
 </header>
 
@@ -36,15 +33,15 @@
     <div class="logo">MagicBlock ✨</div>
 
     <!-- LEFT WIZARD -->
-    <div class="wizard-wrap left">
-      <img src="assets/6009133115600735042-removebg-preview.png" class="wizard">
-      <div class="sparkle">✨✨</div>
+    <div class="wizard left">
+      <img src="assets/6009133115600735042-removebg-preview.png">
+      <span class="sparkle">✨✨</span>
     </div>
 
     <!-- RIGHT WIZARD -->
-    <div class="wizard-wrap right">
-      <img src="assets/6009133115600735042-removebg-preview.png" class="wizard">
-      <div class="sparkle">✨✨</div>
+    <div class="wizard right">
+      <img src="assets/6009133115600735042-removebg-preview.png">
+      <span class="sparkle">✨✨</span>
     </div>
 
     <!-- TEXT -->
@@ -73,13 +70,14 @@
 
 <script>
 function generate() {
-  const name = document.getElementById("nameInput").value || "NAME";
-  const role = document.getElementById("roleInput").value || "ROLE";
-  const date = document.getElementById("dateInput").value || "—";
+  document.getElementById("certName").innerText =
+    document.getElementById("nameInput").value || "NAME";
 
-  document.getElementById("certName").innerText = name;
-  document.getElementById("certRole").innerText = role;
-  document.getElementById("certDate").innerText = date;
+  document.getElementById("certRole").innerText =
+    document.getElementById("roleInput").value || "ROLE";
+
+  document.getElementById("certDate").innerText =
+    document.getElementById("dateInput").value || "—";
 }
 </script>
 
