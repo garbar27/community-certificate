@@ -180,3 +180,10 @@ header.controls {
 .hands-bottom {
   bottom: -140px;
 }
+main.scene {
+  margin-top: 140px; /* щоб сертифікат не ліз під header */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
