@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>MagicBlock Certificate</title>
+  <title>MagicBlock Community Certificate</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -11,8 +11,7 @@
   <h1>Join MagicBlock Community</h1>
 
   <div class="controls">
-    <input id="nameInput" type="text" placeholder="Your name">
-    
+    <input id="nameInput" placeholder="Your name" />
     <select id="roleSelect">
       <option>@Wizard</option>
       <option>@Art Magician</option>
@@ -24,42 +23,40 @@
       <option>Mod</option>
       <option>Team</option>
     </select>
-
-    <input id="dateInput" type="date">
+    <input type="date" id="dateInput" />
     <button onclick="generateCertificate()">Generate Certificate</button>
     <button>Download PDF</button>
   </div>
 </header>
 
-<main class="page">
-  <div class="certificate">
+<main class="wrapper">
+  <div class="certificate" id="certificate">
 
     <!-- LOGO -->
-    <img src="assets/logo.png" class="logo" alt="MagicBlock logo">
+    <div class="logo">
+      <img src="assets/magicblock-labs.htm" alt="MagicBlock Logo">
+      <span>MagicBlock ✨</span>
+    </div>
 
     <h2>
-      Certificate of <span>MagicBlock</span> Community Member
+      Certificate of <span class="brand">MagicBlock</span> Community Member
     </h2>
 
     <p class="small">This certifies that</p>
 
-    <h3 id="certName">NAME</h3>
+    <h1 id="certName">NAME</h1>
 
-    <p class="text">
-      is an official <strong id="certRole">ROLE</strong> of the MagicBlock community
+    <p class="role">
+      is an official <span id="certRole">ROLE</span> of the MagicBlock community
     </p>
 
-    <p class="text">
-      Member since: <span id="certDate">—</span>
-    </p>
+    <p class="date">Member since: <span id="certDate">—</span></p>
 
-    <p class="approved">
-      Approved by MagicBlock Team
-    </p>
+    <p class="footer">Approved by MagicBlock Team</p>
 
     <!-- WIZARDS -->
-    <img src="assets/wizard.png" class="wizard left" alt="Wizard left">
-    <img src="assets/wizard.png" class="wizard right" alt="Wizard right">
+    <img src="assets/wizard-left.png" class="wizard left" alt="Wizard Left">
+    <img src="assets/wizard.png" class="wizard right" alt="Wizard Right">
 
   </div>
 </main>
@@ -67,3 +64,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+
