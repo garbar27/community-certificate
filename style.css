@@ -56,24 +56,22 @@ body {
   font-size: 36px;
   margin-bottom: 20px;
 }
-
-.title span {
-  color: #7c3aed;
+.title {
+  font-size: 32px;
+  margin-bottom: 20px;
 }
 
 .subtitle {
-  font-size: 14px;
-  letter-spacing: 1px;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
 #certName {
- #certName {
   font-size: 48px;
   margin: 20px 0;
-
   color: #8a4dff;
-  font-weight: bold;
 }
+
 
 
 .role span {
@@ -123,15 +121,12 @@ body {
 }
 
 .wizard-on-cert {
- .wizard-on-cert {
   position: absolute;
 
-  right: 20px;
-  bottom: 20px;
+  right: 40px;     /* всередині сертифікату */
+  bottom: 30px;    /* стоїть на “підлозі” */
 
-  height: 360px;
-
-  z-index: 2;
+  height: 260px;   /* розмір */
   pointer-events: none;
 }
 
