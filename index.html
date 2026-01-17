@@ -4,193 +4,70 @@
   <meta charset="UTF-8" />
   <title>MagicBlock Community Certificate</title>
 
-  <!-- MAGICAL FONTS -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Uncial+Antiqua&display=swap" rel="stylesheet">
-
-  <style>
-    /* ===== RESET ===== */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      min-height: 100vh;
-      background: linear-gradient(180deg, #4b1d6b, #2a0f3a);
-      font-family: 'Cinzel', serif;
-      color: #2b1a00;
-    }
-
-    /* ===== TOP BAR ===== */
-    .top {
-      padding: 24px 40px;
-      color: #e9d5ff;
-      font-size: 40px;
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
-
-    .controls {
-      display: flex;
-      gap: 12px;
-      padding: 0 40px 30px;
-    }
-
-    .controls input,
-    .controls select,
-    .controls button {
-      padding: 10px 14px;
-      border-radius: 8px;
-      border: none;
-      font-size: 14px;
-    }
-
-    .controls button {
-      cursor: pointer;
-      font-weight: 600;
-    }
-
-    /* ===== CERTIFICATE ===== */
-    .certificate-wrapper {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 60px;
-    }
-
-    .certificate {
-      position: relative;
-      width: 900px;
-      background: #fff6d8;
-      border-radius: 28px;
-      padding: 40px 60px 160px;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.3);
-      text-align: center;
-    }
-
-    /* ===== LOGO ===== */
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 20px;
-      justify-content: center;
-    }
-
-    .logo img {
-      width: 34px;
-      height: auto;
-    }
-
-    .logo span {
-      font-weight: 700;
-      color: #8b5cf6;
-      letter-spacing: 1px;
-    }
-
-    /* ===== TEXT ===== */
-    .title {
-      font-family: 'Uncial Antiqua', cursive;
-      font-size: 42px;
-      line-height: 1.35;
-      margin-bottom: 22px;
-    }
-
-    .subtitle {
-      font-size: 16px;
-      margin-bottom: 16px;
-      line-height: 1.6;
-    }
-
-    .name {
-      font-size: 48px;
-      color: #8b5cf6;
-      margin: 18px 0;
-    }
-
-    .role {
-      margin-top: 8px;
-      font-size: 16px;
-    }
-
-    .approved {
-      margin-top: 26px;
-      font-style: italic;
-    }
-
-    /* ===== WIZARDS ===== */
-    .wizard {
-      position: absolute;
-      bottom: 30px;
-      width: 150px;
-    }
-
-    .wizard.left {
-      left: 40px;
-      transform: scaleX(-1);
-    }
-
-    .wizard.right {
-      right: 40px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
 
   <!-- TOP -->
-  <div class="top">Join MagicBlock Community</div>
+  <div class="top-bar">
+    <h1>Join MagicBlock Community</h1>
 
-  <div class="controls">
-    <input type="text" placeholder="Your name">
-    <select>
-      <option>@Wizard</option>
-      <option>@Art Magician</option>
-      <option>@Gaming Magician</option>
-      <option>@Apprentice</option>
-      <option>@Sorcerer</option>
-      <option>@Adept</option>
-      <option>@Inner Circle</option>
-      <option>Mod</option>
-      <option>Team</option>
-    </select>
-    <input type="date">
-    <button>Generate Certificate</button>
-    <button>Download PDF</button>
+    <div class="controls">
+      <input id="nameInput" type="text" placeholder="Your name">
+      <select id="roleSelect">
+        <option>@Wizard</option>
+        <option>@Art Magician</option>
+        <option>@Gaming Magician</option>
+        <option>@Apprentice</option>
+        <option>@Sorcerer</option>
+        <option>@Adept</option>
+        <option>@Inner Circle</option>
+        <option>Mod</option>
+        <option>Team</option>
+      </select>
+      <input id="dateInput" type="date">
+      <button onclick="generateCertificate()">Generate Certificate</button>
+    </div>
   </div>
 
-  <!-- CERTIFICATE -->
-  <div class="certificate-wrapper">
+  <!-- PAGE -->
+  <div class="page">
     <div class="certificate">
 
+      <!-- LOGO -->
       <div class="logo">
-        <img src="logo.png" alt="MagicBlock logo">
+        <img src="assets/logo.png" alt="MagicBlock logo">
         <span>MagicBlock</span>
       </div>
 
-      <div class="title">
-        Certificate of <span style="color:#8b5cf6">MagicBlock</span> Community Member
-      </div>
+      <h2>
+        Certificate of <span>MagicBlock</span><br>
+        Community Member
+      </h2>
 
-      <div class="subtitle">This certifies that</div>
+      <div class="small">THIS CERTIFIES THAT</div>
 
-      <div class="name">NAME</div>
+      <div id="certName" class="name">NAME</div>
 
       <div class="role">
-        is an official <strong>ROLE</strong> of the MagicBlock community
+        is an official <strong id="certRole">ROLE</strong> of the MagicBlock community
       </div>
 
-      <div class="subtitle">Member since: —</div>
+      <div class="date">
+        Member since: <span id="certDate">—</span>
+      </div>
 
       <div class="approved">Approved by MagicBlock Team</div>
 
       <!-- WIZARDS -->
-      <img src="wizard.png" class="wizard left" alt="Wizard left">
-      <img src="wizard.png" class="wizard right" alt="Wizard right">
+      <img src="assets/wizard.png" class="wizard left" alt="Wizard left">
+      <img src="assets/wizard.png" class="wizard right" alt="Wizard right">
 
     </div>
   </div>
 
 </body>
 </html>
-
