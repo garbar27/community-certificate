@@ -7,9 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Uncial+Antiqua&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
-  <!-- PDF libs -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
   <script src="script.js" defer></script>
 </head>
@@ -22,7 +20,6 @@
     <div class="controls">
       <input id="nameInput" type="text" placeholder="Your name">
       <select id="roleSelect">
-        <option>Team</option>
         <option>@Wizard</option>
         <option>@Art Magician</option>
         <option>@Gaming Magician</option>
@@ -31,10 +28,11 @@
         <option>@Adept</option>
         <option>@Inner Circle</option>
         <option>Mod</option>
+        <option>Team</option>
       </select>
       <input id="dateInput" type="date">
       <button onclick="generateCertificate()">Generate Certificate</button>
-      <button onclick="downloadPDF()">Download PDF</button>
+      <button onclick="downloadImage()">Download Certificate</button>
     </div>
   </div>
 
@@ -42,7 +40,7 @@
     <div class="certificate" id="certificate">
 
       <div class="logo">
-        <img src="assets/logo.png" alt="MagicBlock logo">
+        <img src="assets/logo.png">
         <span>MAGICBLOCK</span>
       </div>
 
@@ -65,52 +63,44 @@
 
       <div class="approved">Approved by MagicBlock Team</div>
 
-      <img src="assets/wizard.png" class="wizard left" alt="Wizard left">
-      <img src="assets/wizard.png" class="wizard right" alt="Wizard right">
+      <img src="assets/wizard.png" class="wizard left">
+      <img src="assets/wizard.png" class="wizard right">
 
     </div>
   </div>
-<!-- QUIZ MODAL -->
-<div id="quizOverlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:999; align-items:center; justify-content:center;">
-  <div style="background:#fff6d8; padding:30px 36px; border-radius:20px; width:420px; font-family:Cinzel, serif;">
-    <h3 style="margin-bottom:20px; text-align:center;">MagicBlock Quiz ✨</h3>
 
-    <div style="margin-bottom:14px;">
+  <!-- QUIZ -->
+  <div id="quizOverlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:999; align-items:center; justify-content:center;">
+    <div style="background:#fff6d8; padding:30px; border-radius:20px; width:420px;">
+      <h3 style="text-align:center; margin-bottom:20px;">MagicBlock Quiz ✨</h3>
+
       <p>1. What is MagicBlock?</p>
       <select id="q1">
-        <option value="">Select</option>
-        <option>A gaming token</option>
-        <option>A creative Web3 & developer community</option>
-        <option>An NFT marketplace</option>
+        <option></option>
+        <option>A creative Web3 community</option>
+        <option>A game token</option>
       </select>
-    </div>
 
-    <div style="margin-bottom:14px;">
-      <p>2. Which role exists in MagicBlock?</p>
+      <p style="margin-top:12px;">2. Which role exists?</p>
       <select id="q2">
-        <option value="">Select</option>
-        <option>@Trader</option>
+        <option></option>
         <option>@Wizard</option>
-        <option>@Investor</option>
+        <option>@Trader</option>
       </select>
-    </div>
 
-    <div style="margin-bottom:20px;">
-      <p>3. What does MagicBlock value most?</p>
+      <p style="margin-top:12px;">3. What does MagicBlock value?</p>
       <select id="q3">
-        <option value="">Select</option>
-        <option>Only profits</option>
+        <option></option>
         <option>Creativity and community</option>
         <option>Centralization</option>
       </select>
-    </div>
 
-    <div style="display:flex; gap:10px; justify-content:center;">
-      <button onclick="checkQuiz()">Submit</button>
-      <button onclick="closeQuiz()">Cancel</button>
+      <div style="margin-top:20px; display:flex; justify-content:center; gap:10px;">
+        <button onclick="checkQuiz()">Submit</button>
+        <button onclick="closeQuiz()">Cancel</button>
+      </div>
     </div>
   </div>
-</div>
 
 </body>
 </html>
