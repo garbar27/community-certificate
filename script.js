@@ -23,39 +23,22 @@ function closeQuiz() {
   document.getElementById("quizOverlay").style.display = "none";
 }
 
-/* ✔ SUBMIT — ЯВНА ПЕРЕВІРКА */
-function checkQuiz() {
-  if (answersAreCorrect()) {
+/* 🔥 ЄДИНА ТОЧКА ЛОГІКИ */
+function submitQuiz() {
+  const q1 = document.getElementById("q1").value;
+  const q2 = document.getElementById("q2").value;
+  const q3 = document.getElementById("q3").value;
+
+  if (q1 === "correct" && q2 === "correct" && q3 === "correct") {
     quizPassed = true;
     closeQuiz();
-    alert("✨ Quiz passed! You can now generate your certificate.");
+    generateCertificate(); // ⬅ ОДРАЗУ ГЕНЕРУЄМО
+    alert("✨ Quiz passed! Certificate unlocked.");
   } else {
     alert("❌ Some answers are incorrect.");
   }
 }
 
-/* ✔ CANCEL — РОЗУМНА ПОВЕДІНКА */
-function cancelQuiz() {
-  if (answersAreCorrect()) {
-    quizPassed = true;
-  }
-  closeQuiz();
-}
-
-/* ✔ ЄДИНА ФУНКЦІЯ ПЕРЕВІРКИ */
-function answersAreCorrect() {
-  const q1 = document.getElementById("q1").value;
-  const q2 = document.getElementById("q2").value;
-  const q3 = document.getElementById("q3").value;
-
-  return (
-    q1 === "A creative Web3 community" &&
-    q2 === "@Wizard" &&
-    q3 === "Creativity and community"
-  );
-}
-
-/* ✔ ЗАВАНТАЖЕННЯ ЯК ФОТО */
 async function downloadImage() {
   if (!quizPassed) {
     openQuiz();
