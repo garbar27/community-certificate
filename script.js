@@ -23,16 +23,9 @@ function closeQuiz() {
   document.getElementById("quizOverlay").style.display = "none";
 }
 
+/* ✔ SUBMIT — ЯВНА ПЕРЕВІРКА */
 function checkQuiz() {
-  const q1 = document.getElementById("q1").value;
-  const q2 = document.getElementById("q2").value;
-  const q3 = document.getElementById("q3").value;
-
-  if (
-    q1 === "A creative Web3 community" &&
-    q2 === "@Wizard" &&
-    q3 === "Creativity and community"
-  ) {
+  if (answersAreCorrect()) {
     quizPassed = true;
     closeQuiz();
     alert("✨ Quiz passed! You can now generate your certificate.");
@@ -41,6 +34,28 @@ function checkQuiz() {
   }
 }
 
+/* ✔ CANCEL — РОЗУМНА ПОВЕДІНКА */
+function cancelQuiz() {
+  if (answersAreCorrect()) {
+    quizPassed = true;
+  }
+  closeQuiz();
+}
+
+/* ✔ ЄДИНА ФУНКЦІЯ ПЕРЕВІРКИ */
+function answersAreCorrect() {
+  const q1 = document.getElementById("q1").value;
+  const q2 = document.getElementById("q2").value;
+  const q3 = document.getElementById("q3").value;
+
+  return (
+    q1 === "A creative Web3 community" &&
+    q2 === "@Wizard" &&
+    q3 === "Creativity and community"
+  );
+}
+
+/* ✔ ЗАВАНТАЖЕННЯ ЯК ФОТО */
 async function downloadImage() {
   if (!quizPassed) {
     openQuiz();
@@ -51,6 +66,7 @@ async function downloadImage() {
 
   const canvas = await html2canvas(cert, {
     scale: 3,
+    useCORS: true,
     backgroundColor: "#fff6d8"
   });
 
