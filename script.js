@@ -9,27 +9,22 @@ function generateCertificate() {
 }
 
 async function downloadPDF() {
-  const { jsPDF } = window.jspdf;
   const cert = document.getElementById("certificate");
 
-  const rect = cert.getBoundingClientRect();
-
   const canvas = await html2canvas(cert, {
-    scale: 2,
+    scale: 3,                 // висока якість
     useCORS: true,
-    backgroundColor: "#fff6d8",
-    width: rect.width,
-    height: rect.height
+    backgroundColor: "#fff6d8"
   });
 
-  const imgData = canvas.toDataURL("image/png");
+  // створюємо PNG
+  const image = canvas.toDataURL("image/png");
 
-  const pdf = new jsPDF({
-    orientation: rect.width > rect.height ? "landscape" : "portrait",
-    unit: "px",
-    format: [canvas.width, canvas.height]
-  });
-
-  pdf.addImage(imgData, "PNG", 0, 0, canvas.width, canvas.height);
-  pdf.save("MagicBlock_Certificate.pdf");
+  // автоматичне завантаження
+  const link = document.createElement("a");
+  link.href = image;
+  link.download = "MagicBlock_Certificate.png";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
