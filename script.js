@@ -2,18 +2,20 @@ let quizPassed = false;
 
 function generateCertificate() {
   if (!quizPassed) {
-    openQuiz();
+    // 🔥 ПРИМУСОВО СКИДАЄМО ВИБІР
+    document.getElementById("q1").selectedIndex = 0;
+    document.getElementById("q2").selectedIndex = 0;
+    document.getElementById("q3").selectedIndex = 0;
+
+    quizOverlay.style.display = "flex";
     return;
   }
 
-  const name = document.getElementById("nameInput").value || "NAME";
-  const role = document.getElementById("roleSelect").value;
-  const date = document.getElementById("dateInput").value || "—";
-
-  document.getElementById("certName").innerText = name;
-  document.getElementById("certRole").innerText = role;
-  document.getElementById("certDate").innerText = date;
+  certName.innerText = nameInput.value || "NAME";
+  certRole.innerText = roleSelect.value;
+  certDate.innerText = dateInput.value || "—";
 }
+
 
 function openQuiz() {
   document.getElementById("quizOverlay").style.display = "flex";
